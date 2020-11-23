@@ -2,7 +2,7 @@
 # cim-symbol-builder-js
 Use the CIM Symbol Builder to explore different combinations of symbol layers and their properties to create your desired CIMSymbol in the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/).
 
-[View it live](https://annelfitz.github.io/cim-symbol-builder/)
+[View it live](https://annelfitz.github.io/cim-symbol-builder-js/)
 
 ![App](https://raw.githubusercontent.com/annelfitz/cim-symbol-builder-js/master/cim-symbol-builder-js.png)
 
