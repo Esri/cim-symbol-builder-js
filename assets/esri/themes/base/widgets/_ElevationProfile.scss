@@ -1,0 +1,170 @@
+@mixin elevationProfile() {
+  $width: 650px;
+  $height: 284px;
+  $header-height: 30px;
+  $chart-height: 180px;
+  $progress-bar-height: 3px;
+  $toggle-button-width: 34px;
+
+  $popover-padding: $cap-spacing $side-spacing;
+  $popover-border: 1px solid $border-color;
+  $popover-background-color: $background-color;
+
+  //----------------------------------------------------------------------------
+  // Widget
+  //----------------------------------------------------------------------------
+
+  .esri-elevation-profile {
+    resize: horizontal;
+
+    &.esri-component.esri-widget--panel {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      width: $width;
+      height: $height;
+      padding: $cap-spacing $side-spacing;
+    }
+
+    &__progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: $progress-bar-height;
+      background-color: $border-color--active;
+
+      transition: opacity 500ms ease-in-out, width 200ms ease-in-out;
+
+      opacity: 0;
+
+      &--visible {
+        opacity: 1;
+        transition: opacity 100ms ease-in-out, width 200ms ease-in-out;
+      }
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: $header-height;
+      margin-bottom: $cap-spacing;
+    }
+
+    &__header-spacer {
+      width: 100%;
+    }
+
+    &__actions-container {
+      display: flex;
+      flex-flow: row-reverse; // Place buttons on the right.
+      width: 100%;
+      margin-top: $cap-spacing;
+    }
+
+    &__new-profile-button {
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    &__no-path-container {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__chart-container {
+      width: 100%;
+      height: $chart-height;
+      margin-top: -$cap-spacing--half;
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // settings
+  //----------------------------------------------------------------------------
+
+  .esri-elevation-profile-settings {
+    width: $toggle-button-width;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    // Align icon to the right of the chart
+    margin-right: -$side-spacing--half;
+
+    &__popover-content {
+      padding: $popover-padding;
+      border: $popover-border;
+      color: $font-color;
+      background-color: $popover-background-color;
+    }
+
+    &__unit-select {
+      min-width: 150px;
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // Statistics
+  //----------------------------------------------------------------------------
+
+  .esri-elevation-profile-statistics {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    height: $header-height;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__statistic {
+      margin-right: $side-spacing;
+      flex-shrink: 0;
+    }
+
+    &__statistic-label,
+    &__popover-statistic-label,
+    &__statistic-value,
+    &__popover-statistic-value {
+      margin: 0;
+      font-size: $font-size--small;
+      line-height: 1.3em;
+      color: $font-color;
+      white-space: nowrap;
+    }
+
+    &__statistic-label,
+    &__popover-statistic-label {
+      font-weight: $font-weight--medium;
+    }
+
+    &__statistic-value,
+    &__popover-statistic-value {
+      font-weight: $font-weight--regular;
+    }
+
+    &__popover-toggle {
+      width: $toggle-button-width;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    &__popover-content {
+      padding: $popover-padding;
+      border: $popover-border;
+      background-color: $popover-background-color;
+    }
+
+    &__popover-statistic:not(:last-of-type) {
+      margin-bottom: $cap-spacing--half;
+    }
+  }
+}
+
+@if $include_ElevationProfile == true {
+  @include elevationProfile();
+}
