@@ -4,7 +4,7 @@ Use the CIM Symbol Builder to explore different combinations of symbol layers an
 
 [View it live](https://esri.github.io/cim-symbol-builder-js/)
 
-![App](https://raw.githubusercontent.com/ArcGIS/cim-symbol-builder-js/master/cim-symbol-builder-js.png?token=AMHXKJGINUOELN6E5EKE44K7Z2CB2)
+![App](https://raw.githubusercontent.com/Esri/cim-symbol-builder-js/master/cim-symbol-builder-js.png?token=AMHXKJDI2MON2CR5BX7FPPS7Z2ZLA)
 
 ## Features
 * Learn how to create CIM symbols in the ArcGIS API for JavaScript
