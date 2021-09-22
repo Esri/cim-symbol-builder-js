@@ -2,9 +2,9 @@
 # cim-symbol-builder-js
 Use the CIM Symbol Builder to explore different combinations of symbol layers and their properties to create your desired CIMSymbol in the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/).
 
-[View it live](https://annelfitz.github.io/cim-symbol-builder-js/)
+[View it live](https://esri.github.io/cim-symbol-builder-js/)
 
-![App](https://raw.githubusercontent.com/annelfitz/cim-symbol-builder-js/master/cim-symbol-builder-js.png)
+![App](https://raw.githubusercontent.com/Esri/cim-symbol-builder-js/master/cim-symbol-builder-js.png)
 
 ## Features
 * Learn how to create CIM symbols in the ArcGIS API for JavaScript
@@ -48,7 +48,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
-Copyright 2016 Esri
+Copyright 2020 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
