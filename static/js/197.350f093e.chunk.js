@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[197],{942:function(e,t,o){"use strict";o.r(t),o.d(t,"s",(function(){return u}));var r,s,p,a=o(398),c={exports:{}};r=c,s=c.exports,void 0!==(p=function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default={"Zoom Out":"Oddiali\u0165","From %1 to %2":"Z %1 do %2","From %1":"Z %1","To %1":"Do %1"}}(a.a,s))&&(r.exports=p);var n=Object(a.c)(c.exports),u=Object.freeze(Object.assign(Object.create(null),c.exports,{default:n}))}}]);
-//# sourceMappingURL=197.350f093e.chunk.js.map
