@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[223],{920:function(c,p,t){"use strict";t.r(p);var a=t(394),i=t(378);Object(i.b)({"calcite-notice":a.b,"calcite-icon":a.a})}}]);
-//# sourceMappingURL=223.c6e6adf0.chunk.js.map
