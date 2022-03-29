@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $relationship_column_size: 85px;
 
 @mixin legend() {
@@ -22,6 +24,7 @@ $relationship_column_size: 85px;
 
   .esri-legend__layer {
     margin-left: $side-spacing--half;
+    overflow: auto;
   }
 
   .esri-legend__group-layer-child {
@@ -108,13 +111,14 @@ $relationship_column_size: 85px;
   }
 
   .esri-legend__symbol {
-    display: block;
-    margin: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .esri-legend__layer-caption {
     display: table-caption;
     padding: $cap-spacing--half 0;
+    word-break: break-word;
   }
 
   .esri-legend__ramp-labels {
@@ -163,10 +167,10 @@ $relationship_column_size: 85px;
       border-color: transparent rgba($font-color, 0.8) transparent transparent;
     }
     &:first-child {
-      margin-top: floor($font-size/3) * -1;
+      margin-top: floor(math.div($font-size, 3)) * -1;
     }
     &:last-child {
-      bottom: floor($font-size/4) * -1;
+      bottom: floor($font-size * 0.25) * -1;
     }
   }
 
@@ -175,7 +179,7 @@ $relationship_column_size: 85px;
     padding: $cap-spacing--half 0;
   }
 
-  html[dir="rtl"] {
+  [dir="rtl"] {
     .esri-legend__ramp-label:before {
       border-width: 3px 0 3px 4px;
       border-color: transparent transparent transparent rgba($font-color, 0.8);
@@ -187,13 +191,18 @@ $relationship_column_size: 85px;
     .esri-legend__layer-body {
       margin-left: 0;
       margin-right: $side-spacing--half;
+      overflow: auto;
+    }
+
+    .esri-legend__ramps {
+      margin-left: auto;
+      margin-right: $side-spacing--quarter;
     }
   }
 }
 
 @mixin cardLegend() {
   $legend_min_width: $panel-width;
-  $legend_min_height: 150px;
   $carousel_min_width: $legend_min_width;
   $carousel_min_height: 250px;
   $carousel_slide_side_length: $legend_min_width - 50;
@@ -208,7 +217,6 @@ $relationship_column_size: 85px;
   }
   .esri-legend--card__section {
     font-size: $font-size__body;
-    min-height: $legend_min_height;
     min-width: $legend_min_width;
     padding: $cap-spacing $side-spacing;
     border-left: 1px solid $border-color;
@@ -311,13 +319,14 @@ $relationship_column_size: 85px;
   }
 
   .esri-legend--stacked {
-    height: $carousel_min_height + $button-height;
     min-width: $carousel_min_width;
+    display: flex;
+    flex-direction: column;
 
     .esri-legend--card__section {
       border: none;
       overflow: auto;
-      height: $carousel_slide_side_length;
+      height: auto;
       width: $carousel_slide_side_length;
     }
     .esri-legend--card__size-ramp-row {
@@ -338,15 +347,12 @@ $relationship_column_size: 85px;
       text-align: center;
     }
     .esri-legend--card__carousel-indicator-container {
-      align-items: center;
-      bottom: 0;
       box-shadow: 0 -1px 0 $border-color;
       display: flex;
       height: $button-height;
+      width: $legend_min_width;
       justify-content: center;
-      left: 0;
-      position: absolute;
-      right: 0;
+      overflow: auto;
     }
     .esri-legend--card__carousel-indicator {
       cursor: pointer;
@@ -386,7 +392,7 @@ $relationship_column_size: 85px;
 
   //////////////////////////////
   // RTL
-  html[dir="rtl"] .esri-view-width-greater-than-small {
+  [dir="rtl"] .esri-view-width-greater-than-small {
     // scoped to view size to not interfere with carousel
     .esri-legend--card__section {
       border-left: 0;
@@ -474,8 +480,68 @@ $relationship_column_size: 85px;
   }
 }
 
+@mixin univariateAboveAndBelowRamp() {
+  .esri-univariate-above-and-below-ramp__symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .esri-univariate-above-and-below-ramp__label {
+    position: relative;
+    white-space: nowrap;
+    line-height: 1em;
+    font-size: $font-size--small;
+    margin-left: 7px;
+    &:before {
+      position: absolute;
+      top: 0.45em;
+      left: -19px;
+      display: block;
+      content: "";
+      width: 14px;
+      height: 0;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+    }
+    &:first-child {
+      top: floor(math.div($font-size, 2.2)) * -1;
+    }
+    &:last-child {
+      bottom: floor(math.div($font-size, 2.2)) * -1;
+    }
+  }
+
+  .esri-univariate-above-and-below-ramp__color--card {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 1px;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 15px;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+  }
+
+  [dir="rtl"] {
+    .esri-univariate-above-and-below-ramp__label {
+      margin-left: auto;
+      margin-right: 7px;
+
+      &:before {
+        left: auto;
+        right: -19px;
+      }
+    }
+  }
+}
+
 @if $include_Legend == true {
   @include legend();
   @include cardLegend();
   @include relationshipRamp();
+  @include univariateAboveAndBelowRamp();
 }

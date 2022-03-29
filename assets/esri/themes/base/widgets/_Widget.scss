@@ -10,11 +10,21 @@
     font-family: $font-family;
     line-height: $line-height;
     background-color: $background-color;
+
     *,
     *:before,
     *:after {
       box-sizing: inherit;
     }
+
+    // Apply focus ring matching calcite components, for consistency.
+    &:focus-visible,
+    &:focus,
+    *:focus-visible,
+    *:focus {
+      outline: 2px solid var(--calcite-ui-brand);
+    }
+
     &#{&}--disabled {
       & > * {
         pointer-events: none;
@@ -22,8 +32,8 @@
       }
     }
   }
+
   .esri-widget__anchor {
-    text-decoration: none;
     color: $button-color;
     &:hover {
       color: $button-color--hover;
@@ -32,7 +42,12 @@
       pointer-events: none;
       opacity: $opacity--disabled;
     }
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
+
   .esri-widget__header {
     align-items: center;
     background-color: $background-color;
@@ -48,6 +63,7 @@
       display: flex;
       margin: 0;
       padding: 0;
+      text-align: initial;
       width: calc(100% - #{$header-button-width});
     }
     &-button {
@@ -65,6 +81,7 @@
       width: $header-button-width;
     }
   }
+
   .esri-widget__heading {
     color: $heading-color;
     font-weight: $font-weight__heading;
@@ -163,8 +180,10 @@
       background-color: $background-color--active;
       border-left-color: $border-color--active;
     }
-    &__list-item [class^="esri-icon"] {
-      padding-right: $font-size * 0.2;
+    &__list-item {
+      @include icomoonIconSelector() {
+        padding-right: $font-size * 0.2;
+      }
     }
   }
 
@@ -172,6 +191,7 @@
     color: $font-color;
     border: none;
     border-collapse: collapse;
+    line-height: 1.3em;
     width: 100%;
     tr:nth-child(odd) {
       background-color: rgba($background-color--inverse, 0.1);
@@ -210,7 +230,7 @@
     background-color: $background-color;
     border: 1px solid $border-color;
     color: $font-color;
-    font-family: inherit;
+    font-family: $font-family;
     font-size: $font-size;
     &[type="text"],
     &[type="password"],
@@ -244,10 +264,10 @@
     font-size: $font-size;
     min-height: $button-height;
     justify-content: center;
+    word-break: normal;
+    white-space: normal;
     overflow: hidden;
     padding: $cap-spacing--half $side-spacing--half;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 100%;
     transition: background-color 125ms ease-in-out, border 125ms ease-in-out;
     &:hover {
@@ -279,10 +299,9 @@
     border-color: transparent;
     color: $button-color;
     &:hover {
-      background-color: transparent;
+      background-color: $background-color--hover;
       border-color: transparent;
       color: $button-color--hover;
-      text-decoration: underline;
     }
   }
 
@@ -314,12 +333,12 @@
       font-size: $font-size;
       font-family: $font-family;
     }
-    [class*="esri-icon"] {
+    @include icomoonIconSelector() {
       padding: 0 $side-spacing--half;
     }
   }
 
-  [class*="esri-icon"] {
+  @include icomoonIconSelector() {
     font-size: $icon-size;
     display: inline-block;
   }
@@ -352,8 +371,11 @@
   }
 
   // Select
-  $select_caret: "data:image/svg+xml,%3Csvg width%3D%2732%27%20height%3D%2732%27%20viewBox%3D%270%200%2032%2032%27%20xmlns%3D%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d%3D%27M11%2013l5%205.833L21%2013z%27%20fill%3D%27%23" +
-    str-slice(#{$interactive-font-color}, 2) + "%27%20fill-rule%3D%27nonzero%27/%3E%3C/svg%3E";
+
+  // From https://esri.github.io/calcite-ui-icons/#chevron-down
+  $select_caret: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-8 -8 32 32' width='32' height='32'%3E%3Cpath d='M8 11.207l-4-4V5.793l4 4 4-4v1.414z' fill='%23" +
+    str-slice(#{$interactive-font-color}, 2) + "' fillrule='nonzero'/%3E%3C/svg%3E";
+
   .esri-select {
     cursor: pointer;
     display: block;
@@ -369,6 +391,10 @@
     border-radius: 0;
     padding: 0 0.5em;
     background: url($select_caret) no-repeat right center $background-color;
+
+    &[disabled] {
+      cursor: auto;
+    }
   }
 
   .esri-select::-ms-expand {
@@ -377,10 +403,15 @@
 
   // Disabled
   .esri-disabled a,
-  .esri-disabled [class*="esri-icon"],
   .esri-disabled [role="menu"],
   .esri-disabled [role="checkbox"] {
     color: $interactive-font-color--disabled;
+  }
+
+  .esri-disabled {
+    @include icomoonIconSelector() {
+      color: $interactive-font-color--disabled;
+    }
   }
 
   .keynav-mode {
@@ -517,7 +548,7 @@
    RTL
    ========================================================================== */
 
-  html[dir="rtl"] {
+  [dir="rtl"] {
     .esri-widget__table {
       th {
         text-align: right;
@@ -528,9 +559,11 @@
     .esri-select {
       background-position: left 50%;
     }
-    .esri-menu__list-item [class^="esri-icon"] {
-      padding-right: 0;
-      padding-left: floor($font-size * 0.2);
+    .esri-menu__list-item {
+      @include icomoonIconSelector() {
+        padding-right: 0;
+        padding-left: floor($font-size * 0.2);
+      }
     }
     .esri-menu__list-item {
       border-left: none;
@@ -553,7 +586,7 @@
     width: 1px;
   }
 
-  [class^="esri-icon"] {
+  @include icomoonIconSelector() {
     // fixes IE11 bug where animation will continue after animation class is removed
     // https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/4784
     animation: none;
@@ -630,6 +663,16 @@
     position: absolute;
     top: -999em;
     left: -999em;
+  }
+
+  /* ==========================================================================
+   component shims
+   ========================================================================== */
+  .esri-match-height {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
   }
 }
 

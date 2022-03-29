@@ -28,14 +28,16 @@
   }
 
   .esri-feature__content-element {
-    padding: 0 $side-spacing--half $cap-spacing--double;
+    padding: 0 $side-spacing--half;
+    margin-bottom: $cap-spacing--double;
   }
 
   .esri-feature__content-element:last-child {
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
+
   // ATTACHMENTS
-  .esri-feature__attachments {
+  .esri-feature-attachments {
     flex-flow: column wrap;
     align-items: flex-start;
   }
@@ -46,7 +48,7 @@
   }
 
   //  RTL
-  html[dir="rtl"] {
+  [dir="rtl"] {
     .esri-feature__attachments-title {
       margin: 0 0 0 auto;
     }

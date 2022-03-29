@@ -6,7 +6,7 @@
   $slider-ticks-z-index: 0;
 
   $slider-thumb-size: 16px !default;
-  $slider-thumb-offset: ($slider-thumb-size/2) - 1 !default;
+  $slider-thumb-offset: ($slider-thumb-size * 0.5) - 1 !default;
 
   $slider-thumb-hover-scale: 1.2 !default;
 
@@ -174,7 +174,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 0;
   }
 
   .esri-slider__track {
@@ -330,6 +330,11 @@
     .esri-slider__min,
     .esri-slider__tick-label {
       direction: rtl;
+      unicode-bidi: plaintext;
+    }
+
+    .esri-slider__range-input,
+    .esri-slider__label-input {
       unicode-bidi: plaintext;
     }
   }
