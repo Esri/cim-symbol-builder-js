@@ -1,3 +1,0 @@
-/*! For license information please see 116.6155b711.chunk.js.LICENSE.txt */
-(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[116],{469:function(n,t,e){"use strict";e.r(t),e.d(t,"I",(function(){return i})),e.d(t,"S",(function(){return o})),e.d(t,"T",(function(){return u}));var o={menuActions:"menu-actions",menuTooltip:"menu-tooltip"},u={more:"More"},i={menu:"ellipsis"}}}]);
-//# sourceMappingURL=116.6155b711.chunk.js.map
