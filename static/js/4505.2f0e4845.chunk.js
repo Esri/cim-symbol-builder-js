@@ -1,1 +1,0 @@
-(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[4505],{4505:()=>{}}]);
