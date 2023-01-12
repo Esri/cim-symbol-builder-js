@@ -1,16 +1,16 @@
 
 # cim-symbol-builder-js
-Use the CIM Symbol Builder to explore different combinations of symbol layers and their properties to create your desired CIMSymbol in the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/).
+Use the CIM Symbol Builder to explore different combinations of symbol layers and their properties to create your desired CIMSymbol in the [ArcGIS Maps SDK for JavaScript](https://developers.arcgis.com/javascript/).
 
 [View it live](https://esri.github.io/cim-symbol-builder-js/)
 
 ![App](https://raw.githubusercontent.com/Esri/cim-symbol-builder-js/master/cim-symbol-builder-js.png)
 
 ## Features
-* Learn how to create CIM symbols in the ArcGIS API for JavaScript
+* Learn how to create CIM symbols in the ArcGIS Maps SDK for JavaScript
 * Modify the properties of symbol layers 
 * Modify your own custom symbols by importing the symbol JSON
-* When you are done creating your symbol, copy the JSON and use it in your own ArcGIS API for JavaScript application!
+* When you are done creating your symbol, copy the JSON and use it in your own ArcGIS Maps SDK for JavaScript application!
 
 ## Instructions
 
