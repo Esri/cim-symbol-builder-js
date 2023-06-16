@@ -1,1 +1,1 @@
-{"widgetLabel":"한_Features_________________빠","zoom":"한_Zoom to_______________빠","browseClusteredFeatures":"한_Browse features________________빠","exitRelatedRecords":"한_Exit related records_____________________빠","total":"한_Total: {total}_______________빠","pageText":"한_{index} of {total}___________________빠","selectFeature":"한_Select feature_______________빠"}
+{"widgetLabel":"피처","zoom":"확대/축소","browseClusteredFeatures":"피처 찾아보기","exitRelatedRecords":"연계 레코드 종료","total":"합계: {total}","pageText":"{index}개 중 {total}개","selectFeature":"피처 선택"}
