@@ -23,21 +23,19 @@
     background-color: transparent;
   }
 
-  .esri-features__action-bar {
-    background-color: var(--calcite-ui-foreground-1);
-    border-block-end: 1px solid var(--calcite-ui-border-3);
-  }
-
-  .esri-features__footer-actions {
+  .esri-features__footer {
     display: flex;
     background-color: var(--calcite-ui-foreground-1);
     justify-content: flex-end;
-    margin: -0.5rem;
     flex: 1;
 
     calcite-action-group {
       border-inline-start: 1px solid var(--calcite-ui-border-3);
     }
+  }
+
+  .esri-features__content-feature {
+    --calcite-flow-item-footer-padding: 0;
   }
 
   .esri-features__feature-menu-observer {

@@ -1,3 +1,0 @@
-/*! For license information please see 5738.34f04841.chunk.js.LICENSE.txt */
-"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[5738],{65738:(t,e,n)=>{function o(t){for(let e=t;e;e=i(e))if(e instanceof Element&&"none"===getComputedStyle(e).display)return null;for(let e=i(t);e;e=i(e)){if(!(e instanceof Element))continue;const t=getComputedStyle(e);if("contents"!==t.display){if("static"!==t.position||"none"!==t.filter)return e;if("BODY"===e.tagName)return e}}return null}function i(t){return t.assignedSlot?t.assignedSlot:t.parentNode instanceof ShadowRoot?t.parentNode.host:t.parentNode}n.r(e),n.d(e,{offsetParent:()=>o})}}]);
-//# sourceMappingURL=5738.34f04841.chunk.js.map
