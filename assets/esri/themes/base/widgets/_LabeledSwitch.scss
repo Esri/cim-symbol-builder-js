@@ -1,0 +1,22 @@
+@mixin labeledSwitch() {
+  .esri-labeled-switch {
+    &__label {
+      --calcite-label-margin-bottom: 0;
+    }
+
+    &__label-content {
+      display: flex;
+      flex-shrink: 0;
+      gap: $side-spacing--half;
+      align-items: center;
+    }
+
+    &__icon {
+      color: var(--calcite-ui-info);
+    }
+  }
+}
+
+@if $include_LabeledSwitch == true {
+  @include labeledSwitch();
+}
