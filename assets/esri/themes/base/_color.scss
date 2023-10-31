@@ -1,11 +1,12 @@
+@use "sass:color";
 @import "functions";
 @import "colors/scss/variables";
+
 // ↳ https: //github.com/Esri/calcite-colors.git
 
 //  Main Colors Vars
 $font-color: $Calcite_Gray_700 !default;
 $interactive-font-color: $Calcite_Gray_550 !default;
-
 $background-color: $Calcite_Gray_050 !default;
 
 // Inverse
@@ -29,12 +30,12 @@ $background-color--offset-subtle: offset-background-color($background-color, 3.5
 $button-color: $Calcite_Highlight_Blue_350 !default;
 $button-color--active: $Calcite_Highlight_Blue_400 !default;
 $button-color--bright: $Calcite_Blue_a100 !default;
-$button-color--hover: darken($button-color, 10%) !default;
+$button-color--hover: color.adjust($button-color, $lightness: -10%) !default;
 $button-color--inverse: $interactive-font-color--inverse !default;
 
 // Other
 $heading-color: $font-color !default;
-$background-color--overlay: rgba(0, 0, 0, 0.7) !default;
+$background-color--overlay: rgb(0 0 0 / 70%) !default;
 $opacity--disabled: 0.4 !default;
 $opacity--sortable: 0.75 !default;
 $interactive-font-color--disabled: rgba($interactive-font-color, $opacity--disabled) !default;
@@ -43,7 +44,6 @@ $border-color: rgba($interactive-font-color, 0.3) !default;
 $border-color--subtle: rgba($interactive-font-color, 0.15) !default;
 $border-color--contrast: rgba($interactive-font-color, 0.4) !default;
 $border-color--input: $Calcite_Gray_450;
-
 $updating: $Calcite_Highlight_Blue_350;
 $connection-connected: $Brand_Green_200;
 $connection-disconnected: $Brand_Orange_100;

@@ -2,7 +2,7 @@
   Theme: Dark
 */
 
-@import "../base/colors/scss/variables_dark.scss";
+@import "../base/colors/scss/variables_dark";
 
 body {
   --esri-calcite-mode-name: "dark";
@@ -26,9 +26,10 @@ $background-color--inverse: $interactive-font-color;
 
 // Selected
 $border-color--active: $Calcite_Highlight_Blue_350;
-$background-color--active: #000000;
+$background-color--active: #000;
 
 // Error
 $font-color--error: #eb7953;
 
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 @import "../base/core";
