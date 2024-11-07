@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Numeerinen arvo, jolla on toivottavaa olla tekstialias."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana oleva kohde."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Laskettavana olevan kohteen edellinen tila."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa taulukossa kuin lauseketta arvioiva $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin komentosarjan suorittava $feature-kohde."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Ilmaisee, onko muokkaustapahtuma LISÄÄ, PÄIVITÄ, POISTA tai NA (ei käytettävissä)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana oleva kohde."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Laskettavana olevan kohteen edellinen tila."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa taulukossa kuin lauseketta arvioiva $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin komentosarjan suorittava $feature-kohde."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Ilmaisee, onko muokkaustapahtuma LISÄÄ, PÄIVITÄ, POISTA tai NA (ei käytettävissä)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana oleva kohde."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Laskettavana olevan kohteen edellinen tila."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa taulukossa kuin lauseketta arvioiva $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin komentosarjan suorittava $feature-kohde."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Ilmaisee, onko muokkaustapahtuma LISÄÄ, PÄIVITÄ, POISTA tai NA (ei käytettävissä)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Aineistopiste, jonka visuaalista elementtiä arvioidaan."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Viitearvo, jonka visuaalista elementtiä arvioidaan.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Aineistopiste, jonka visuaalista elementtiä arvioidaan."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Aineistopiste, jonka visuaalista elementtiä arvioidaan."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Rivin sijainti taulukossa (nollaperustainen)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Tarjoaa pääsyn laskettavana olevan tietueen ominaisuustieto- tai kenttäarvoihin."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, joka piirretään kartalle."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Määritysarvojen hakemisto.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, joka edellyttää Z-arvoa."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana oleva kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin laskelman suorittava $feature-kohde."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Kenttäkartan lähteenä oleva kohde."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Kenttäkartan kohteena oleva kohde."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $sourcefeature-kohde."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $targetfeature-kohde."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja suorittavan Arcade-lausekkeen kartassa."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa aineistosäilössä kuin $sourcelayer-karttataso."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa aineistosäilössä kuin $targetlayer-karttataso."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Näyttää kohteen laskelmassa käytettävät ominaisuustiedot"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Laskettavana olevan kohteen edellinen tila."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin $feature-kohde."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa taulukossa kuin $feature-kohde."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Kokoelma kohdepalvelukarttatasoja samassa kartassa kuin $feature-kohde."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Ilmaisee, onko muokkaustapahtuma LISÄÄ, PÄIVITÄ, POISTA tai NA (ei käytettävissä)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, jonka rajoitusta arvioidaan."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Kohteen edellinen tila."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin $feature-kohde."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa taulukossa kuin $feature-kohde."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Kokoelma kohdepalvelukarttatasoja samassa kartassa kuin $feature-kohde."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Ilmaisee, onko muokkaustapahtuma LISÄÄ, PÄIVITÄ, POISTA tai NA (ei käytettävissä)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana oleva kohde."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Lähtöaineiston kohde (esim. laitteen sijainti tai kohde), joka aiheutti geotriggerin aktivoitumisen. Tämän kohteen on sisällettävä geometria (yleensä piste) ja kiinteä rakenne, jolla on seuraavat ominaisuudet: \\\"course\\\" (sijainnin kurssi asteina myötäpäivään luvun 0 ollessa maantieteellinen pohjoinen) ja \\\"horizontalaccuracy\\\" (sijainnin vaakasuuntainen tarkkuus metreinä)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Aitakohde (esim. kiinnostusalue), johon siirryttiin tai josta poistuttiin ja joka aiheutti Geotriggerin aktivoitumisen."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Tapahtuneen tapahtuman kuvaus – joko \\\"siirryttiin alueelle\\\" tai \\\"poistuttiin alueelta\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, jonka tunnusteksti piirretään kartalle."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, jonka arvot voidaan näyttää asettelussa."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Sijainnin päivityskohde (esim. GPS:stä), jonka rajoitusta arvioidaan.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Sijainnin kurssi asteina myötäpäivään luvun 0 ollessa maantieteellinen pohjoinen."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Sijainnin vaakasuuntainen tarkkuus metreinä."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Sijainnin pystysuuntainen tarkkuus metreinä."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Sijainnin nopeus metreinä sekunnissa."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Merkitsimen sijainnin interpoloitu M-arvo."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Kohde, joka piirretään kartalle."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Palauttaa kartan mittakaavan lausekkeen arviointihetkellä."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Tarjoaa pääsyn sen kohteen ominaisuustietoihin ja geometriaan, jonka ponnahdusikkuna näytetään näkymässä."
+      },
+      {
+        "name": "$layer",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $feature-kohde, jonka ponnahdusikkuna näkyy näkymässä. Tämä koskee vain kohdepalvelukarttatasoja.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Kokoelma karttatasoja samassa kartassa kuin $feature-kohde, jonka ponnahdusikkuna näkyy näkymässä. Tämä koskee vain kohdepalvelukarttatasoja.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin $feature-kohde, jonka ponnahdusikkuna näkyy näkymässä. Tämä koskee vain kohdepalvelukarttatasoja.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Tarjoaa pääsyn koontikenttiin, jotka on määritetty joko klusteroinnin tai lokeroinnin ponnahdusikkunoissa."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet, joka sisältää kaikki klusterin tai lokeron edustamat kohteet.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Näyttää kohteen laskelmassa käytettävät ominaisuustiedot."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Kokoelma kohteita samassa karttatasossa kuin $feature-kohde."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin $feature-kohde."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Kokoelma kohdepalvelukarttatasoja kartassa, jota QuickCapture-projekti käyttää. Tämä muuttuja voi olla nolla."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Kohde, jota tehtävä arvioi.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Kokoelma karttatasoja samassa kohdepalvelussa tai tietokannassa kuin tehtävän arvioitavana oleva $feature-kohde.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Laskettavana, arvioitavana tai käsiteltävänä oleva kohde analyysityökaluissa, joissa on yksi lähtöaineisto."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Suodatusta tai rikastusta varten arvioitavana oleva kohde analyysityökaluissa, joissa on kaksi lähtöaineistoa."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Kohteelle arviointi- tai rikastusarvoja antava kohde analyysityökaluissa, joissa on kaksi lähtöaineistoa."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Analyysiin liittyvät aika-arvot, kuten aloitusaika, viimeisin lopetusaika, jne.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Kohde, joka piirretään kartalle.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Palauttaa kartan mittakaavan lausekkeen arviointihetkellä."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

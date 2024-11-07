@@ -1,0 +1,13 @@
+{
+  "close": "닫기",
+  "console": "콘솔",
+  "output": "결과",
+  "log": "로그",
+  "consolemessage": "결과 메시지에 콘솔 함수를 사용합니다.",
+  "lastexecutionformat": "마지막 실행 {timeStamp}",
+  "compilationtimeformat": "컴파일 {time}",
+  "executiontimeformat": "실행 {time}",
+  "runscriptmessage": "결과가 없습니다. 스크립트를 한 번 실행하세요.",
+  "showingfirstitemsformat": "(첫 {count}개 항목 표시)",
+  "executionerrorformat": "테스트 실행 오류: {message}. 테스트 데이터를 확인하세요."
+}

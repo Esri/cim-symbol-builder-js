@@ -1,0 +1,13 @@
+{
+  "close": "Chiudi",
+  "console": "Console",
+  "output": "Output",
+  "log": "Log",
+  "consolemessage": "Usa la funzione Console per emettere messaggi.",
+  "lastexecutionformat": "Ultima esecuzione {timeStamp}",
+  "compilationtimeformat": "Compilation {time}",
+  "executiontimeformat": "Esecuzione {time}",
+  "runscriptmessage": "Nessun output, eseguire lo script una volta.",
+  "showingfirstitemsformat": "(Visualizzazione primi elementi {count})",
+  "executionerrorformat": "Errore di esecuzione test: {message}. Verifica i dati del test."
+}

@@ -1,28 +1,22 @@
 @mixin elevationProfile() {
-  $width: 550px;
-  $chart-height: 180px;
-
-  $actions-spacing-h: $side-spacing--half;
-  $actions-spacing-v: $cap-spacing--half;
-
-  $statistics-font-size: $font-size--tiny;
-  $statistics-slope-values-spacing: $side-spacing--half;
-
-  $popover-padding: $cap-spacing $side-spacing;
-
   // ----------------------------------------------------------------------------
   // Widget
   // ----------------------------------------------------------------------------
 
   .esri-elevation-profile {
+    --popover-padding: #{$cap-spacing} #{$side-spacing};
+    --width: 550px;
+    --chart-height: 180px;
     --calcite-label-margin-bottom: 0;
+    --actions-spacing-h: #{$side-spacing--half};
+    --actions-spacing-v: #{$cap-spacing--half};
 
     position: relative;
     isolation: isolate;
     padding: var(--esri-widget-padding);
 
     &.esri-component.esri-widget--panel {
-      width: $width;
+      width: var(--width);
       max-width: 100%; // Don't overflow parent container, especially on mobile
     }
 
@@ -46,14 +40,16 @@
     }
 
     &__action-button {
-      margin-inline-start: $actions-spacing-h;
+      margin-inline-start: var(--actions-spacing-h);
       width: auto;
     }
 
     &__main-container {
+      display: flex;
       position: relative;
+      flex-flow: column;
       width: 100%;
-      height: $chart-height;
+      height: var(--chart-height);
     }
 
     &__chart-container {
@@ -63,13 +59,12 @@
     }
 
     &__prompt-container {
+      box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 0;
       padding: $cap-spacing $side-spacing;
-      padding-top: $cap-spacing--double + $cap-spacing;
-      width: 100%;
       height: 100%;
       text-align: center;
 
@@ -86,12 +81,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       transition: opacity 150ms ease-in-out;
+      transition-delay: 0;
       opacity: 0;
 
-      // We show a spinner with a delay so that it is only visible if a preview
-      // takes too long to be generated.
+      // We show a spinner with a delay so that it is only visible if a profile takes a longer
+      // time to refine.
       &--visible {
-        transition-delay: 500ms;
+        transition-delay: 50ms;
         opacity: 1;
       }
 
@@ -100,7 +96,7 @@
         left: unset;
         inset-inline-start: 0;
         transform: none;
-        color: var(--calcite-ui-brand);
+        color: var(--calcite-color-brand);
       }
     }
 
@@ -121,7 +117,7 @@
       margin-inline-start: 0;
 
       &:not(:last-of-type) {
-        margin-bottom: $actions-spacing-v;
+        margin-bottom: var(--actions-spacing-v);
       }
     }
   }
@@ -131,14 +127,18 @@
   // ----------------------------------------------------------------------------
 
   .esri-elevation-profile-settings {
+    calcite-popover[calcite-hydrated-hidden] {
+      inset-block-start: -999999px;
+      inset-inline-start: -999999px;
+    }
+
     &__popover-content {
       display: flex;
       flex-direction: column;
       gap: $cap-spacing;
-      padding: $popover-padding;
+      padding: var(--popover-padding);
       min-width: 180px; // Give some space for our labels to render properly
       color: $font-color;
-      font-family: $font-family;
       font-size: $font-size__body;
     }
   }
@@ -246,6 +246,11 @@
         height: 16px;
       }
     }
+  }
+
+  // Ensure the chart fits when the view is really small.
+  .esri-view-height-xsmall .esri-elevation-profile {
+    --chart-height: 68px;
   }
 
   .esri-elevation-profile--portrait {

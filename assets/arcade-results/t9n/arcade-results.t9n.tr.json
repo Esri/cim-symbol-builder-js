@@ -1,0 +1,13 @@
+{
+  "close": "Kapat",
+  "console": "Konsol",
+  "output": "Çıktı",
+  "log": "İşlem Kaydı",
+  "consolemessage": "Çıktı mesajları için Konsol fonksiyonunu kullanın.",
+  "lastexecutionformat": "Son yürütme {timeStamp}",
+  "compilationtimeformat": "Derleme {time}",
+  "executiontimeformat": "Yürütme {time}",
+  "runscriptmessage": "Çıktı yok, kodu bir kez çalıştırın.",
+  "showingfirstitemsformat": "(İlk {count} öge gösteriliyor)",
+  "executionerrorformat": "Test yürütme hatası: {message}. Test verilerini doğrulayın."
+}

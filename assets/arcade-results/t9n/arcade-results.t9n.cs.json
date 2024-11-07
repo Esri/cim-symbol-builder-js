@@ -1,0 +1,13 @@
+{
+  "close": "Zavřít",
+  "console": "Konzole",
+  "output": "Výstup",
+  "log": "Záznam",
+  "consolemessage": "Pro tvorbu zpráv použijte funkci Konzole.",
+  "lastexecutionformat": "Poslední spuštění {timeStamp}",
+  "compilationtimeformat": "Kompilace {time}",
+  "executiontimeformat": "Spuštění {time}",
+  "runscriptmessage": "Žádný výstup, skript spusťte jednou.",
+  "showingfirstitemsformat": "(Zobrazeny první {count} položky)",
+  "executionerrorformat": "Chyba při provádění testu: {message}. Ověřit testovací data."
+}

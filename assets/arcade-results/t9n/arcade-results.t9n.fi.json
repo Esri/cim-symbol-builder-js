@@ -1,0 +1,13 @@
+{
+  "close": "Sulje",
+  "console": "Konsoli",
+  "output": "Tulosaineisto",
+  "log": "Loki",
+  "consolemessage": "Käytä konsolitoimintoa viestien tulostamiseen.",
+  "lastexecutionformat": "Edellinen suoritus {timeStamp}",
+  "compilationtimeformat": "Muunto {time}",
+  "executiontimeformat": "Suoritus {time}",
+  "runscriptmessage": "Ei tulosaineistoa, suorita komentosarja kerran.",
+  "showingfirstitemsformat": "(Näytetään ensimmäiset {count} kohdetta)",
+  "executionerrorformat": "Testin suoritusvirhe: {message}. Vahvista testiaineisto."
+}

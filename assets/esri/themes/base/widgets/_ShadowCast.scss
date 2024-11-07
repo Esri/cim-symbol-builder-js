@@ -8,16 +8,17 @@
     position: relative;
     flex-direction: column;
     gap: $cap-spacing;
-    padding: $cap-spacing $side-spacing;
+    padding: var(--esri-widget-padding);
     width: $width;
     overflow: hidden;
 
     &__time-range {
-      @include timeSlider();
-
       display: flex;
       flex-direction: column;
       font-size: $font-size--tiny-time-slider;
+
+      /* stylelint-disable-next-line order/order */
+      @include timeSlider();
 
       .esri-slider__segment-1 {
         background: $border-color--active;
@@ -41,7 +42,7 @@
       margin-top: $cap-spacing;
     }
 
-    &__date-picker-container .esri-date-picker {
+    &__date-picker {
       display: block;
       flex-grow: 1;
     }
@@ -88,6 +89,10 @@
 
     &__threshold-config {
       .esri-slider {
+        // Ensure the timezone popover stays on top of the date picker (which has a z-index=1)
+        // See #60677, #61515
+        z-index: 2;
+
         // Fit slider content since default API slider doesn't do it for us.
         padding-top: $slider-thumb-size;
         padding-bottom: 25px;

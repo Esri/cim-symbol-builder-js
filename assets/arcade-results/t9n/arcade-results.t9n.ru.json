@@ -1,0 +1,13 @@
+{
+  "close": "Закрыть",
+  "console": "Консоль",
+  "output": "Выходные данные",
+  "log": "Журнал",
+  "consolemessage": "Используйте консольную функцию для выходных сообщений.",
+  "lastexecutionformat": "Последний запуск {timeStamp}",
+  "compilationtimeformat": "Компиляция {time}",
+  "executiontimeformat": "Выполнение {time}",
+  "runscriptmessage": "Нет выходных данных, запустите скрипт один раз.",
+  "showingfirstitemsformat": "(Показаны первые {count} элементов)",
+  "executionerrorformat": "Ошибка выполнения теста: {message}. Проверьте тестовые данные."
+}

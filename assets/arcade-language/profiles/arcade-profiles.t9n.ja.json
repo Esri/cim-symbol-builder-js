@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "テキスト エイリアスが必要な数値。"
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算されるフィーチャ。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "計算されるフィーチャの前の状態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "式を評価する $feature と同じテーブル内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "スクリプトを実行する $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "編集イベントが INSERT、UPDATE、DELETE、または NA (該当なし) かどうかを示します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算されるフィーチャ。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "計算されるフィーチャの前の状態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "式を評価する $feature と同じテーブル内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "スクリプトを実行する $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "編集イベントが INSERT、UPDATE、DELETE、または NA (該当なし) かどうかを示します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算されるフィーチャ。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "計算されるフィーチャの前の状態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "式を評価する $feature と同じテーブル内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "スクリプトを実行する $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "編集イベントが INSERT、UPDATE、DELETE、または NA (該当なし) かどうかを示します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "視覚的エレメントの評価対象となるデータ ポイント。"
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "視覚的エレメントの評価対象となる参照値。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "視覚的エレメントの評価対象となるデータ ポイント。"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "視覚的エレメントの評価対象となるデータ ポイント。"
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "テーブルの行の位置 (ゼロベース)。"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "計算されているレコードの属性/フィールド値へのアクセスを提供します。"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "マップに描画されるフィーチャ。"
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "コンフィグレーション値の辞書。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Z 値を必要とするフィーチャ。"
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算されるフィーチャ。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "計算を実行する $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "フィールド マップのソース フィーチャ。"
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "フィールド マップのターゲット フィーチャ。"
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "$sourcefeature と同じレイヤー内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "$targetfeature と同じレイヤー内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "実行している Arcade 式のマップ内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "$sourcelayer と同じデータストア内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "$targetlayer と同じデータストア内のレイヤーのコレクション。"
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算で使用するフィーチャの属性を公開します"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "計算されるフィーチャの前の状態。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "$feature と同じレイヤー内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "$feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "$feature と同じテーブル内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "$feature と同じマップ内のフィーチャ サービス レイヤーのコレクション。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "編集イベントが INSERT、UPDATE、DELETE、または NA (該当なし) かどうかを示します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "制約の評価対象となるフィーチャ。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "フィーチャの前の状態。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "$feature と同じレイヤー内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "$feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "$feature と同じテーブル内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "$feature と同じマップ内のフィーチャ サービス レイヤーのコレクション。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "編集イベントが INSERT、UPDATE、DELETE、または NA (該当なし) かどうかを示します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算されるフィーチャ。"
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Geotrigger がアクティブ化された入力フィーチャ (例: デバイスの位置やフィーチャ)。 このフィーチャには、ジオメトリ (通常はポイント) と、`course` プロパティ (度単位で 0 を真北とする、時計回りの位置のコース)、`horizontalaccuracy` プロパティ (メートル単位の位置の水平精度) を含む固定スキーマを含める必要があります。"
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "出入りして、Geotrigger がアクティブ化されたフェンス フィーチャ (例: 対象地域)。"
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "発生したイベントの説明 (\\\"entered\\\" または \\\"exited\\\")。"
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "マップに描画されるラベルを持つフィーチャ。"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "レイアウトに表示される値を持つフィーチャ。"
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "制約の評価対象となる位置の更新フィーチャ (例: GPS から)。",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "単位は度で 0 を真北とする、時計回りの位置のコース。"
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "位置の水平精度 (メートル単位)。"
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "位置の垂直精度 (メートル単位)。"
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "位置の速度 (メートル/秒)。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "マーカー位置の内挿された M 値。"
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "マップに描画されるフィーチャ。"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "式の評価時にマップ縮尺を返します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ビューに表示されるポップアップを持つフィーチャの属性とジオメトリへのアクセスを提供します。"
+      },
+      {
+        "name": "$layer",
+        "description": "ビューに表示されるポップアップを持つ $feature と同じレイヤー内のフィーチャのコレクション。 これはフィーチャ サービス レイヤーにのみ当てはまります。",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "ビューに表示されるポップアップを持つ $feature と同じマップ内のレイヤーのコレクション。 これはフィーチャ サービス レイヤーにのみ当てはまります。",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "ビューに表示されるポップアップを持つ $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。 これはフィーチャ サービス レイヤーにのみ当てはまります。",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "クラスタリングまたはビニング ポップアップで定義された集約フィールドへのアクセスを提供します。"
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "クラスターまたはビンで表されるすべてのフィーチャを含む FeatureSet。",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "計算で使用するフィーチャの属性を公開します。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "$feature と同じレイヤー内のフィーチャのコレクション。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "$feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "QuickCapture プロジェクトで使用されるマップ内のフィーチャ サービス レイヤーのコレクション。 この変数は NULL の場合があります。"
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "タスクによって評価されるフィーチャ。",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "タスクによって評価される $feature と同じフィーチャ サービスまたはデータベース内のレイヤーのコレクション。",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "単一入力を持つ解析ツールで、計算、評価、または操作されるフィーチャ。"
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "2 つの入力を持つ解析ツールで、フィルタリングまたは情報付加が評価されるフィーチャ。"
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "2 つの入力を持つ解析ツールで、ターゲット フィーチャの評価または情報付加の値を指定するフィーチャ。"
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "開始時間や終了時間などの解析に関連付けられている時間値。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "マップに描画されるフィーチャ。",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "式の評価時にマップ縮尺を返します。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

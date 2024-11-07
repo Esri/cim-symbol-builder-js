@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Числовата стойност, за която се иска текстов псевдоним."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се изчислява."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Предишното състояние на изчислявания обект."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същата таблица като $feature, оценяваща израза."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, изпълняваща скрипта."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Показва дали събитието за редактиране е INSERT (ВМЪКВАНЕ), UPDATE (ОБНОВЯВАНЕ), DELETE (ИЗТРИВАНЕ) или NA (не е приложимо)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се изчислява."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Предишното състояние на изчислявания обект."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същата таблица като $feature, оценяваща израза."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, изпълняваща скрипта."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Показва дали събитието за редактиране е INSERT (ВМЪКВАНЕ), UPDATE (ОБНОВЯВАНЕ), DELETE (ИЗТРИВАНЕ) или NA (не е приложимо)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се изчислява."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Предишното състояние на изчислявания обект."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същата таблица като $feature, оценяваща израза."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, изпълняваща скрипта."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Показва дали събитието за редактиране е INSERT (ВМЪКВАНЕ), UPDATE (ОБНОВЯВАНЕ), DELETE (ИЗТРИВАНЕ) или NA (не е приложимо)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точката от данни, която се оценява за визуалния елемент."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Референтната стойност, която се оценява за визуалния елемент.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точката от данни, която се оценява за визуалния елемент."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точката от данни, която се оценява за визуалния елемент."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Позицията на ред в таблицата (на база нула)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Осигурява достъп до стойностите на атрибута/полето на записа, който се изчислява."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който трябва да бъде начертан на картата."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Речник на конфигурационните стойности.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, изискващ Z стойност."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се изчислява."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, изпълняваща изчисляването."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Обектът източник за картата на полето."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Обектът-цел за картното поле."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същия слой като $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същия слой като $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в картата на изпълняващия се аркаден израз."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същото хранилище за данни като $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същото хранилище за данни като $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Излага атрибутите на обекта за използване в изчислението"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Предишното състояние на изчислявания обект."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същия слой като $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същата таблица като $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве за услуга с обекти в същата карта като $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Показва дали събитието за редактиране е INSERT (ВМЪКВАНЕ), UPDATE (ОБНОВЯВАНЕ), DELETE (ИЗТРИВАНЕ) или NA (не е приложимо)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се оценява за ограничението."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Предишното състояние на обекта."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същия слой като $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същата таблица като $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве за услуга с обекти в същата карта като $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Показва дали събитието за редактиране е INSERT (ВМЪКВАНЕ), UPDATE (ОБНОВЯВАНЕ), DELETE (ИЗТРИВАНЕ) или NA (не е приложимо)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който се изчислява."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Входните данни (напр. местоположение на устройство или обект), които са причина за активирането на Geotrigger. Този обект трябва да включва геометрия (обикновено точка) и фиксирана схема със следните свойства: „курс“ (курс на местоположението в градуси по посока на часовниковата стрелка, като 0 е истински север) и „хоризонтална точност“ (хоризонталната точност на местоположението в метри)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Обектът за ограда (напр. област на интерес), който е влязъл или излязъл и е причинил активирането на Geotrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Описание на събитието, което се е случило - „влизане“, или „излизане“."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, чийто надпис трябва да бъде начертан на картата."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, чиито стойности могат да бъдат показани в оформлението."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Обектът за актуализиране на местоположението (напр. от GPS), който се оценява за ограничението.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Курсът на местоположението в градуси по часовниковата стрелка, като 0 е истински север."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Хоризонталната точност на местоположението в метри."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Вертикалната точност на местоположението в метри."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Скоростта на местоположението в метри в секунда."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Интерполираната M-стойност за местоположението на маркера."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Обектът, който трябва да бъде начертан на картата."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Връща мащаба на картата към момента, в който изразът изчислява."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Осигурява достъп до атрибутите и геометрията на обекта, чийто изскачащ прозорец трябва да се покаже в изгледа."
+      },
+      {
+        "name": "$layer",
+        "description": "Колекция от обекти в същия слой като $feature, чийто изскачащ прозорец се показва в изгледа. Това се отнася само за слоевете на услугата с обекти.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Колекция от слоеве в същата карта като $feature, чийто изскачащ прозорец се показва в изгледа. Това се отнася само за слоевете на услугата с обекти.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, чийто изскачащ прозорец се показва в изгледа. Това се отнася само за слоевете на услугата с обекти.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Осигурява достъп до обобщените полета, дефинирани в изскачащи прозорци за групиране по общ признак или обединяване."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet, съдържащ всички обекти, представени от клъстера или клетката.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Излага атрибутите на обекта за използване в изчислението"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекция от обекти в същия слой като $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекция от слоеве за услуга с обекти в картата, използвана от проекта QuickCapture. Тази променлива може да е null."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Обектът, който се оценява от задачата.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Колекция от слоеве в същата услуга с обекти или база данни като $feature, която се оценява от задачата.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "В аналитични инструменти с единични входове, обектът, който се изчислява, оценява или с който се работи."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "В аналитични инструменти с два входа, обектът се оценява за филтриране или обогатяване."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "В аналитични инструменти с два входа, обектът предоставя стойности за оценка или обогатяване на целевия обект."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Времеви стойности, свързани с анализа, като начален час, последен краен час и т.н.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Обектът, който трябва да бъде начертан на картата.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Връща мащаба на картата към момента, в който изразът изчислява."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

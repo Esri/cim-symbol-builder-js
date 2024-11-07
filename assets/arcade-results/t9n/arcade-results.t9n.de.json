@@ -1,0 +1,13 @@
+{
+  "close": "Schließen",
+  "console": "Konsole",
+  "output": "Ausgabe",
+  "log": "Protokoll",
+  "consolemessage": "Verwenden Sie die Funktion \\\"Console\\\" zur Ausgabe von Meldungen.",
+  "lastexecutionformat": "Letzte Ausführung: {timeStamp}",
+  "compilationtimeformat": "Kompilierung: {time}",
+  "executiontimeformat": "Ausführung: {time}",
+  "runscriptmessage": "Keine Ausgabe, das Skript einmal ausführen.",
+  "showingfirstitemsformat": "(Die ersten {count} Elemente werden angezeigt)",
+  "executionerrorformat": "Fehler bei der Testausführung: {message}. Überprüfen Sie die Testdaten."
+}

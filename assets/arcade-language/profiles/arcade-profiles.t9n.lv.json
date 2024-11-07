@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Skaitliskā vērtība, kurai ir vēlams teksta aizstājvārds."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements tiek aprēķināts."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Aprēķināmā elementa iepriekšējais stāvoklis."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Tās pašas tabulas elementu kolekcija, kurā atrodas $feature izteiksmes izvērtēšana."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā $feature izpilda skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Norāda, vai rediģēšanas notikums ir IEVIETOT, ATJAUNINĀT, DZĒST vai NP (nav attiecināms)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements tiek aprēķināts."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Aprēķināmā elementa iepriekšējais stāvoklis."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Tās pašas tabulas elementu kolekcija, kurā atrodas $feature izteiksmes izvērtēšana."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā $feature izpilda skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Norāda, vai rediģēšanas notikums ir IEVIETOT, ATJAUNINĀT, DZĒST vai NP (nav attiecināms)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements tiek aprēķināts."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Aprēķināmā elementa iepriekšējais stāvoklis."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Tās pašas tabulas elementu kolekcija, kurā atrodas $feature izteiksmes izvērtēšana."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā $feature izpilda skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Norāda, vai rediģēšanas notikums ir IEVIETOT, ATJAUNINĀT, DZĒST vai NP (nav attiecināms)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Vizuālā elementa izvērtējamais datu punkts."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Vizuālā elementa izvērtējamā atsauces vērtība.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Vizuālā elementa izvērtējamais datu punkts."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Vizuālā elementa izvērtējamais datu punkts."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Rindas novietojums tabulā (atbilstoši nullei)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Nodrošina piekļuvi aprēķinātā ieraksta atribūtu/lauku vērtībām."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements, kas jāzīmē kartē."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Konfigurācijas vērtību vārdnīca.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements, kuram nepieciešama Z vērtība."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements tiek aprēķināts."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā $feature veic aprēķinu."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Lauka kartes avota elements."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Lauku kartes mērķa elements."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā slānī, kurā atrodas $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā slānī, kurā atrodas $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija izpildāmās arkādes izteiksmes kartē."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā datu krātuvē, kurā atrodas $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā datu krātuvē, kurā atrodas $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Atklāj elementa atribūtus izmantošanai aprēķinā"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Aprēķināmā elementa iepriekšējais stāvoklis."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā slānī, kurā atrodas $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā atrodas $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā tabulā, kurā atrodas $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Elementu servisa slāņu kolekcija tajā pašā kartē, kurā atrodas $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Norāda, vai rediģēšanas notikums ir IEVIETOT, ATJAUNINĀT, DZĒST vai NP (nav attiecināms)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Ierobežojumam izvērtējams elements."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Elementa iepriekšējais stāvoklis."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā slānī, kurā atrodas $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā atrodas $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā tabulā, kurā atrodas $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Elementu servisa slāņu kolekcija tajā pašā kartē, kurā atrodas $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Norāda, vai rediģēšanas notikums ir IEVIETOT, ATJAUNINĀT, DZĒST vai NP (nav attiecināms)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements tiek aprēķināts."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Ievades elements (piemēram, ierīces novietojums vai elements), kas izraisīja Geotrigger aktivizēšanu. Šim elementam jāietver ģeometrija (parasti punkts) un fiksēta shēma ar šādiem rekvizītiem: `course` (novietojums grādos pulksteņrādītāja virzienā, 0 ir īsteni uz ziemeļiem) un `horizontalaccuracy` (novietojuma horizontālā precizitāte metros)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Žoga elements (piemēram, interesējošā zona), kas tika ievadīts, vai tika aizvērts un izraisīja Geotrigger aktivizēšanu."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Notikušā notikuma apraksts — vai nu “ievadīts” vai “aizvērts”."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements, kura apzīmējums jāzīmē kartē."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements, kura vērtības var tikt parādītas izkārtojumā."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Atrašanās vietas atjaunināšanas elements (piemēram, no GPS), kas tiek izvērtēts ierobežojumam.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Atrašanās vietas kurss grādos pulksteņrādītāju kustības virzienā, kad 0 ir precīzi ziemeļi."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Atrašanās vietas horizontālā precizitāte metros."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Atrašanās vietas vertikālā precizitāte metros."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Atrašanās vietas ātrums metros sekundē."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Marķiera atrašanās vietas interpolētā M vērtība."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Elements, kas jāzīmē kartē."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Uzrāda kartes mērogu izteiksmes izvērtēšanas laikā."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Nodrošina piekļuvi tā elementa atribūtiem un ģeometrijai, kura uznirstošais logs jāparāda skatā."
+      },
+      {
+        "name": "$layer",
+        "description": "To elementu kolekcija, kas atrodas tajā pašā slānī, kur $feature, kura uznirstošais logs tiek parādīts skatā. Tas attiecas tikai uz elementu servisa slāņiem.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Slāņu kolekcija tajā pašā kartē, kurā redzams $feature, kura uznirstošais logs tiek parādīts skatā. Tas attiecas tikai uz elementu servisa slāņiem.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datu bāzē, kurā redzams $feature, kura uznirstošais logs tiek parādīts skatā. Tas attiecas tikai uz elementu servisa slāņiem.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Nodrošina piekļuvi apkopojuma laukiem, kas definēti grupēšanas vai nodalījumu izveides uznirstošajos logos."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Elementu kopa (FeatureSet), kurā ir visi klastera vai nodalījuma elementi.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Atklāj elementa atribūtus izmantošanai aprēķinā."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Elementu kolekcija tajā pašā slānī, kurā atrodas $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kurā atrodas $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Elementu servisa slāņu kolekcija kartē, ko izmanto QuickCapture projekts. Šis mainīgais var būt nulle."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Uzdevumā izvērtētais elements.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Slāņu kolekcija tajā pašā elementu servisā vai datubāzē, kur atrodas uzdevuma izvērtētā $feature.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Analīzes rīkos ar vienu ievadi aprēķināts, izvērtēts vai izmantots elements."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Analīzes rīkos ar divām ievadēm filtrēšanai vai papildināšanai izvērtēts elements."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Analīzes rīkos ar divām ievadēm elements nodrošina vērtības mērķa elementa izvērtēšanai vai papildināšanai."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Laika vērtības, kas saistītas ar analīzi, piemēram, sākuma laiks, pēdējais beigu laiks utt.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Elements, kas jāzīmē kartē.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Uzrāda kartes mērogu izteiksmes izvērtēšanas laikā."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

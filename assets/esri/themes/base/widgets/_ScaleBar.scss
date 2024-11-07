@@ -12,8 +12,11 @@
 
   $offset_for_unit_label: 2ch;
 
+  $text-shadow-size: 1px;
+
   $border_style: $line_thickness solid $dark_color;
 
+  .esri-component.esri-scale-bar.esri-widget,
   .esri-scale-bar.esri-widget {
     box-shadow: none;
     background: transparent;
@@ -129,9 +132,12 @@
     .esri-scale-bar__label {
       padding: $cap-spacing--half 0 0;
       text-shadow:
-        0 0 1px $light_color,
-        0 0 1px $light_color,
-        0 0 1px $light_color;
+        $text-shadow-size 0 0 $light_color,
+        0 $text-shadow-size 0 $light_color,
+        $text-shadow-size $text-shadow-size 0 $light_color,
+        ($text-shadow-size * -1) 0 0 $light_color,
+        0 ($text-shadow-size * -1) 0 $light_color,
+        ($text-shadow-size * -1) ($text-shadow-size * -1) 0 $light_color;
     }
   }
 

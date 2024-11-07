@@ -1,0 +1,13 @@
+{
+  "close": "Zatvori",
+  "console": "Konzola",
+  "output": "Izlaz",
+  "log": "Zapis",
+  "consolemessage": "Upotrijebite funkciju konzole za izlazne poruke.",
+  "lastexecutionformat": "Posljednje izvršenje {timeStamp}",
+  "compilationtimeformat": "Kompilacija {time}",
+  "executiontimeformat": "Izvršenje {time}",
+  "runscriptmessage": "Nema rezultata, pokrenite skriptu jednom.",
+  "showingfirstitemsformat": "(Prikaz prvih {count} stavki)",
+  "executionerrorformat": "Pogreška izvršenja testa: {message}. Provjeri podatke iz testa."
+}

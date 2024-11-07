@@ -1,0 +1,13 @@
+{
+  "close": "Закрити",
+  "console": "Консоль",
+  "output": "Виведення",
+  "log": "Журнал",
+  "consolemessage": "Використовуйте функцію консолі для вихідних повідомлень.",
+  "lastexecutionformat": "Останнє виконання {timeStamp}",
+  "compilationtimeformat": "Компіляція {time}",
+  "executiontimeformat": "Виконання {time}",
+  "runscriptmessage": "Немає вихідних даних, запустіть скрипт повторно.",
+  "showingfirstitemsformat": "(Показано перші {count} елементи(-ів))",
+  "executionerrorformat": "Повідомлення про помилку виконання: {message}. Перевірити тестові дані."
+}

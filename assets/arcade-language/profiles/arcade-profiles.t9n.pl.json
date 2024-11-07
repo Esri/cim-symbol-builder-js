@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Wartość liczbowa, dla której jest potrzebny alias tekstowy."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obliczany obiekt."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Poprzedni stan obliczanego obiektu."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej tabeli co obiekt $feature szacujący wyrażenie."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature wykonujący skrypt."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Wskazuje, czy zdarzeniem edycji jest INSERT, UPDATE, DELETE lub NA (nie dotyczy)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obliczany obiekt."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Poprzedni stan obliczanego obiektu."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej tabeli co obiekt $feature szacujący wyrażenie."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature wykonujący skrypt."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Wskazuje, czy zdarzeniem edycji jest INSERT, UPDATE, DELETE lub NA (nie dotyczy)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obliczany obiekt."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Poprzedni stan obliczanego obiektu."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej tabeli co obiekt $feature szacujący wyrażenie."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature wykonujący skrypt."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Wskazuje, czy zdarzeniem edycji jest INSERT, UPDATE, DELETE lub NA (nie dotyczy)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Punkt danych szacowany pod kątem elementu wizualnego."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Wartość odniesienia szacowana pod kątem elementu wizualnego.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Punkt danych szacowany pod kątem elementu wizualnego."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Punkt danych szacowany pod kątem elementu wizualnego."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Pozycja w wierszu w tabeli (licząc od zera)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Zapewnia dostęp do wartości atrybutów/pól obliczanego rekordu."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt, który ma zostać narysowany na mapie."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Słownik wartości konfiguracyjnych.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt wymagający wartości Z."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obliczany obiekt."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature wykonujący obliczenie."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Obiekt źródłowy dla przyporządkowania pól."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Obiekt docelowy dla przyporządkowania pól."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw na mapie wykonywanego wyrażenia w języku Arcade."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tym samym magazynie danych co warstwa $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tym samym magazynie danych co warstwa $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Ujawnia atrybuty obiektu do użycia w obliczeniu"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Poprzedni stan obliczanego obiektu."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej tabeli co obiekt $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw usługi obiektowej na tej samej mapie co obiekt $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Wskazuje, czy zdarzeniem edycji jest INSERT, UPDATE, DELETE lub NA (nie dotyczy)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt szacowany pod kątem ograniczenia."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Poprzedni stan obiektu."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej tabeli co obiekt $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw usługi obiektowej na tej samej mapie co obiekt $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Wskazuje, czy zdarzeniem edycji jest INSERT, UPDATE, DELETE lub NA (nie dotyczy)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obliczany obiekt."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Obiekt wejściowy (na przykład lokalizacja urządzenia lub obiekt), który spowodował aktywację usługi Geotrigger. Ten obiekt musi zawierać geometrię (zazwyczaj punktową) oraz stały schemat o następujących właściwościach: `course` (kierunek lokalizacji w stopniach zgodnie z ruchem wskazówek zegara, 0 oznacza północ) oraz `horizontalaccuracy` (dokładność lokalizacji w poziomie wyrażona w metrach)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Obiekt ogrodzenia (na przykład obszar zainteresowania), do którego nastąpiło wejście lub z którego nastąpiło wyjście, co spowodowało aktywację usługi Geotrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Opis zdarzenia, które nastąpiło - 'entered' (wejście) lub 'exited' (wyjście)."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt, którego etykieta ma zostać narysowana na mapie."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt, którego wartości mogą zostać wyświetlone w kompozycji."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Obiekt aktualizacji lokalizacji (na przykład z GPS) szacowany pod kątem ograniczenia.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Kierunek lokalizacji w stopniach zgodnie z ruchem wskazówek zegara, 0 oznacza północ."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Dokładność lokalizacji w poziomie (w metrach)."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Dokładność lokalizacji w pionie (w metrach)."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Prędkość lokalizacji w metrach na sekundę."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Interpolowana wartość M dla lokalizacji znacznika."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Obiekt, który ma zostać narysowany na mapie."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Zwraca skalę mapy z czasu szacowania wyrażenia."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Zapewnia dostęp do atrybutów i geometrii obiektu, którego okno podręczne ma być wyświetlane w widoku."
+      },
+      {
+        "name": "$layer",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $feature, którego okno podręczne jest wyświetlone w widoku. Dotyczy to wyłącznie warstw usługi obiektowej.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Zbiór warstw na tej samej mapie co obiekt $feature, którego okno podręczne jest wyświetlone w widoku. Dotyczy to wyłącznie warstw usługi obiektowej.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature, którego okno podręczne jest wyświetlone w widoku. Dotyczy to wyłącznie warstw usługi obiektowej.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Zapewnia dostęp do pól agregowania zdefiniowanych w oknach podręcznych klastrowania lub binowania."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Element FeatureSet zawierający wszystkie obiekty reprezentowane przez klaster lub kosz.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Ujawnia atrybuty obiektu do użycia w obliczeniu."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbiór obiektów w tej samej warstwie co obiekt $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbiór warstw usługi obiektowej na mapie używanej w projekcie QuickCapture. Ta zmienna może przyjmować wartość null."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Obiekt szacowany przez zadanie.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Zbiór warstw w tej samej usłudze obiektowej lub bazie danych co obiekt $feature szacowany przez zadanie.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "W narzędziach analitycznych z pojedynczymi danymi wejściowymi jest to obiekt, który jest obliczany, szacowany lub na którym jest wykonywana operacja."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "W narzędziach analitycznych z dwiema danymi wejściowymi jest to obiekt, który jest szacowany pod kątem filtrowania lub wzbogacania."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "W narzędziach analitycznych z dwiema danymi wejściowymi jest to obiekt dostarczający wartości do szacowania lub wzbogacania obiektu docelowego."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Wartości czasu powiązane z analizą, takie jak czas rozpoczęcia, ostatni czas zakończenia itp.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Obiekt, który ma zostać narysowany na mapie.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Zwraca skalę mapy z czasu szacowania wyrażenia."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

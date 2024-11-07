@@ -1,0 +1,13 @@
+{
+  "close": "Tutup",
+  "console": "Konsol",
+  "output": "Keluaran",
+  "log": "Catatan",
+  "consolemessage": "Gunakan fungsi Konsol untuk mengirimkan pesan.",
+  "lastexecutionformat": "Eksekusi terakhir {timeStamp}",
+  "compilationtimeformat": "Kompilasi {time}",
+  "executiontimeformat": "Eksekusi {time}",
+  "runscriptmessage": "Tidak ada keluaran, jalankan skrip sekali.",
+  "showingfirstitemsformat": "(Menampilkan {count} item pertama)",
+  "executionerrorformat": "Kesalahan eksekusi pengujian: {message}. Verifikasi data pengujian."
+}

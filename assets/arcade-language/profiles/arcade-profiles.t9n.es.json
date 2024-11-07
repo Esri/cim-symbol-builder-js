@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "El valor numérico para el que se desea un alias de texto."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está calculando."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "El estado anterior de la entidad que se está calculando."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma tabla que la $feature que evalúa la expresión."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature que ejecuta el script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica si el evento de edición es INSERTAR, ACTUALIZAR, ELIMINAR o NA (no aplicable)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está calculando."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "El estado anterior de la entidad que se está calculando."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma tabla que la $feature que evalúa la expresión."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature que ejecuta el script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica si el evento de edición es INSERTAR, ACTUALIZAR, ELIMINAR o NA (no aplicable)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está calculando."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "El estado anterior de la entidad que se está calculando."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma tabla que la $feature que evalúa la expresión."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature que ejecuta el script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica si el evento de edición es INSERTAR, ACTUALIZAR, ELIMINAR o NA (no aplicable)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "El punto de datos que se está evaluando para el elemento visual."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "El valor de referencia que se está evaluando para el elemento visual.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "El punto de datos que se está evaluando para el elemento visual."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "El punto de datos que se está evaluando para el elemento visual."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "La posición de una fila en la tabla (basada en cero)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Proporciona acceso a los valores de atributo/campo del registro que se está calculando."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se va a dibujar en el mapa."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Un diccionario de valores de configuración.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que requiere un valor Z."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está calculando."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature que ejecuta el cálculo."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "La entidad de origen para el mapa de campo."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "La entidad de destino para el mapa de campo."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma capa que $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma capa que $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mapa de la expresión de arcade en ejecución."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo datastore que $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo datastore que $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Expone los atributos de la entidad para su uso en el cálculo"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "El estado anterior de la entidad que se está calculando."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma capa que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidadeso base de datos que $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma tabla que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas de servicios de entidades en el mismo mapa que $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica si el evento de edición es INSERTAR, ACTUALIZAR, ELIMINAR o NA (no aplicable)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está evaluando para la restricción."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "El estado anterior de la entidad."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma capa que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidadeso base de datos que $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma tabla que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas de servicios de entidades en el mismo mapa que $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica si el evento de edición es INSERTAR, ACTUALIZAR, ELIMINAR o NA (no aplicable)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se está calculando."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "La entidad de entrada (p. ej., una ubicación de dispositivo o una entidad) que hizo que se activara el geotrigger. Esta entidad debe incluir una geometría (normalmente un punto) y un esquema fijo con las propiedades siguientes: `course` (curso de la ubicación en grados en sentido horario; 0 es el norte real), y `horizontalaccuracy` (precisión horizontal de la ubicación en metros)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "La entidad de valla (p. ej., un área de interés) introducida o extraída que provocó la activación del Geotrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Una descripción del evento que ocurrió, ya sea \\\"entrada\\\" o \\\"salida\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad cuya etiqueta se va a dibujar en el mapa."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad cuyos valores puede que se muestren en el diseño."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "La entidad de actualización de ubicación (por ejemplo, desde GPS) que se está evaluando para la restricción.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "El curso de la ubicación en grados en sentido horario, siendo 0 el norte verdadero."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "La precisión horizontal de la ubicación en metros."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "La precisión vertical de la ubicación en metros."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "La velocidad de la ubicación en metros por segundo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "El valor m interpolado para la ubicación del marcador."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La entidad que se va a dibujar en el mapa."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Devuelve la escala del mapa en el momento en que se evalúe la expresión."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Proporciona acceso a los atributos y la geometría de la entidad cuya ventana emergente se mostrará en la vista."
+      },
+      {
+        "name": "$layer",
+        "description": "Un conjunto de entidades en la misma capa que la $feature cuyo elemento emergente se muestra en la vista. Esto solo se aplica a las capas de servicios de entidades.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Un conjunto de capas en el mismo mapa que la $feature cuyo elemento emergente se muestra en la vista. Esto solo se aplica a las capas de servicios de entidades.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature cuyo elemento emergente se muestra en la vista. Esto solo se aplica a las capas de servicios de entidades.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Proporciona acceso a los campos agregados definidos en los elementos emergentes de clustering o clasificación."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Un FeatureSet que contiene todas las entidades representadas por el clúster o contenedor.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Expone los atributos de la entidad para su uso en el cálculo."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Un conjunto de entidades en la misma capa que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Un conjunto de capas en el mismo servicio de entidadeso base de datos que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Una colección de capas de servicios de entidades en el mapa utilizado por el proyecto de QuickCapture. Esta variable puede ser nula."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "La entidad que está siendo evaluada por la tarea.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Un conjunto de capas en el mismo servicio de entidades o base de datos que la $feature que está siendo evaluada por la tarea.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "En herramientas analíticas con entradas únicas, la entidad que se está calculando, evaluando u operando."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "En herramientas analíticas con dos entradas, la entidad se evalúa para el filtrado o el enriquecimiento."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "En herramientas analíticas con dos entradas, la entidad que proporciona valores para la evaluación o el enriquecimiento de la entidad objetivo."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Valores de tiempo asociados con el análisis, como la hora de inicio, la última hora de finalización, etc.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "La entidad que se va a dibujar en el mapa.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Devuelve la escala del mapa en el momento en que se evalúe la expresión."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

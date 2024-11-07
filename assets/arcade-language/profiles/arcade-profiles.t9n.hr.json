@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Numerička vrijednost za koju je poželjan tekstualni alias."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se izračunava."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Prethodno stanje geoobjekta koji se izračunava."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istoj tablici kao $feature koji procjenjuje izraz."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature koji izvršava skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Označava je li događaj uređivanja INSERT, UPDATE, DELETE ili NA (nije primjenjivo)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se izračunava."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Prethodno stanje geoobjekta koji se izračunava."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istoj tablici kao $feature koji procjenjuje izraz."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature koji izvršava skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Označava je li događaj uređivanja INSERT, UPDATE, DELETE ili NA (nije primjenjivo)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se izračunava."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Prethodno stanje geoobjekta koji se izračunava."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istoj tablici kao $feature koji procjenjuje izraz."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature koji izvršava skriptu."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Označava je li događaj uređivanja INSERT, UPDATE, DELETE ili NA (nije primjenjivo)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Podatkovna točka koja se procjenjuje za vizualni element."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Referentna vrijednost koja se procjenjuje za vizualni element.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Podatkovna točka koja se procjenjuje za vizualni element."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Podatkovna točka koja se procjenjuje za vizualni element."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Položaj retka u tablici (na nuli)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Omogućuje pristup vrijednostima atributa/polja zapisa koji se izračunava."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji treba nacrtati na karti."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Rječnik konfiguracijskih vrijednosti.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji zahtijeva Z vrijednost."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se izračunava."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature koji izvršava izračun."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Izvorni geoobjekt za kartu polja."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Ciljni geoobjekt za kartu polja."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istom sloju kao $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istom sloju kao $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u mapi izvršavanja arkadnog izraza."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj pohrani podataka kao i $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj pohrani podataka kao i $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Izlaže atribute geoobjekta za korištenje u izračunu"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Prethodno stanje geoobjekta koji se izračunava."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istom sloju kao $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istoj tablici kao $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva usluge geoobjekata na istoj karti kao $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Označava je li događaj uređivanja INSERT, UPDATE, DELETE ili NA (nije primjenjivo)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se procjenjuje za ograničenje."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Prethodno stanje geoobjekta."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istom sloju kao $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istoj tablici kao $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva usluge geoobjekata na istoj karti kao $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Označava je li događaj uređivanja INSERT, UPDATE, DELETE ili NA (nije primjenjivo)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji se izračunava."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Ulazni geoobjekt (npr. lokacija uređaja ili geoobjekt) koji je uzrokovao aktiviranje Geotriggera. Ovaj geoobjekt mora uključivati geometriju (obično točku) i fiksnu shemu sa sljedećim svojstvima: \\\"smjer\\\" (smjer lokacije u stupnjevima u smjeru kazaljke na satu, 0 je pravi sjever) i \\\"horizontalna točnost\\\" (horizontalna točnost lokacije u metrima)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Geoobjekt ograde (npr. područje interesa) koji je ušao ili izašao i uzrokovao aktiviranje Geotriggera."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Opis događaja koji se dogodio – ili „ušao” ili „izišao”."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt čija oznaka treba biti nacrtana na karti."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt čije se vrijednosti mogu prikazati u izgledu."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Geoobjekt ažuriranja lokacije (npr. iz GPS-a) koji se procjenjuje za ograničenje.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Kurs lokacije u stupnjevima u smjeru kazaljke na satu, pri čemu je 0 pravi sjever."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Horizontalna točnost lokacije u metrima."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Vertikalna točnost lokacije u metrima."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Brzina lokacije u metrima po sekundi."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Interpolirana M-vrijednost za lokaciju markera."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjekt koji treba nacrtati na karti."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Vraća mjerilo karte u vrijeme koje izraz procjenjuje."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Omogućuje pristup atributima i geometriji geoobjekta čiji će se skočni prozor prikazati u prikazu."
+      },
+      {
+        "name": "$layer",
+        "description": "Zbirka geoobjekata u istom sloju kao $feature čiji je skočni prozor prikazan u prikazu. Ovo se odnosi samo na slojeve usluga geoobjekata.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Zbirka slojeva u istoj karti kao $feature čiji je skočni prozor prikazan u prikazu. Ovo se odnosi samo na slojeve usluga geoobjekata.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekata ili bazi podataka kao $feature čiji je skočni prozor prikazan u prikazu. Ovo se odnosi samo na slojeve usluga geoobjekata.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Omogućuje pristup agregatnim poljima definiranim u skočnim prozorima klasteriranja ili grupiranja."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet koji sadrži sve geoobjekte predstavljene klasterom ili ćelijom.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Izlaže atribute geoobjekta za korištenje u izračunu."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Zbirka geoobjekata u istom sloju kao $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekta ili bazi podataka kao $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Zbirka slojeva usluga geoobjekata na karti koju koristi projekt QuickCapture. Ova varijabla može biti nula."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Geoobjekt kojeg procjenjuje zadatak.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Zbirka slojeva u istoj usluzi geoobjekata ili bazi podataka kao $feature kojeg procjenjuje zadatak.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "U analitičkim alatima s jednim unosom, geoobjekt koji se izračunava, procjenjuje ili se na njemu radi."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "U analitičkim alatima s dva ulaza, geoobjekt koji se procjenjuje za filtriranje ili obogaćivanje."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "U analitičkim alatima s dva ulaza, geoobjekt koji daje vrijednosti za procjenu ili obogaćivanje ciljanog geoobjekta."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Vremenske vrijednosti povezane s analitikom kao što su vrijeme početka, posljednje vrijeme završetka itd.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Geoobjekt koji treba nacrtati na karti.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Vraća mjerilo karte u vrijeme koje izraz procjenjuje."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Den numeriske verdien det er ønskelig med et tekstalias for."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Den forrige tilstanden til geoobjektet som beregnes."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme tabell som $feature som evaluerer uttrykket."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature som kjører skriptet."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Angir om redigeringshandlingen er SETT INN, OPPDATER, SLETT eller NA (ikke aktuell)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Den forrige tilstanden til geoobjektet som beregnes."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme tabell som $feature som evaluerer uttrykket."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature som kjører skriptet."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Angir om redigeringshandlingen er SETT INN, OPPDATER, SLETT eller NA (ikke aktuell)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Den forrige tilstanden til geoobjektet som beregnes."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme tabell som $feature som evaluerer uttrykket."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature som kjører skriptet."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Angir om redigeringshandlingen er SETT INN, OPPDATER, SLETT eller NA (ikke aktuell)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Datapuktet som evalueres for det visuelle elementet."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Referanseverdien som evalueres for det visuelle elementet.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Datapuktet som evalueres for det visuelle elementet."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Datapuktet som evalueres for det visuelle elementet."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Posisjonen for en rad i tabellen (nullbasert)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Gir tilgang til attributt-/feltverdiene for posten som beregnes."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som skal tegnes på kartet."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "En katalog over konfigurasjonsverdier.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet krever en Z-verdi."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature som kjører beregningen."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Kildegeoobjektet for feltkartet."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Målgeoobjektet for feltkartet."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme lag som $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme lag som $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "En samling lag i kartet for arcade-uttrykket som utføres."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i samme datalager som $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i samme datalager som $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Viser geoobjektets attributter som skal brukes i beregningen."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Den forrige tilstanden til geoobjektet som beregnes."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme lag som $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme tabell som $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "En samling geotjenestelag i samme kart som $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Angir om redigeringshandlingen er SETT INN, OPPDATER, SLETT eller NA (ikke aktuell)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes for begrensningen."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Den forrige tilstanden til geoobjektet."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme lag som $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme tabell som $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "En samling geotjenestelag i samme kart som $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Angir om redigeringshandlingen er SETT INN, OPPDATER, SLETT eller NA (ikke aktuell)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Inndata-geoobjektet (f.eks. enhetslokasjon eller geoobjekt) som førte til at Geotrigger ble aktivert. Dette geoobjektet må inkludere en geometri (vanligvis et punkt) og et fast skjema med følgende egenskaper: \\\"course\\\" (retningen for lokasjonen i grader med klokken, der 0 er sann nord) og \\\"horizontalaccuracy\\\" (horisontal nøyaktighet for lokasjonen i meter)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Gjerde-geoobjekt (f.eks. et interesseområde) som ble gått inn i eller ut av førte til at Geotrigger ble aktivert."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "En beskrivelse av hendelsen som inntraff, enten \\\"inn i\\\" eller \\\"ut av\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som har etikett som skal tegnes på kartet."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som har verdier som kan vises i layouten."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Lokasjonsoppdateringen (f.eks. fra GPS) som evalueres for begrensningen.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Retningen for lokasjonen i grader med klokken, der 0 er sann nord."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Den horisontale nøyaktigheten for lokasjonen i meter."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Den vertikale nøyaktigheten for lokasjonen i meter."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Hastigheten for lokasjonen i meter i sekundet."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Den interpolerte M-verdien for markørlokasjonen."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som skal tegnes på kartet."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Returnerer målestokken for kartet på det tidspunktet da uttrykket evelueres."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Gir tilgang til attributtene og geometrien for geoobjektet som har en popup som skal vises i visningen."
+      },
+      {
+        "name": "$layer",
+        "description": "En samling geoobjekter i det samme laget som $feature som har en popup som vises i visningen. Dette gjelder bare for geoobjekttjenestelag.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "En samling lag i det samme kartet som $feature som har en popup som vises i visningen. Dette gjelder bare for geoobjekttjenestelag.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature med popup som vises i visningen. Dette gjelder bare for geoobjekttjenestelag.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Gir tilgang til de aggregerte feltene som er definert i popuper for klynger eller beholdere."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet som inneholder alle geoobjekter som er representert av klyngen eller beholderen.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Viser geoobjektets attributter som skal brukes i beregningen."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "En samling geoobjekter i samme lag som $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "En samling geotjenestelag i samme kart som brukes av QuickCapture-prosjektet. Denne variablen kan være null."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Geoobjektet som evalueres av oppgaven.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "En samling lag i den samme geoobjekttjenesten eller databasen som $feature som evalueres av oppgaven.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Geoobjektet som beregnes, evalueres eller opereres på i analyseverktøy med en inndata."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Geoobjektet som evalueres for filtrering eller berikelse i analyseverktøy med to inndata."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Geoobjektet som leverer verdier for evaluering eller beriking av målgeoobjektet i analyseverktøyer med to inndata."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Tidsverdier som er knyttet til analysen, som starttid, siste sluttid osv.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Geoobjektet som skal tegnes på kartet.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Returnerer målestokken for kartet på det tidspunktet da uttrykket evelueres."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

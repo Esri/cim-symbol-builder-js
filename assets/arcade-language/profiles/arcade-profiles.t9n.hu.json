@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "A szöveges aliasnévvel ellátni kívánt numerikus érték."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem előző állapota."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "A kifejezést éppen értékelő $feature változóval egy táblában lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A szkriptet végrehajtó $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Azt jelzi, hogy a szerkesztési esemény melyik a köetkezők közül: INSERT, UPDATE, DELETE vagy NA (nem alkalmazható."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem előző állapota."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "A kifejezést éppen értékelő $feature változóval egy táblában lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A szkriptet végrehajtó $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Azt jelzi, hogy a szerkesztési esemény melyik a köetkezők közül: INSERT, UPDATE, DELETE vagy NA (nem alkalmazható."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem előző állapota."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "A kifejezést éppen értékelő $feature változóval egy táblában lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A szkriptet végrehajtó $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Azt jelzi, hogy a szerkesztési esemény melyik a köetkezők közül: INSERT, UPDATE, DELETE vagy NA (nem alkalmazható."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "A vizuális elem szempontjából értékelés alatt álló adatpont."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "A vizuális elem szempontjából értékelés alatt álló referenciaérték.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "A vizuális elem szempontjából értékelés alatt álló adatpont."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "A vizuális elem szempontjából értékelés alatt álló adatpont."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Sor (nullától kezdődő) pozíciója a táblázatban."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Hozzáférést biztosít az éppen számított rekord attribútum-/mezőértékeihez."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A térképen ábrázolni kívánt vektoeros elem."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Konfigurációértékek szótára.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A Z értéket megkövetelő vektoros elem."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A számolást végrehajtó $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "A mezőtérkép forrás vektoros eleme."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "A mezőtérkép cél vektoros eleme."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "A $sourcefeature változóval egy rétegben lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "A $targetfeature változóval egy rétegben lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "A végrehajtás alatt álló Arcade-kifejezés térképén szereplő rétegek gyűjteménye."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "A $sourcelayer változóval egyező adattárban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "A $targetlayer változóval egyező adattárban lévő rétegek gyűjteménye."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A vektoros elem attribútumait teszi közzé a számításban való felhasználáshoz"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem előző állapota."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "A $feature változóval egy rétegben lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "A $feature változóval egy táblában lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "A $feature változóval egy térképen lévő vektorosszolgáltatás-rétegek gyűjteménye."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Azt jelzi, hogy a szerkesztési esemény melyik a köetkezők közül: INSERT, UPDATE, DELETE vagy NA (nem alkalmazható."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A korlátozás szempontjából értékelés alatt álló vektoros elem."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "A vektoros elem előző állapota."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "A $feature változóval egy rétegben lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "A $feature változóval egy táblában lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "A $feature változóval egy térképen lévő vektorosszolgáltatás-rétegek gyűjteménye."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Azt jelzi, hogy a szerkesztési esemény melyik a következők közül: INSERT, UPDATE, DELETE vagy NA (nem alkalmazható)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az éppen számított vektoros elem."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "A geoaktiválás aktiválódását kiváltó bemeneti vektoros elem (például az eszköz helyzete vagy egy vektoros elem). E vektoros elemnek tartalmaznia kell egy geometriát (rendszerint pontot), valamint a következő tulajdonságokkal rendelkező rögzített sémát: 'course' (a hely pályája fokban, az óramutató járásával egyező irányban, ahol a 0 a valódi észak), és 'horizontalaccuracy' (a hely méterben megadott horizontális pontossága)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Belépés vagy kilépés történt a kerítésül szolgáló vektoros elembe vagy elemből (pl. a vizsgálati területre vagy területről), ami előidézte a geoaktiválás aktiválódását."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "A bekövetkezett esemény leírása, amely „entered” (belépett) vagy „exited” (kilépett) értékű lehet."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A térképen ábrázolni kívánt címkéjű vektoros elem."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az vektoros elem, amelynek értékei megjeleníthetők a térképi kimeneten."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "A korlátozás szempontjából értékelés alatt álló vektoros elem helyzetének frissítése (pl. GPS-adatokkal).",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "A hely pályája fokban, az óramutató járásával egyező irányban, ahol a 0 a valódi észak."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "A hely horizontális pontossága méterben."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "A hely függőleges pontossága méterben."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "A hely sebessége méter per szekundumban."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "A jelölő helyének interpolált M-értéke."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A térképen ábrázolni kívánt vektoeros elem."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "A térkép méretarányát adja vissza a kifejezés által értékelt időpontban."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Annak a vektoros elemnek az attribútumaihoz és geometriájához nyújt hozzáférést, amelynek előugró ablaka megjelenik a nézetben."
+      },
+      {
+        "name": "$layer",
+        "description": "Az azzal a $feature változóval egy rétegben lévő vektoros elemek gyűjteménye, amelynek előugró ablaka megjelenik a nézetben. Ez csak a vektoros szolgáltatás rétegeire vonatkozik.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Az azzal a $feature változóval egy térképen lévő rétegek gyűjteménye, amelynek előugró ablaka megjelenik a nézetben. Ez csak a vektoros szolgáltatás rétegeire vonatkozik.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Az azzal a $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye, amelynek előugró ablaka megjelenik a nézetben. Ez csak a vektoros szolgáltatás rétegeire vonatkozik.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A klaszterezés során vagy a tárolási előugró ablakokban meghatározott összesített mezőkhöz nyújt hozzáférést."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "A klaszter vagy tároló áltasl képviselt valamennyi vektoros elemet tartalmazó FeatureSet.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A vektoros elem attribútumait teszi közzé a számításban való felhasználáshoz."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "A $feature változóval egy rétegben lévő vektoros elemek gyűjteménye."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "A $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "A QuickCapture-projekt által használt térképen lévő vektorosszolgáltatás-rétegek gyűjteménye. Ez a változó lehet null értékű."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "A feladat által éppen értékelt vektoros elem.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "A feladat által éppen értékelt $feature változóval egy vektoros szolgáltatásban vagy adatbázisban lévő rétegek gyűjteménye.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Az önálló (egyes) bemenetekkel rendelkező elemző eszközökben az éppen számított, értékelt vagy művelet alatt álló vektoros elem."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "A két bemenettel rendelkező elemző eszközökben a szűrés vagy bővítés szempontjából értékelt vektoros elem."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "A két bemenettel rendelkező elemző eszközökben a cél vektoros elem értékeléséhez vagy bővítéséhez értékeket biztosító vektoros elem."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Az elemzéshez társított időértékek, például kezdő időpont, utolsó záró időpont stb.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "A térképen ábrázolni kívánt vektoeros elem.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "A térkép méretarányát adja vissza a kifejezés által értékelt időpontban."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

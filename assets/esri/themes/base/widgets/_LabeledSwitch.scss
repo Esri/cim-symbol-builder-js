@@ -6,13 +6,30 @@
 
     &__label-content {
       display: flex;
-      flex-shrink: 0;
+      flex: 1;
       gap: $side-spacing--half;
       align-items: center;
+      text-wrap: balance;
+
+      > div {
+        flex-grow: 1;
+      }
     }
 
     &__icon {
-      color: var(--calcite-ui-info);
+      margin-top: -1px; // Align the icon visually with the switch.
+
+      &_info {
+        color: var(--calcite-color-status-info);
+      }
+
+      &_warning {
+        color: var(--calcite-color-status-warning);
+      }
+    }
+
+    &__tooltip {
+      text-wrap: wrap;
     }
   }
 }

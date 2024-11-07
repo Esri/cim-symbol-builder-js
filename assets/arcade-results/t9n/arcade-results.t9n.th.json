@@ -1,0 +1,13 @@
+{
+  "close": "ปิด",
+  "console": "คอนโซล",
+  "output": "ผลลัพธ์",
+  "log": "บันทึก",
+  "consolemessage": "ใช้ฟังก์ชันคอนโซลในการเอาท์พุทข้อความ",
+  "lastexecutionformat": "การดำเนินการล่าสุด {timeStamp}",
+  "compilationtimeformat": "การคอมไพล์ {time}",
+  "executiontimeformat": "การดำเนินการ {time}",
+  "runscriptmessage": "ไม่มีผลลัพธ์ รันสคริปต์หนึ่งครั้ง",
+  "showingfirstitemsformat": "(กำลังแสดง {count} ไอเท็มแรก)",
+  "executionerrorformat": "ข้อผิดพลาดการดำเนินการทดสอบ: {message} ยืนยันข้อมูลทดสอบ"
+}

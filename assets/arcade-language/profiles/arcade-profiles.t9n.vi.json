@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Giá trị dạng số mà văn bản hiển thị mong muốn."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được tính toán."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Trạng thái trước đó của đối tượng đang được tính toán."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một bảng với $feature đánh giá biểu thức."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature thực hiện script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Cho biết sự kiện chỉnh sửa là CHÈN, CẬP NHẬT, XÓA hay NA (không áp dụng)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được tính toán."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Trạng thái trước đó của đối tượng đang được tính toán."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một bảng với $feature đánh giá biểu thức."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature thực hiện script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Cho biết sự kiện chỉnh sửa là CHÈN, CẬP NHẬT, XÓA hay NA (không áp dụng)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được tính toán."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Trạng thái trước đó của đối tượng đang được tính toán."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một bảng với $feature đánh giá biểu thức."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature thực hiện script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Cho biết sự kiện chỉnh sửa là CHÈN, CẬP NHẬT, XÓA hay NA (không áp dụng)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Điểm dữ liệu đang được đánh giá cho phần tử trực quan."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Giá trị tham chiếu đang được đánh giá cho phần tử trực quan.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Điểm dữ liệu đang được đánh giá cho phần tử trực quan."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Điểm dữ liệu đang được đánh giá cho phần tử trực quan."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Vị trí của một hàng trong bảng (bắt đầu từ 0)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Cấp quyền truy cập vào các giá trị thuộc tính/trường của bản ghi đang được tính toán."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng sẽ được vẽ trên bản đồ."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Từ điển các giá trị cấu hình.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng yêu cầu giá trị Z."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được tính toán."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature thực hiện tính toán."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Đối tượng nguồn cho bản đồ trường."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Đối tượng đích cho bản đồ trường."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập các đối tượng trong cùng một lớp với $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập các đối tượng trong cùng một lớp với $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu gồm các lớp trong bản đồ của biểu thức Arcade đang thực hiện."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một kho dữ liệu với $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một kho dữ liệu với $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Hiển thị các thuộc tính của đối tượng để sử dụng trong tính toán"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Trạng thái trước đó của đối tượng đang được tính toán."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một lớp với $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một bảng với $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp dịch vụ đối tượng trong cùng một bản đồ với $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Cho biết sự kiện chỉnh sửa là CHÈN, CẬP NHẬT, XÓA hay NA (không áp dụng)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được đánh giá cho ràng buộc."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Trạng thái trước đó của đối tượng."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một lớp với $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một bảng với $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp dịch vụ đối tượng trong cùng một bản đồ với $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Cho biết sự kiện chỉnh sửa là CHÈN, CẬP NHẬT, XÓA hay NA (không áp dụng)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng đang được tính toán."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Đối tượng đầu vào (ví dụ: vị trí thiết bị hoặc đối tượng) khiến geotrigger được kích hoạt. Đối tượng này phải bao gồm một hình học (thường là một điểm) và một lược đồ cố định với các thuộc tính sau: `course` (hướng di chuyển của vị trí tính bằng độ theo chiều kim đồng hồ, 0 là chính bắc) và `horizontalaccuracy` (độ chính xác theo chiều ngang của vị trí tính bằng mét)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Đối tượng hàng rào (ví dụ: khu vực quan tâm) đã vào hoặc thoát ra và khiến Geotrigger được kích hoạt."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Mô tả về sự kiện đã xảy ra - \\\"đã vào\\\" hoặc \\\"đã thoát\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng có nhãn sẽ được vẽ trên bản đồ."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng có các giá trị có thể được hiển thị trong bố cục."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Đối tượng cập nhật vị trí (ví dụ: từ GPS) đang được đánh giá cho ràng buộc.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Hướng di chuyển của vị trí tính bằng độ theo chiều kim đồng hồ, 0 là hướng chính Bắc."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Độ chính xác theo chiều ngang của vị trí tính bằng mét."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Độ chính xác theo chiều dọc của vị trí tính bằng mét."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Vận tốc của vị trí tính bằng mét trên giây."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Giá trị M nội suy cho vị trí đánh dấu."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Đối tượng sẽ được vẽ trên bản đồ."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Trả về tỷ lệ của bản đồ tại thời điểm biểu thức đánh giá."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Cung cấp quyền truy cập vào các thuộc tính và hình học của đối tượng có cửa sổ pop-up được hiển thị trong chế độ xem."
+      },
+      {
+        "name": "$layer",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một lớp với $feature có cửa sổ pop-up được hiển thị trong chế độ xem. Điều này chỉ áp dụng cho các lớp dịch vụ đối tượng.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một bản đồ với $feature có cửa sổ pop-up được hiển thị trong chế độ xem. Điều này chỉ áp dụng cho các lớp dịch vụ đối tượng.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature có cửa sổ pop-up được hiển thị trong chế độ xem. Điều này chỉ áp dụng cho các lớp dịch vụ đối tượng.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Cung cấp quyền truy cập vào các trường tổng hợp được xác định trong cửa sổ pop-up gom cụm hoặc binning."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Một FeatureSet chứa tất cả các đối tượng được biểu thị bằng cụm hoặc bin.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Hiển thị các thuộc tính của đối tượng để sử dụng trong tính toán."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Một bộ sưu tập gồm các đối tượng trong cùng một lớp với $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Một bộ sưu tập gồm các lớp dịch vụ đối tượng trong bản đồ được dự án QuickCapture sử dụng. Biến số này có thể rỗng."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Đối tượng được đánh giá bởi tác vụ.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Một bộ sưu tập gồm các lớp trong cùng một dịch vụ đối tượng hoặc cơ sở dữ liệu với $feature đang được đánh giá bởi tác vụ.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Trong các công cụ phân tích có đầu vào đơn, đối tượng sẽ được tính toán, đánh giá hoặc vận hành."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Trong các công cụ phân tích có hai đầu vào, đối tượng được đánh giá để lọc hoặc bổ sung."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Trong các công cụ phân tích có hai đầu vào, đối tượng cung cấp các giá trị để đánh giá hoặc bổ sung đối tượng đích."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Giá trị thời gian liên quan đến phân tích như thời gian bắt đầu, thời gian kết thúc cuối cùng, v.v.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Đối tượng sẽ được vẽ trên bản đồ.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Trả về tỷ lệ của bản đồ tại thời điểm biểu thức đánh giá."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

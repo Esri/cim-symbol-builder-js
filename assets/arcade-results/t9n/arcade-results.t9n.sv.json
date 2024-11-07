@@ -1,0 +1,13 @@
+{
+  "close": "Stäng",
+  "console": "Konsol",
+  "output": "Utdata",
+  "log": "Logg",
+  "consolemessage": "Använd konsolfunktionen för att visa meddelanden.",
+  "lastexecutionformat": "Senaste körning {timeStamp}",
+  "compilationtimeformat": "Kompilering {time}",
+  "executiontimeformat": "Körning {time}",
+  "runscriptmessage": "Ingen utdata, kör skriptet en gång.",
+  "showingfirstitemsformat": "(Visar första {count} objekten)",
+  "executionerrorformat": "Testkörningsfel: {message}. Verifiera testdata."
+}

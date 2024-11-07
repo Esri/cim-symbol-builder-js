@@ -1,0 +1,13 @@
+{
+  "close": "Đóng",
+  "console": "Bảng điều khiển",
+  "output": "Đầu ra",
+  "log": "Nhật ký",
+  "consolemessage": "Sử dụng hàm Console để xuất thông báo.",
+  "lastexecutionformat": "Lần thực hiện cuối {timeStamp}",
+  "compilationtimeformat": "Tài liệu biên soạn {time}",
+  "executiontimeformat": "Lần thực hiện {time}",
+  "runscriptmessage": "Không có đầu ra, chạy script một lần.",
+  "showingfirstitemsformat": "(Đang hiển thị {count} mục đầu tiên)",
+  "executionerrorformat": "Lỗi thực hiện kiểm tra: {message}. Xác minh dữ liệu kiểm tra."
+}

@@ -1,0 +1,13 @@
+{
+  "close": "Zamknij",
+  "console": "Konsola",
+  "output": "Dane wynikowe",
+  "log": "Dziennik",
+  "consolemessage": "Użyj funkcji konsoli, aby wyprowadzać komunikaty.",
+  "lastexecutionformat": "Ostatnie wykonanie {timeStamp}",
+  "compilationtimeformat": "Kompilacja {time}",
+  "executiontimeformat": "Wykonanie {time}",
+  "runscriptmessage": "Brak danych wynikowych, uruchom ten skrypt jednokrotnie.",
+  "showingfirstitemsformat": "(Wyświetlanie pierwszych {count} elementów)",
+  "executionerrorformat": "Błąd wykonania testu: {message}. Zweryfikuj dane testowe."
+}

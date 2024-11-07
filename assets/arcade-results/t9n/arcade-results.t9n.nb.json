@@ -1,0 +1,13 @@
+{
+  "close": "Lukk",
+  "console": "Konsoll",
+  "output": "Resultat",
+  "log": "Logg",
+  "consolemessage": "Bruk Console-funksjonen til å sende meldinger.",
+  "lastexecutionformat": "Siste kjøring {timeStamp}",
+  "compilationtimeformat": "Kompilering {time}",
+  "executiontimeformat": "Kjøring {time}",
+  "runscriptmessage": "Ingen utdata. Kjør skriptet én gang.",
+  "showingfirstitemsformat": "(Viser første {count} elementer)",
+  "executionerrorformat": "Testutføringsfeil: {message}. Bekreft testdata."
+}

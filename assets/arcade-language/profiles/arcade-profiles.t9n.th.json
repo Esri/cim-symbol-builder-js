@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "ค่าตัวเลขที่ต้องการนามแฝงข้อความ"
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "สถานะก่อนหน้าของฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในตารางเดียวกันกับที่ $feature ทำการประเมินนิพจน์"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกัน ในขณะที่ $feature ดำเนินการตามสคริปต์"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "ระบุว่าเหตุการณ์การแก้ไขเป็น INSERT, UPDATE, DELETE หรือ NA (ไม่สามารถดำเนินการได้)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "สถานะก่อนหน้าของฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในตารางเดียวกันกับที่ $feature ทำการประเมินนิพจน์"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกัน ในขณะที่ $feature ดำเนินการตามสคริปต์"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "ระบุว่าเหตุการณ์การแก้ไขเป็น INSERT, UPDATE, DELETE หรือ NA (ไม่สามารถดำเนินการได้)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "สถานะก่อนหน้าของฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในตารางเดียวกันกับที่ $feature ทำการประเมินนิพจน์"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกัน ในขณะที่ $feature ดำเนินการตามสคริปต์"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "ระบุว่าเหตุการณ์การแก้ไขเป็น INSERT, UPDATE, DELETE หรือ NA (ไม่สามารถดำเนินการได้)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "จุดข้อมูลที่กำลังถูกประเมินสำหรับองค์ประกอบภาพ"
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "ค่าอ้างอิงที่กำลังถูกประเมินสำหรับองค์ประกอบภาพ",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "จุดข้อมูลที่กำลังถูกประเมินสำหรับองค์ประกอบภาพ"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "จุดข้อมูลที่กำลังถูกประเมินสำหรับองค์ประกอบภาพ"
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "ตำแหน่งของแถวในตาราง (อิงศูนย์)"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "ระบุการเข้าถึงค่าแอตทริบิวต์/ฟิลด์ของบันทึกที่กำลังทำการคำนวณ"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่จะวาดบนแผนที่"
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "พจนานุกรมของค่าการกำหนดค่า",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่ต้องการค่า Z"
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature ที่ดำเนินการคำนวณ"
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "ฟีเจอร์ต้นทางสำหรับแผนที่ฟิลด์"
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "ฟีเจอร์เป้าหมายสำหรับแผนที่ฟิลด์"
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $sourcefeature"
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $targetfeature"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันชั้นข้อมูลในแผนที่ของนิพจน์ Arcade ที่ดำเนินการ"
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในที่เก็บข้อมูลเดียวกันกับ $sourcelayer"
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในที่เก็บข้อมูลเดียวกันกับ $targetlayer"
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "เปิดเผยแอตทริบิวต์ของฟีเจอร์สำหรับใช้ในการคำนวณ"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "สถานะก่อนหน้าของฟีเจอร์ที่กำลังถูกคำนวณ"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในตารางเดียวกันกับ $feature"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลฟีเจอร์เซอร์วิสในแผนที่เดียวกันกับ $feature"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "ระบุว่าเหตุการณ์การแก้ไขเป็น INSERT, UPDATE, DELETE หรือ NA (ไม่สามารถดำเนินการได้)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกประเมินข้อจำกัด"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "สถานะก่อนหน้าของฟีเจอร์"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในตารางเดียวกันกับ $feature"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลฟีเจอร์เซอร์วิสในแผนที่เดียวกันกับ $feature"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "ระบุว่าเหตุการณ์การแก้ไขเป็น INSERT, UPDATE, DELETE หรือ NA (ไม่สามารถดำเนินการได้)"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่กำลังถูกคำนวณ"
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "ฟีเจอร์อินพุท (เช่น ตำแหน่งของอุปกรณ์หรือฟีเจอร์) ที่ส่งผลให้ Geotrigger เริ่มทำงาน ฟีเจอร์นี้ต้องมีเรขาคณิต (โดยทั่วไปจะเป็นจุด) และสคีมาแบบคงที่ ซึ่งมีคุณสมบัติต่อไปนี้: `course` (เส้นทางของตำแหน่งในองศาตามเข็มนาฬิกา โดย 0 คือทิศเหนือจริง) และ `horizontalaccuracy` (ความแม่นยำแนวนอนของตำแหน่งในหน่วยเมตร)"
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "ฟีเจอร์รั้วกั้น (เช่น พื้นที่ที่สนใจ) ซึ่งเมื่อมีการเข้าหรือออก จะส่งผลให้ Geotrigger เริ่มทำงาน"
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "คำอธิบายของเหตุการณ์ที่เกิดขึ้น - ระหว่าง \\\"เข้าสู่\\\" หรือ \\\"ออกจาก\\\""
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่จะวาดป้ายกำกับบนแผนที่"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่ค่าอาจถูกแสดงในโครงร่าง"
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "ฟีเจอร์การอัปเดตตำแหน่ง (เช่น จาก GPS) ที่กำลังถูกประเมินข้อจำกัด",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "ทิศทางของตำแหน่งในหน่วยองศาตามเข็มนาฬิกา โดยที่ 0 คือทิศเหนือที่แท้จริง"
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "ความแม่นยำแนวนอนของตำแหน่งในหน่วยเมตร"
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "ความแม่นยำแนวดิ่งของตำแหน่งในหน่วยเมตร"
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "ความเร็วของตำแหน่งในหน่วยเมตรต่อวินาที"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "ค่า M ที่ประมาณในช่วงสำหรับตำแหน่งมาร์คเกอร์"
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ฟีเจอร์ที่จะวาดบนแผนที่"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "ส่งคืนมาตราส่วนของแผนที่ในช่วงเวลาที่นิพจน์ทำการประเมิน"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ช่วยให้สามารถเข้าใช้งานแอตทริบิวต์และเรขาคณิตของฟีเจอร์ ที่ป็อปอัพจะถูกแสดงในมุมมองได้"
+      },
+      {
+        "name": "$layer",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $feature ที่ป็อปอัพจะถูกแสดงในมุมมอง ส่วนนี้จะใช้ได้เฉพาะกับชั้นข้อมูลฟีเจอร์เซอร์วิส",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "คอลเลกชันของชั้นข้อมูลในแผนที่เดียวกันกับ $feature ที่ป็อปอัพจะถูกแสดงในมุมมอง ส่วนนี้จะใช้ได้เฉพาะกับชั้นข้อมูลฟีเจอร์เซอร์วิส",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature ที่ปรากฏในมุมมอง ส่วนนี้จะใช้ได้เฉพาะกับชั้นข้อมูลฟีเจอร์เซอร์วิส",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ช่วยให้สามารถเข้าใช้งานฟิลด์การรวมซึ่งถูกกำหนดไว้ในป็อปอัพการจัดกลุ่มหรือการสร้างถังได้"
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet ที่มีฟีเจอร์ทั้งหมดซึ่งถูกแทนด้วยการจัดกลุ่มหรือถัง",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "เปิดเผยแอตทริบิวต์ของฟีเจอร์สำหรับใช้ในการคำนวณ"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "คอลเลกชันของฟีเจอร์ในชั้นข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "คอลเลกชันของชั้นข้อมูลฟีเจอร์เซอร์วิสในแผนที่ ซึ่งถูกใช้โดย QuickCapture project ตัวแปรนี้อาจเป็นนัล"
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "ฟีเจอร์ที่กำลังถูกประเมินโดยงาน",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "คอลเลกชันของชั้นข้อมูลในฟีเจอร์เซอร์วิสหรือฐานข้อมูลเดียวกันกับ $feature ที่ถูกประเมินโดยงาน",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "ในเครื่องมือการวิเคราะห์ที่มีอินพุทเดียว ฟีเจอร์ที่กำลังถูกคำนวณ ประเมิน หรือดำเนินการ"
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "ในเครื่องมือการวิเคราะห์ที่มีสองอินพุท ฟีเจอร์ที่กำลังถูกประเมินสำหรับการกรองหรือการเพิ่มรายละเอียด"
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "ในเครื่องมือการวิเคราะห์ที่มีสองอินพุท ฟีเจอร์ที่ให้ค่าสำหรับการประเมินหรือการเพิ่มรายละเอียดของฟีเจอร์เป้าหมาย"
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "ค่าเวลาที่เชื่อมโยงกับการวิเคราะห์ เช่น เวลาเริ่มต้น เวลาสิ้นสุดครั้งสุดท้าย ฯลฯ",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "ฟีเจอร์ที่จะวาดบนแผนที่",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "ส่งคืนมาตราส่วนของแผนที่ในช่วงเวลาที่นิพจน์ทำการประเมิน"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

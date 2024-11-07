@@ -1,0 +1,13 @@
+{
+  "close": "Luk",
+  "console": "Konsol",
+  "output": "Output",
+  "log": "Log",
+  "consolemessage": "Brug Konsolfunktionen til outputmeddelelser.",
+  "lastexecutionformat": "Seneste udførelse {timeStamp}",
+  "compilationtimeformat": "Kompilering {time}",
+  "executiontimeformat": "Udførelse {time}",
+  "runscriptmessage": "Intet output, kør scriptet en gang.",
+  "showingfirstitemsformat": "(Viser de første {count} elementer)",
+  "executionerrorformat": "Fejl ved udførelse af test: {message}. Bekræft testdata."
+}

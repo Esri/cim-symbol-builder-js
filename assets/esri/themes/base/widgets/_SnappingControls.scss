@@ -3,14 +3,15 @@
 
   .esri-snapping-controls__toggle-block {
     margin: 0;
+    min-width: 100%;
   }
 
   .esri-snapping-controls__layer-list-block {
     border-bottom: none;
+    min-width: $panel-width--three-quarters;
   }
 
   .esri-snapping-controls__layer-list {
-    max-height: 220px;
     overflow: auto;
 
     &__filter {
@@ -29,9 +30,14 @@
         }
       }
 
+      calcite-checkbox {
+        margin-left: 1rem;
+        padding-left: 2px;
+      }
+
       calcite-icon {
         margin-inline-start: var(--calcite-list-item-spacing-indent);
-        color: var(--calcite-ui-brand);
+        color: var(--calcite-color-brand);
       }
     }
   }
@@ -45,6 +51,10 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
+
+    :only-child {
+      border-block-end: none; // Issue #55500
+    }
   }
 
   .esri-snapping-controls__panel {
@@ -125,11 +135,6 @@
         height: $toggle-handle-size;
         content: "";
       }
-    }
-
-    &.esri-disabled-element {
-      opacity: $opacity--disabled;
-      pointer-events: none;
     }
   }
 

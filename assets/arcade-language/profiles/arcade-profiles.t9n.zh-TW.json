@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "需要文字別名的數值。"
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在計算的圖徵。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "正在計算之圖徵的先前狀態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "與評估表達式的 $feature 在相同的表格中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與執行指令碼的 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "指示編輯事件是 INSERT、UPDATE、DELETE 還是 NA (不適用)。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在計算的圖徵。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "正在計算之圖徵的先前狀態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "與評估表達式的 $feature 在相同的表格中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與執行指令碼的 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "指示編輯事件是 INSERT、UPDATE、DELETE 還是 NA (不適用)。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在計算的圖徵。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "正在計算之圖徵的先前狀態。"
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "與評估表達式的 $feature 在相同的表格中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與執行指令碼的 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "指示編輯事件是 INSERT、UPDATE、DELETE 還是 NA (不適用)。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "正在為視覺元素評估的資料點。"
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "正在為視覺元素評估的參考值。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "正在為視覺元素評估的資料點。"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "正在為視覺元素評估的資料點。"
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "表格中列的位置 (從零開始)。"
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "提供對正在計算之記錄的屬性/欄位值存取。"
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "要在地圖上繪製的圖徵。"
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "配置值的字典。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "需要 Z 值的圖徵。"
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在計算的圖徵。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與執行計算的 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "現場地圖的來源圖徵。"
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "現場地圖的目標圖徵。"
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "與 $sourcefeature 在相同圖層中的圖徵集合。"
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "與 $targetfeature 在相同圖層中的圖徵集合。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "正在執行的 Arcade 表達式的地圖中的圖層集合。"
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "與 $sourcelayer 在相同資料儲存庫中的圖層集合。"
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "與 $targetlayer 在相同資料儲存庫中的圖層集合。"
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "公開圖徵的屬性以用於計算"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "正在計算之圖徵的先前狀態。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "與 $feature 在相同圖層中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "與 $feature 在相同表格中的圖徵集合。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "與 $feature 在相同地圖中的圖徵服務圖層集合。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "指示編輯事件是 INSERT、UPDATE、DELETE 還是 NA (不適用)。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在為限制評估的圖徵。"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "圖徵的先前狀態。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "與 $feature 在相同圖層中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "與 $feature 在相同表格中的圖徵集合。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "與 $feature 在相同地圖中的圖徵服務圖層集合。"
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "指示編輯事件是 INSERT、UPDATE、DELETE 還是 NA (不適用)。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在計算的圖徵。"
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "導致 geotrigger 啟動的輸入圖徵 (例如裝置位置或圖徵)。 此圖徵必須包括一個幾何 (通常是一個點) 和一個具有以下屬性的固定結構描述: `course` (以順時針方向度為單位的位置路線，0 為真北) 和 `horizontalaccuracy` (位置的水平精度，以公尺為單位)。"
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "進入或退出並導致 Geotrigger 啟動的圍欄圖徵 (例如感興趣區域)。"
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "對發生的事件描述 -「已進入」或「已退出」。"
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "要在地圖上繪製其標籤的圖徵。"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "其值可能顯示在版面配置中的圖徵。"
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "正在評估限制的位置更新圖徵 (例如來自 GPS)。",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "該位置的路線以順時針度數為單位，0 表示真北。"
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "位置的水平準確度 (公尺)。"
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "位置的垂直準確度 (公尺)。"
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "位置的速度 (公尺/秒)。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "標記位置的插值 M 值。"
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "要在地圖上繪製的圖徵。"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "傳回表達式評估時地圖的比例。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "提供對要在視圖中顯示其快顯視窗之圖徵的屬性和幾何存取。"
+      },
+      {
+        "name": "$layer",
+        "description": "與在視圖中顯示其快顯視窗的 $feature 位於相同圖層的圖徵集合。 這僅適用於圖徵服務圖層。",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "與在視圖中顯示其快顯視窗的 $feature 位於相同地圖的圖層集合。 這僅適用於圖徵服務圖層。",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "與在視圖中顯示其快顯視窗的 $feature 相同的圖徵服務或資料庫中的圖層集合。 這僅適用於圖徵服務圖層。",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "提供對叢集或裝箱快顯視窗中定義的匯聚欄位存取。"
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "一個 FeatureSet，包含由叢集或 bin 表示的所有圖徵。",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "公開圖徵的屬性以用於計算。"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "與 $feature 在相同圖層中的圖徵集合。"
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "與 $feature 在相同的圖徵服務或資料庫中的圖層集合。"
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "QuickCapture 專案使用的地圖中的圖徵服務圖層集合。 此變數可為 null。"
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "任務正在評估的圖徵。",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "與任務評估的 $feature 相同的圖徵服務或資料庫中的圖層集合。",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "正在具有單一輸入的分析工具中，計算、評估或操作的圖徵。"
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "在具有兩個輸入的分析工具中，正在對圖徵進行評估以進行篩選或豐富。"
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "在具有兩個輸入的分析工具中，為評估或豐富目標圖徵提供值的圖徵。"
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "與分析相關的時間值，例如開始時間、最後結束時間等。",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "要在地圖上繪製的圖徵。",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "傳回表達式評估時地圖的比例。"
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

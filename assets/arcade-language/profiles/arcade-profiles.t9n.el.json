@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Η αριθμητική τιμή για την οποία είναι επιθυμητό ένα ψευδώνυμο κειμένου."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που υπολογίζεται."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Υπολογίζεται η προηγούμενη κατάσταση του γνωρίσματος."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στον ίδιο πίνακα με το $feature που αξιολογεί την έκφραση."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature που εκτελεί τη δέσμη ενεργειών."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Υποδεικνύει εάν το συμβάν επεξεργασίας είναι ΕΙΣΑΓΩΓΗ, ΕΝΗΜΕΡΩΣΗ, ΔΙΑΓΡΑΦΗ ή Δ/Υ (δεν ισχύει)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που υπολογίζεται."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Υπολογίζεται η προηγούμενη κατάσταση του γνωρίσματος."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στον ίδιο πίνακα με το $feature που αξιολογεί την έκφραση."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature που εκτελεί τη δέσμη ενεργειών."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Υποδεικνύει εάν το συμβάν επεξεργασίας είναι ΕΙΣΑΓΩΓΗ, ΕΝΗΜΕΡΩΣΗ, ΔΙΑΓΡΑΦΗ ή Δ/Υ (δεν ισχύει)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που υπολογίζεται."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Υπολογίζεται η προηγούμενη κατάσταση του γνωρίσματος."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στον ίδιο πίνακα με το $feature που αξιολογεί την έκφραση."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature που εκτελεί τη δέσμη ενεργειών."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Υποδεικνύει εάν το συμβάν επεξεργασίας είναι ΕΙΣΑΓΩΓΗ, ΕΝΗΜΕΡΩΣΗ, ΔΙΑΓΡΑΦΗ ή Δ/Υ (δεν ισχύει)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Το σημείο δεδομένων που αξιολογείται για το οπτικό στοιχείο."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Η τιμή αναφοράς που αξιολογείται για το οπτικό στοιχείο.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Το σημείο δεδομένων που αξιολογείται για το οπτικό στοιχείο."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Το σημείο δεδομένων που αξιολογείται για το οπτικό στοιχείο."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Η θέση μιας σειράς στον πίνακα (με βάση το μηδέν)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Παρέχει πρόσβαση σε τιμές γνωρισμάτων/πεδίων της εγγραφής που υπολογίζεται."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που πρόκειται να σχεδιαστεί στον χάρτη."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Ένα λεξικό τιμών διαμόρφωσης.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που απαιτεί μία τιμή Ζ."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που υπολογίζεται."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature που εκτελεί τον υπολογισμό."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Το γνώρισμα πηγής για τον χάρτη πεδίου."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Το γνώρισμα προορισμού για τον χάρτη πεδίου."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στον χάρτη εκτέλεσης της έκφρασης arcade."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή επιπέδων στο ίδιο datastore με το $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή επιπέδων στο ίδιο datastore με το $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Εκθέτει τα χαρακτηριστικά του γωνρίσματος για χρήση στον υπολογισμό"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Υπολογίζεται η προηγούμενη κατάσταση του γνωρίσματος."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στον ίδιο πίνακα με το $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή γνωρισμάτων στα ίδια θεματικά επίπεδα στον ίδιο χάρτη με το $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Υποδεικνύει εάν το συμβάν επεξεργασίας είναι ΕΙΣΑΓΩΓΗ, ΕΝΗΜΕΡΩΣΗ, ΔΙΑΓΡΑΦΗ ή Δ/Υ (δεν ισχύει)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που αξιολογείται από τον περιορισμό."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Η προηγούμενη κατάσταση του γνωρίσματος."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στον ίδιο πίνακα με το $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή γνωρισμάτων στα ίδια θεματικά επίπεδα στον ίδιο χάρτη με το $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Υποδεικνύει εάν το συμβάν επεξεργασίας είναι ΕΙΣΑΓΩΓΗ, ΕΝΗΜΕΡΩΣΗ, ΔΙΑΓΡΑΦΗ ή Δ/Υ (δεν ισχύει)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που υπολογίζεται."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Η δυνατότητα εισαγωγής (π.χ. μια θέση συσκευής ή ένα γνώρισμα) που προκάλεσε την ενεργοποίηση του Geotrigger. Αυτό το γνώρισμα πρέπει να περιέχει μια γεωμετρία (συνήθως ένα σημείο) και ένα ορισμένο σχήμα με τις ακόλουθες ιδιότητες: «πορεία» (η πορεία της τοποθεσίας σε μοίρες δεξιόστροφα, το 0 είναι ο γεωγραφικός βορράς) και «οριζόντια ακρίβεια» (η οριζόντια ακρίβεια της τοποθεσίας σε μέτρα)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Το γνώρισμα φράχτη (π.χ. μια θέση συσκευής ή ένα γνώρισμα) που προκάλεσε την ενεργοποίηση του Geottrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Περιγραφή του γεγονότος που συνέβη - είτε \\\"εισήχθη\\\" είτε \\\"εξήχθη\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα η ετικέτα του οποίου πρόκειται να σχεδιαστεί στον χάρτη."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα του οποίου οι τιμές μπορούν να εμφανίζονται στη διάταξη."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Η δυνατότητα ενημέρωσης τοποθεσίας (π.χ. από το GPS) αξιολογείται για τον περιορισμό.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Η πορεία της τοποθεσίας σε μοίρες δεξιόστροφα, το 0 είναι ο γεωγραφικός Βορράς."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Η οριζόντια ακρίβεια της τοποθεσίας σε μέτρα."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Η κατακόρυφη ακρίβεια της τοποθεσίας σε μέτρα."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Η ταχύτητα της θέσης σε μέτρα ανά δευτερόλεπτο."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Η παρεμβαλλόμενη τιμή M για τη θέση του δείκτη."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Το γνώρισμα που πρόκειται να σχεδιαστεί στον χάρτη."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Επιστρέφει την κλίμακα του χάρτη τη στιγμή που αξιολογείται η έκφραση."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Παρέχει πρόσβαση στα γνωρίσματα και τη γεωμετρία του γνωρίσματος του οποίου το αναδυόμενο παράθυρο θα εμφανίζεται στην προβολή."
+      },
+      {
+        "name": "$layer",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $feature του οποίου το αναδυόμενο παράθυρο εμφανίζεται στην προβολή. Αυτό ισχύει μόνο για θεματικά επίπεδα feature service.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Μια συλλογή θεματικών επιπέδων στον ίδιο χάρτη με το $feature του οποίου το αναδυόμενο παράθυρο εμφανίζεται στην προβολή. Αυτό ισχύει μόνο για θεματικά επίπεδα feature service.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Μια συλλογή θεματικών επιπέδων στο ίδιο feature service ή database με το $feature του οποίου το αναδυόμενο παράθυρο εμφανίζεται στην προβολή. Αυτό ισχύει μόνο για θεματικά επίπεδα feature service.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Παρέχει πρόσβαση στα συγκεντρωτικά πεδία που ορίζονται είτε σε ομαδοποίηση είτε σε αναδυόμενα παράθυρα."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Ένα FeatureSet που περιέχει όλα τα γνωρίσματα που αντιπροσωπεύονται από το σύμπλεγμα ή τον κάδο.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Εκθέτει τα χαρακτηριστικά του γνωρίσματος για χρήση στον υπολογισμό."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Μια συλλογή γνωρισμάτων στο ίδιο θεματικό επίπεδο με το $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή database με το $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Μια συλλογή γνωρισμάτων στα ίδια θεματικά επίπεδα στον χάρτη που χρησιμοποιείται από το έργο QuickCapture. Αυτή η μεταβλητή μπορεί να έχει τιμή null."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Το γνώρισμα που αξιολογείται από την εργασία.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Μια συλλογή θεματικών επιπέδων στην ίδια feature service ή βάση δεδομένων με το $feature που αξιολογείται από την εργασία.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Στα εργαλεία ανάλυσης με μεμονωμένες εισόδους, το γνώρισμα υπολογίζεται, αξιολογείται ή λειτουργεί."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Σε εργαλεία ανάλυσης με δύο εισόδους, το γνώρισμα αξιολογείται για φιλτράρισμα ή εμπλουτισμό."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Σε εργαλεία ανάλυσης με δύο εισόδους, το γνώρισμα παρέχει τιμές για αξιολόγηση ή εμπλουτισμό του γνωρίσματος προορισμού."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Τιμές ώρας που σχετίζονται με την ανάλυση, όπως ώρα έναρξης, τελευταία ώρα λήξης κλπ.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Το γνώρισμα που πρόκειται να σχεδιαστεί στον χάρτη.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Επιστρέφει την κλίμακα του χάρτη τη στιγμή που αξιολογείται η έκφραση."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

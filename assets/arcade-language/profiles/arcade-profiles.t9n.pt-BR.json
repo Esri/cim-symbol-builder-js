@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "O valor numérico para o qual um nome alternativo de texto é desejado."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição sendo calculada."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "O estado anterior da feição que está sendo calculada."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma tabela que o $feature que avalia a expressão."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature que executa o script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se o evento de edição é INSERT, UPDATE, DELETE ou NA (não aplicável)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição sendo calculada."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "O estado anterior da feição que está sendo calculada."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma tabela que o $feature que avalia a expressão."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature que executa o script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se o evento de edição é INSERT, UPDATE, DELETE ou NA (não aplicável)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição sendo calculada."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "O estado anterior da feição que está sendo calculada."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma tabela que o $feature que avalia a expressão."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature que executa o script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se o evento de edição é INSERT, UPDATE, DELETE ou NA (não aplicável)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "O ponto de dados que está sendo avaliado para o elemento visual."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "O valor de referência que está sendo avaliado para o elemento visual.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "O ponto de dados que está sendo avaliado para o elemento visual."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "O ponto de dados que está sendo avaliado para o elemento visual."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "A posição de uma linha na tabela (base zero)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Fornece acesso aos valores de atributo/campo de registro que está sendo calculado."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição que deve ser desenhada no mapa."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Um dicionário de valores de configuração.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição que exige um valor Z."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição sendo calculada."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature que executa o cálculo."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "A feição de origem para o mapa de campo."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "A feição de destino para o mapa de campo."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma camada que $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma camada que $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mapa da expressão Arcade em execução."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo armazenamento de dados que o $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo armazenamento de dados que o $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Expõe os atributos da feição para uso no cálculo"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "O estado anterior da feição que está sendo calculada."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma camada que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma tabela que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas de serviço da feição no mesmo mapa que $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se o evento de edição é INSERT, UPDATE, DELETE ou NA (não aplicável)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição que está sendo avaliada para a restrição."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "O estado anterior da feição."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma camada que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma tabela que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas de serviço da feição no mesmo mapa que $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se o evento de edição é INSERT, UPDATE, DELETE ou NA (não aplicável)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição sendo calculada."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "A feição de entrada (por exemplo, uma localização do dispositivo ou uma feição) que fez com que o geotrigger fosse ativado. Essa feição deve incluir uma geometria (geralmente um ponto) e um esquema fixo com as seguintes propriedades: `curso` (o curso do local em graus no sentido horário, sendo 0 o norte verdadeiro) e `horizontalaccuracy` (a precisão horizontal do local em metros)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "A feição de limite (por exemplo, uma área de interesse) que foi inserida ou saída e fez com que o Geotrigger fosse ativado."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Uma descrição do evento que ocorreu - \\\"entrou\\\" ou \\\"saiu\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição cujo rótulo deve ser desenhado no mapa."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição cujos valores podem ser exibidos no layout."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "A feição de atualização de localização (por exemplo, do GPS) sendo avaliada para a restrição.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "O curso do local em graus no sentido horário, sendo 0 o Norte verdadeiro."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "A precisão horizontal da localização em metros."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "A precisão vertical da localização em metros."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "A velocidade do local em metros por segundo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "O valor M interpolado para o local do marcador."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "A feição que deve ser desenhada no mapa."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Retorna a escala do mapa no momento que a expressão é avaliada."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Fornece acesso aos atributos e geometria da feição cujo pop-up deve ser exibido na visualização."
+      },
+      {
+        "name": "$layer",
+        "description": "Uma coleção de feições na mesma camada que o $feature cujo pop-up é exibido na visualização. Isso se aplica apenas às camadas de serviço da feição.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Uma coleção de camadas no mesmo mapa que o $feature cujo pop-up é exibido na visualização. Isso se aplica apenas às camadas de serviço da feição.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature cujo pop-up é exibido na visualização. Isso se aplica apenas às camadas de serviço da feição.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Fornece acesso aos campos agregados definidos em pop-ups de agrupamento ou categorização."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Um FeatureSet contendo todas as feições representadas pelo agrupamento ou categorização.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Expõe os atributos da feição para uso no cálculo"
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Uma coleção de feições na mesma camada que $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Uma coleção de camadas de serviço da feição no mapa usado pelo projeto do QuickCapture. Esta variável pode ser nula."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "A feição que está sendo avaliada pela tarefa.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Uma coleção de camadas no mesmo serviço da feição ou banco de dados que o $feature sendo avaliado pela tarefa.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Em ferramentas analíticas com entradas únicas, a feição sendo calculada, avaliada ou operada."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Em ferramentas analíticas com duas entradas, a feição sendo avaliada para filtragem ou enriquecimento."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Em ferramentas analíticas com duas entradas, a feição fornece valores para avaliação ou enriquecimento da feição de destino."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Valores de tempo associados à análise, como hora inicial, última hora final, etc.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "A feição que deve ser desenhada no mapa.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Retorna a escala do mapa no momento que a expressão é avaliada."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

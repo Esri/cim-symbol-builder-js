@@ -48,7 +48,28 @@
     display: flex;
     flex: 1 1 auto;
     flex-flow: column;
-    margin: $cap-spacing--half;
+    padding: $cap-spacing--half;
+    min-height: calc(100px - $cap-spacing);
+    max-height: $view-height--medium__component-max-height;
+    overflow-y: auto;
+
+    // When there are tooltip options and snapping options at the same time, we need to restore
+    // the border between them. Issue #55500
+    .esri-sketch-tooltip-controls:not(:only-child) calcite-block {
+      border-block-end-width: 1px;
+      border-style: solid;
+      border-color: var(--calcite-color-border-3);
+    }
+  }
+
+  .esri-view-height-xsmall .esri-sketch__menu-container {
+    min-height: calc(100% - $cap-spacing);
+    max-height: $view-height--xsmall__component-max-height;
+  }
+
+  .esri-view-height-small .esri-sketch__menu-container {
+    min-height: calc(100% - $cap-spacing);
+    max-height: $view-height--small__component-max-height;
   }
 
   .esri-sketch__section {
@@ -109,6 +130,13 @@
     }
   }
 
+  .esri-sketch--horizontal {
+    .esri-sketch__info-panel {
+      width: min-content;
+      min-width: 100%;
+    }
+  }
+
   .esri-sketch--vertical {
     flex-flow: row-reverse;
 
@@ -134,6 +162,9 @@
     }
 
     .esri-sketch__info-panel {
+      width: max-content;
+      max-width: 350px;
+
       &:empty {
         padding: 0;
       }

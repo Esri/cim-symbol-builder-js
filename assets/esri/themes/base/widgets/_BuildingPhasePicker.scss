@@ -2,84 +2,83 @@
  * Adds all the styles for the phase picker used in the building explorer.
  */
 @mixin buildingPhasePicker() {
-  $container: "esri-building-phase-picker";
-  $phases-container: "#{$container}__phases-container";
-  $phase: "#{$container}__phase";
-  $phase-active: "#{$container}__phase--active";
-  $phase-current: "#{$container}__phase--current";
-  $divider: "#{$container}__divider";
-  $divider-active: "#{$container}__divider--active";
-  $arrow-left: "#{$container}__arrow-left";
-  $arrow-right: "#{$container}__arrow-right";
+  .esri-building-phase-picker {
+    --num-phases: 7; // Should be an odd number so that we can have a phase in the middle
+    --divider-width: var(--calcite-spacing-xs);
+    --container-width: 100cqw;
+    --arrow-width: 16px;
+    --padding: var(--calcite-spacing-xxs);
+    --dividers-width: (var(--num-phases) - 1) * var(--divider-width);
+    --arrows-width: 2 * var(--arrow-width);
+    --phase-width: calc(
+      (var(--container-width) - var(--dividers-width) - var(--arrows-width) - var(--padding)) / var(--num-phases)
+    );
 
-  $phase-size: 32px;
-  $border-width: 1px;
-  $divider-min-width: $side-spacing;
+    container-type: inline-size;
 
-  .#{$container},
-  .#{$phases-container} {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .#{$phases-container} {
-    flex-grow: 0;
-    flex-shrink: 1;
-    padding: 5px;
-    overflow: hidden;
-  }
-
-  .#{$phase} {
-    appearance: none;
-    flex-shrink: 0;
-    transition: all 250ms;
-    border: solid $border-width $border-color;
-    border-radius: 100%;
-    background: $background-color;
-    cursor: pointer;
-    width: $phase-size;
-    height: $phase-size;
-    color: $font-color;
-    font-weight: $font-weight;
-
-    &:hover {
-      transform: scale(1.1); // Make it slightly bigger w/o affecting layout
-      box-shadow: 0 0 2px 1px $border-color--active;
+    &,
+    &__phases-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
-    &.#{$phase-active} {
-      border-color: $border-color--active;
-      background-color: $background-color--active;
+    &__phases-container {
+      position: relative;
+      flex-shrink: 1;
+      padding: var(--calcite-spacing-xxs);
+      overflow: hidden;
     }
 
-    &.#{$phase-current} {
-      background-color: $border-color--active;
-      color: $interactive-font-color--inverse;
+    &__phase {
+      appearance: none;
+      flex-shrink: 0;
+      border: solid var(--calcite-border-width-sm) $border-color;
+      border-radius: 100%;
+      background: var(--calcite-color-background);
+      cursor: pointer;
+      width: var(--phase-width);
+      aspect-ratio: 1;
+      color: var(--calcite-color-text-1);
+      font-weight: $font-weight;
+
+      &:hover {
+        border-width: var(--calcite-border-width-md);
+        border-color: var(--calcite-color-brand);
+      }
+
+      &:focus:focus-visible {
+        @include calciteExternalOutline();
+      }
+
+      &--active {
+        border-color: var(--calcite-color-brand);
+        background-color: $background-color--active;
+      }
+
+      &--current {
+        background-color: var(--calcite-color-brand);
+        color: var(--calcite-color-text-inverse);
+      }
     }
-  }
 
-  .#{$divider} {
-    flex-grow: 0;
-    background: $border-color;
-    min-width: $divider-min-width;
-    height: $border-width;
-
-    &.#{$divider-active} {
-      background-color: $border-color--active;
+    // Force the arrows to have a fixed width so that we can properly calculate the width of the
+    // container in order to center the phases and decide their size.
+    &__arrow-left,
+    &__arrow-right {
+      width: var(--arrow-width);
+      min-width: var(--arrow-width);
     }
-  }
 
-  .#{$arrow-left},
-  .#{$arrow-right} {
-    @include arrowButton();
-  }
+    &__divider {
+      flex: 0;
+      background: var(--calcite-color-border-1);
+      min-width: var(--divider-width);
+      height: var(--calcite-border-width-sm);
 
-  .#{$arrow-left} {
-    @extend .esri-arrow-left;
-  }
-
-  .#{$arrow-right} {
-    @extend .esri-arrow-right;
+      &--active {
+        background-color: var(--calcite-color-brand);
+      }
+    }
   }
 }

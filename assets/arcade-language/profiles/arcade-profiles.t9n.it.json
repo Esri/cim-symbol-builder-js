@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Il valore numerico per cui si desidera l'alias di testo."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Lo stato precedente della feature da calcolare."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nella stessa tabella della $feature che valuta l'espressione."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature che esegue lo script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se l'evento di modifica è INSERT, UPDATE, DELETE o NA (non applicabile)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Lo stato precedente della feature da calcolare."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nella stessa tabella della $feature che valuta l'espressione."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature che esegue lo script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se l'evento di modifica è INSERT, UPDATE, DELETE o NA (non applicabile)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Lo stato precedente della feature da calcolare."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nella stessa tabella della $feature che valuta l'espressione."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature che esegue lo script."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se l'evento di modifica è INSERT, UPDATE, DELETE o NA (non applicabile)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Il punto dati da valutare per l'elemento visivo."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Il valore di riferimento da valutare per l'elemento visivo.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Il punto dati da valutare per l'elemento visivo."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Il punto dati da valutare per l'elemento visivo."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "La posizione di una riga nella tabella (a partire da zero)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Consente di accedere ai valori di attributo/campo del record calcolato."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da disegnare sulla mappa."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Un dizionario di valori di configurazione.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature che richiede un valore Z."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature che esegue il calcolo."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "La feature di origine per la mappa del campo."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "La feature di destinazione per la mappa di campo."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Una raccolta di feature dallo stesso layer di $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Una raccolta di feature dallo stesso layer di $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nella mappa di esecuzione dell'espressione arcade."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso datastore di $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso datastore di $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Espone gli attributi della feature per l'uso nel calcolo"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Lo stato precedente della feature da calcolare."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nello stesso layer di $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database di $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nella stessa tabella di $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer feature service nella stessa mappa di $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se l'evento di modifica è INSERT, UPDATE, DELETE o NA (non applicabile)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare per il vincolo."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Lo stato precedente della feature."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nello stesso layer di $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database di $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nella stessa tabella di $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer feature service nella stessa mappa di $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Indica se l'evento di modifica è INSERT, UPDATE, DELETE o NA (non applicabile)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da calcolare."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "La feature di input (ad es. la posizione di un dispositivo o una feature) che ha causato l'attivazione del geotrigger. La feature deve includere una geometria (in genere un punto) e uno schema fisso con le seguenti proprietà: `course` (il corso della posizione in gradi in senso orario con 0 corrispondente al nord geografico) e `horizontalaccuracy` (la precisione orizzontale della posizione in metri)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "La feature recinto (ad es. un'area di interesse) in cui si è entrati o usciti e causando l'attivazione di Geotrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Una descrizione dell'evento verificatosi: \\\"entrata\\\" o \\\"uscita\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature di cui occorre disegnare l'etichetta sulla mappa."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature i cui valori possono essere visualizzati nel layout."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "La feature di aggiornamento della posizione (ad es. da GPS) da valutare per il vincolo.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "La traiettoria della posizione in gradi in senso orario, con 0 corrispondente al nord geografico."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "La precisione orizzontale della posizione in metri."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "La precisione verticale della posizione in metri."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "La velocità della posizione in metri al secondo."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Il valore M interpolato per la posizione del marcatore."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "La feature da disegnare sulla mappa."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Restituisce la scala della mappa al momento della valutazione dell'espressione."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Fornisce l'accesso agli attributi e alla geometria della feature di cui deve essere visualizzato il popup nella vista."
+      },
+      {
+        "name": "$layer",
+        "description": "Una raccolta di feature nello stesso layer della $feature di cui è visualizzato il popup nella vista. Si applica solo ai layer feature service.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Una raccolta di layer nella stessa mappa della $feature di cui è visualizzato il popup nella vista. Si applica solo ai layer feature service.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature di cui è visualizzato il popup nella vista. Si applica solo ai layer feature service.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Fornisce l'accesso ai campi aggregati definiti nei popup di clustering o binning."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "Un FeatureSet contenente tutte le feature rappresentate dal cluster o bin.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Espone gli attributi della feature per l'uso nel calcolo."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Una raccolta di feature nello stesso layer di $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer nello stesso feature service o database di $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Una raccolta di layer feature service nella mappa utilizzata dal progetto QuickCapture. Questa variabile può essere nulla."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "La feature che deve essere valutata dall'attività.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Una raccolta di layer nello stesso feature service o database della $feature che deve essere valutata dall'attività.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Negli strumenti analitici con singoli input la feature da calcolare, valutare o su cui agire."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "Negli strumenti analitici con due input, la feature da valutare per il filtraggio o l'arricchimento."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "Negli strumenti analitici con due input, la feature che fornisce valori per la valutazione o l'arricchimento della feature di destinazione."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Valori temporali associati all'analisi, ad esempio ora di inizio, ultima ora di fine ecc.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "La feature da disegnare sulla mappa.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Restituisce la scala della mappa al momento della valutazione dell'espressione."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

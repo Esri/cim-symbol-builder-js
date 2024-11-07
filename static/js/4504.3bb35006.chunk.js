@@ -1,0 +1,3 @@
+/*! For license information please see 4504.3bb35006.chunk.js.LICENSE.txt */
+"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[4504],{64504:(n,t,e)=>{e.r(t),e.d(t,{extractRegion:()=>i,getCountry:()=>o,global:()=>u});var r=e(49404);const u="Global";function i(n){if(function(n){return 0===(0,r.a)(n).countries.length}(n))return u;const t=n.indexOf("/");return-1===t?n:n.slice(0,t)}function o(n){return(0,r.b)(n)?.id??n}}}]);
+//# sourceMappingURL=4504.3bb35006.chunk.js.map

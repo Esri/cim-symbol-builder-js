@@ -1,0 +1,758 @@
+[
+  {
+    "name": "Minimalist",
+    "id": "minimalist",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Alias",
+    "id": "alias",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$value",
+        "type": "number",
+        "description": "Числове значення, для якого є бажаним псевдонім."
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule calculation",
+    "id": "attribute-rule-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "database",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який обчислюється."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Попередній стан об'єкта, який обчислюється."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тій самій таблиці, що й $feature, який оцінює вираз."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, який виконує скрипт."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Указує, чи редагуванням події є INSERT (вставити), UPDATE (оновити), DELETE (видалити) або NA (незастосовне)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule constraint",
+    "id": "attribute-rule-constraint",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який обчислюється."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Попередній стан об'єкта, який обчислюється."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тій самій таблиці, що й $feature, який оцінює вираз."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, який виконує скрипт."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Указує, чи редагуванням події є INSERT (вставити), UPDATE (оновити), DELETE (видалити) або NA (незастосовне)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Attribute rule validation",
+    "id": "attribute-rule-validation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який обчислюється."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Попередній стан об'єкта, який обчислюється."
+      },
+      {
+        "name": "$featureSet",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тій самій таблиці, що й $feature, який оцінює вираз."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, який виконує скрипт."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Указує, чи редагуванням події є INSERT (вставити), UPDATE (оновити), DELETE (видалити) або NA (незастосовне)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Dashboard indicator formatting",
+    "id": "dashboard-indicator-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точка даних, яка оцінюється за візуальним елементом."
+      },
+      {
+        "name": "$reference",
+        "type": "dictionary",
+        "description": "Опорне значення, яке оцінюється за візуальним елементом.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Dashboard list formatting",
+    "id": "dashboard-list-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точка даних, яка оцінюється за візуальним елементом."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard table formatting",
+    "id": "dashboard-table-formatting",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$datapoint",
+        "type": "feature",
+        "description": "Точка даних, яка оцінюється за візуальним елементом."
+      },
+      {
+        "name": "$rowindex",
+        "type": "number",
+        "description": "Положення рядка в таблиці (з відліком від нуля)."
+      }
+    ]
+  },
+  {
+    "name": "Dashboard data",
+    "id": "dashboard-data",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": []
+  },
+  {
+    "name": "Data Pipelines",
+    "id": "data-pipelines",
+    "bundles": [
+      "core"
+    ],
+    "variables": [
+      {
+        "name": "$record",
+        "type": "dictionary",
+        "description": "Надає доступ до значень атрибуту/поля обчислюваного запису."
+      }
+    ]
+  },
+  {
+    "name": "Dictionary renderer",
+    "id": "dictionary-renderer",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який буде намальований на карті."
+      },
+      {
+        "name": "$config",
+        "type": "dictionary",
+        "description": "Словник значень конфігурації.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Feature Z",
+    "id": "feature-z",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, для якого потрібне Z-значення."
+      }
+    ]
+  },
+  {
+    "name": "Field calculation",
+    "id": "field-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який обчислюється."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, який виконує обчислення."
+      }
+    ]
+  },
+  {
+    "name": "Field mapping",
+    "id": "field-mapping",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$sourceFeature",
+        "type": "feature",
+        "description": "Об'єкт-джерело для карти полів."
+      },
+      {
+        "name": "$targetFeature",
+        "type": "feature",
+        "description": "Цільовий об'єкт для карти полів."
+      },
+      {
+        "name": "$sourceLayer",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тому самому шарі, що й $sourcefeature."
+      },
+      {
+        "name": "$targetLayer",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тому самому шарі, що й $targetfeature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів на карті виконувального виразу Arcade."
+      },
+      {
+        "name": "$sourceDatastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тому самому сховищі даних, що й $sourcelayer."
+      },
+      {
+        "name": "$targetDatastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тому самому сховищі даних, що й $targetlayer."
+      }
+    ]
+  },
+  {
+    "name": "Form calculation",
+    "id": "form-calculation",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Розкриває атрибути об'єкта для використання в обчисленні"
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Попередній стан об'єкта, який обчислюється."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тому самому шарі, що й $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тій самій таблиці, що й $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів сервісу об'єктів у тій самій карті, що й $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Указує, чи редагуванням події є INSERT (вставити), UPDATE (оновити), DELETE (видалити) або NA (незастосовне)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Form Constraint",
+    "id": "form-constraint",
+    "bundles": [
+      "core",
+      "geometry",
+      "data-access",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який оцінюється за обмеженням."
+      },
+      {
+        "name": "$originalFeature",
+        "type": "feature",
+        "description": "Попередній стан об'єкта."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тому самому шарі, що й $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature."
+      },
+      {
+        "name": "$featureset",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тій самій таблиці, що й $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів сервісу об'єктів у тій самій карті, що й $feature."
+      },
+      {
+        "name": "$editcontext",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "editType",
+            "type": "text",
+            "description": "Указує, чи редагуванням події є INSERT (вставити), UPDATE (оновити), DELETE (видалити) або NA (незастосовне)."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Geoanalytics",
+    "id": "geoanalytics",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який обчислюється."
+      }
+    ]
+  },
+  {
+    "name": "Geotrigger notification",
+    "id": "geotrigger-notification",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feedfeature",
+        "type": "feature",
+        "description": "Вхідний об'єкт (наприклад, місце розташування пристрою або об'єкт), який спричинив активацію geotrigger. Цей об'єкт має включати геометрію (зазвичай точку) і фіксовану схему з такими властивостями: «курс» (курс місця розташування в градусах за годинниковою стрілкою, причому 0 означає істинну північ) і «горизонтальна точність» (горизонтальна точність місця розташування в метрах)."
+      },
+      {
+        "name": "$fencefeature",
+        "type": "feature",
+        "description": "Об'єкт паркану (наприклад, область інтересу), у якому здійснювався вхід або вихід та який спричинив активацію Geotrigger."
+      },
+      {
+        "name": "$fencenotificationtype",
+        "type": "text",
+        "description": "Опис події, яка відбулася - \\\"вхід\\\" або \\\"вихід\\\"."
+      }
+    ]
+  },
+  {
+    "name": "Labeling",
+    "id": "labeling",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, напис якого буде намальований на карті."
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "id": "layout",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, значення якого можуть відображатися на компонуванні."
+      }
+    ]
+  },
+  {
+    "name": "Location update constraint",
+    "id": "location-update-constraint",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$locationupdate",
+        "type": "dictionary",
+        "description": "Об'єкт оновлення місця розташування (наприклад, через GPS), який оцінюється за обмеженням.",
+        "properties": [
+          {
+            "name": "course",
+            "type": "number",
+            "description": "Напрямок місця розташування у градусах за годинниковою стрілкою коли 0 відповідає істинній півночі."
+          },
+          {
+            "name": "horizontalaccuracy",
+            "type": "number",
+            "description": "Горизонтальна точність місця розташування в метрах."
+          },
+          {
+            "name": "verticalaccuracy",
+            "type": "number",
+            "description": "Вертикальна точність місця розташування в метрах."
+          },
+          {
+            "name": "velocity",
+            "type": "number",
+            "description": "Швидкість місця розташування в метрах на секунду."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Measure visualization",
+    "id": "measure-visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$measure",
+        "type": "number",
+        "description": "Інтерпольоване M-значення для місця розташування маркера."
+      },
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Об'єкт, який буде намальований на карті."
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Повертає масштаб карти на час виконання оцінювання виразом."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "id": "popup",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Надає доступ до атрибутів і геометрії об'єкта, спливне вікно якого відображається в представленні."
+      },
+      {
+        "name": "$layer",
+        "description": "Колекція об'єктів у тому самому шарі, що й $feature, спливне вікно якого відображається в представленні. Це застосовується тільки до шарів сервісу об'єктів.",
+        "type": "featureSet"
+      },
+      {
+        "name": "$map",
+        "description": "Колекція шарів у тій самій карті, що й $feature, спливне вікно якого відображається в представленні. Це застосовується тільки до шарів сервісу об'єктів.",
+        "type": "featureSetCollection"
+      },
+      {
+        "name": "$datastore",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, спливне вікно якого відображається в представленні. Це застосовується тільки до шарів сервісу об'єктів.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Popup feature reduction",
+    "id": "popup-feature-reduction",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Надає доступ до агрегованих полів, визначених у спливних вікнах кластеризації або бінінгу."
+      },
+      {
+        "name": "$aggregatedFeatures",
+        "description": "FeatureSet, який містить усі об'єкти, представлені кластером або контейнером.",
+        "type": "featureSet"
+      }
+    ]
+  },
+  {
+    "name": "Quick Capture",
+    "id": "quick-capture",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "Розкриває атрибути об'єкта для використання в обчисленні."
+      },
+      {
+        "name": "$layer",
+        "type": "featureSet",
+        "description": "Колекція об’єктів у тому самому шарі, що й $feature."
+      },
+      {
+        "name": "$datastore",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature."
+      },
+      {
+        "name": "$map",
+        "type": "featureSetCollection",
+        "description": "Колекція шарів сервісу об'єктів у карті, яка використовується в проєкті QuickCapture. Ця змінна може бути нульовою."
+      }
+    ]
+  },
+  {
+    "name": "Tasks",
+    "id": "tasks",
+    "bundles": [
+      "core",
+      "data-access",
+      "geometry",
+      "portal-access"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Об'єкт, який оцінюється задачею.",
+        "type": "feature"
+      },
+      {
+        "name": "$datastore",
+        "description": "Колекція шарів у тих самих сервісі об'єктів або базі даних, що й $feature, оцінюваний у задачі.",
+        "type": "featureSetCollection"
+      }
+    ]
+  },
+  {
+    "name": "Velocity",
+    "id": "velocity",
+    "bundles": [
+      "core",
+      "geometry",
+      "track"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "type": "feature",
+        "description": "В інструментах аналітики з одинарним введенням початкових даних об'єкт обчислюється, оцінюється або з ним виконується операція."
+      },
+      {
+        "name": "$target",
+        "type": "feature",
+        "description": "В інструментах аналітики з подвійним введенням початкових даних об'єкт оцінюється для фільтрації або збагачення."
+      },
+      {
+        "name": "$join",
+        "type": "feature",
+        "description": "В інструментах аналітики з подвійним введенням початкових даних об'єкт надає значення для оцінювання або збагачення цільового об'єкта."
+      },
+      {
+        "name": "$analytic",
+        "type": "dictionary",
+        "description": "Значення часу, пов’язані з аналітикою, як-от час початку, останній час закінчення тощо.",
+        "properties": []
+      }
+    ]
+  },
+  {
+    "name": "Visualization",
+    "id": "visualization",
+    "bundles": [
+      "core",
+      "geometry"
+    ],
+    "variables": [
+      {
+        "name": "$feature",
+        "description": "Об'єкт, який буде намальований на карті.",
+        "type": "feature"
+      },
+      {
+        "name": "$view",
+        "type": "dictionary",
+        "properties": [
+          {
+            "name": "scale",
+            "type": "number",
+            "description": "Повертає масштаб карти на час виконання оцінювання виразом."
+          }
+        ],
+        "description": ""
+      }
+    ]
+  }
+]

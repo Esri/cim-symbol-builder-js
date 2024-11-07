@@ -1,0 +1,13 @@
+{
+  "close": "Închidere",
+  "console": "Consolă",
+  "output": "Ieşire",
+  "log": "Registru",
+  "consolemessage": "Utilizați funcția Consolă pentru a extrage mesaje.",
+  "lastexecutionformat": "Ultima executare {timeStamp}",
+  "compilationtimeformat": "Compilație {time}",
+  "executiontimeformat": "Execuție {time}",
+  "runscriptmessage": "Nu există ieșire, rulați scriptul o dată.",
+  "showingfirstitemsformat": "(Se afișează primele {count} elemente)",
+  "executionerrorformat": "Mesaj de eroare execuție: {message}. Verificați datele de testare."
+}

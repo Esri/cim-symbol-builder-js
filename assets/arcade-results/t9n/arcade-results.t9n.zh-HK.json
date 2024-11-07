@@ -1,0 +1,13 @@
+{
+  "close": "關閉",
+  "console": "控制台",
+  "output": "輸出",
+  "log": "記錄",
+  "consolemessage": "使用 Console 函數輸出訊息。",
+  "lastexecutionformat": "前次執行 {timeStamp}",
+  "compilationtimeformat": "匯編 {time}",
+  "executiontimeformat": "執行 {time}",
+  "runscriptmessage": "無輸出，執行指令碼一次。",
+  "showingfirstitemsformat": "(正在顯示前 {count} 個項目)",
+  "executionerrorformat": "測試執行錯誤: {message}。 驗證測試資料。"
+}

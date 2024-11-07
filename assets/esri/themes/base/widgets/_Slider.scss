@@ -256,6 +256,7 @@
   }
 
   .esri-slider__thumb {
+    box-sizing: border-box;
     position: absolute;
     top: -$slider-thumb-offset;
     left: -$slider-thumb-offset;

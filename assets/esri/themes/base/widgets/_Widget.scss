@@ -190,14 +190,15 @@
     }
 
     &__list-item {
-      @include icomoonIconSelector() {
-        padding-right: $font-size * 0.2;
-      }
-
       border-top: solid 1px $border-color;
       border-left: $border-size--active solid transparent;
       cursor: pointer;
       padding: 0.8em 1em;
+
+      /* stylelint-disable-next-line order/order */
+      @include icomoonIconSelector() {
+        padding-right: $font-size * 0.2;
+      }
     }
 
     &__list-item:first-child {
@@ -272,7 +273,6 @@
     border: 1px solid $border-color--input;
     background-color: $background-color;
     color: $font-color;
-    font-family: $font-family;
     font-size: $font-size;
 
     &::-ms-clear {
@@ -282,6 +282,10 @@
     &::placeholder {
       opacity: 1;
       color: $font-color--placeholder;
+    }
+
+    &:placeholder-shown {
+      text-overflow: ellipsis;
     }
 
     &[type="text"],
@@ -297,6 +301,7 @@
   }
 
   .esri-button {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -363,10 +368,6 @@
   .esri-button--drill-in {
     @include borderBoxShadow();
 
-    @include icomoonIconSelector() {
-      padding: 0 $side-spacing--half;
-    }
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -387,8 +388,12 @@
     }
 
     &__title {
-      font-family: $font-family;
       font-size: $font-size;
+    }
+
+    /* stylelint-disable-next-line order/order */
+    @include icomoonIconSelector() {
+      padding: 0 $side-spacing--half;
     }
   }
 
@@ -507,6 +512,13 @@
     color: $interactive-font-color;
     font-size: $font-size;
 
+    // Make Calcite widget button's default background match all other widget
+    // buttons, unless a custom appearance was specified
+    &:not([appearance]),
+    &[appearance="solid"] {
+      --calcite-color-foreground-3: $background-color;
+    }
+
     &:hover {
       background-color: $background-color--hover;
       color: $interactive-font-color--hover;
@@ -514,6 +526,16 @@
 
     &:active {
       background-color: $background-color--active;
+    }
+
+    &:is(calcite-button) {
+      // Put outline inside the button
+      --calcite-offset-invert-focus: 1;
+
+      // Make calcite-button's icon color match calcite-action's
+      &:not(:hover) {
+        --calcite-ui-icon-color: var(--calcite-color-text-3);
+      }
     }
 
     // Align Calcite loader horizontally
@@ -527,7 +549,7 @@
    ========================================================================== */
 
   .esri-ui-corner {
-    .esri-component {
+    .esri-component.esri-widget {
       @include defaultBoxShadow();
     }
 
@@ -540,8 +562,6 @@
       overflow-y: auto;
     }
 
-    .esri-expand .esri-widget--panel,
-    .esri-expand .esri-widget--panel-height-only,
     .esri-component > .esri-widget--panel,
     .esri-component.esri-widget--panel {
       width: $panel-width;
@@ -555,8 +575,6 @@
 
   // Max heights
   .esri-view-height-greater-than-medium {
-    .esri-expand .esri-widget--panel,
-    .esri-expand .esri-widget--panel-height-only,
     .esri-ui-corner .esri-component.esri-widget--panel,
     .esri-ui-corner .esri-component.esri-widget--panel-height-only {
       max-height: $view-height--gt-medium__component-max-height;
@@ -564,8 +582,6 @@
   }
 
   .esri-view-height-medium {
-    .esri-expand .esri-widget--panel,
-    .esri-expand .esri-widget--panel-height-only,
     .esri-ui-corner .esri-component.esri-widget--panel,
     .esri-ui-corner .esri-component.esri-widget--panel-height-only {
       max-height: $view-height--medium__component-max-height;
@@ -573,8 +589,6 @@
   }
 
   .esri-view-height-small {
-    .esri-expand .esri-widget--panel,
-    .esri-expand .esri-widget--panel-height-only,
     .esri-ui-corner .esri-component.esri-widget--panel,
     .esri-ui-corner .esri-component.esri-widget--panel-height-only {
       max-height: $view-height--small__component-max-height;
@@ -582,8 +596,6 @@
   }
 
   .esri-view-height-xsmall {
-    .esri-expand .esri-widget--panel,
-    .esri-expand .esri-widget--panel-height-only,
     .esri-ui-corner .esri-component.esri-widget--panel,
     .esri-ui-corner .esri-component.esri-widget--panel-height-only {
       max-height: $view-height--xsmall__component-max-height;
@@ -618,13 +630,14 @@
     }
 
     .esri-menu__list-item {
+      border-right: $border-size--active solid transparent;
+      border-left: none;
+
+      /* stylelint-disable-next-line order/order */
       @include icomoonIconSelector() {
         padding-right: 0;
         padding-left: math.floor($font-size * 0.2);
       }
-
-      border-right: $border-size--active solid transparent;
-      border-left: none;
     }
 
     .esri-menu__list-item--active {
