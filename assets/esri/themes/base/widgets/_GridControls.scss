@@ -1,0 +1,105 @@
+@mixin gridControls() {
+  // Prevent bad appearance when embedded in a block - ensures correct behavior when embedded in snapping controls
+  calcite-block > .esri-grid-controls {
+    background: none;
+    padding: 0;
+  }
+
+  .esri-ui-corner .esri-expand .esri-widget--panel .esri-widget--panel.esri-grid-controls {
+    overflow-y: visible;
+  }
+
+  .esri-grid-controls {
+    user-select: none;
+    display: flex;
+    flex-flow: column wrap;
+    padding: var(--esri-widget-padding);
+
+    // Update spacing on LabeledSwitch to have the same padding
+    // as other labeled elements in the form
+    calcite-label.esri-labeled-switch__label {
+      margin-block-end: var(--calcite-spacing-sm, 0.5rem);
+    }
+
+    &__switch--bordered {
+      border-width: 0 0 var(--calcite-spacing-px) 0;
+      border-style: solid;
+      border-color: var(--calcite-color-border-1);
+    }
+
+    &__container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      gap: var(--calcite-spacing-sm);
+    }
+
+    &__tilegroup {
+      display: flex;
+      column-gap: var(--calcite-spacing-md);
+      align-items: start;
+    }
+
+    &__tile__content {
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--calcite-spacing-md);
+      align-items: center;
+      padding: var(--calcite-spacing-md);
+      color: var(--calcite-color-text-2);
+
+      calcite-label {
+        // Fix for calcite putting its own internal margin in the label
+        margin-bottom: calc(0px - var(--calcite-label-margin-bottom, 0.75rem));
+        font-weight: var(--calcite-font-weight-medium);
+      }
+    }
+
+    &__tile {
+      position: relative;
+
+      &:focus-within {
+        outline: 2px solid var(--calcite-color-brand);
+        outline-offset: 2px;
+      }
+
+      &--disabled {
+        opacity: var(--calcite-opacity-disabled);
+      }
+
+      input[type="radio"] {
+        appearance: none;
+        position: absolute;
+        inset: 0;
+        opacity: 0.001;
+        border: var(--calcite-spacing-px) solid transparent;
+        cursor: pointer;
+
+        &:checked + .esri-grid-controls__tile__content {
+          border: var(--calcite-spacing-px) solid var(--calcite-color-brand);
+        }
+
+        + .esri-grid-controls__tile__content {
+          border: var(--calcite-spacing-px) solid transparent;
+        }
+      }
+    }
+
+    &__numeric-inputs__container {
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+      gap: var(--calcite-spacing-sm);
+    }
+
+    &__inline-icon {
+      margin-left: var(--calcite-spacing-xs);
+      vertical-align: top;
+      color: var(--calcite-color-status-warning);
+    }
+  }
+}
+
+@if $include_GridControls == true {
+  @include gridControls();
+}

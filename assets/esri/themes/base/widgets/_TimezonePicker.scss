@@ -12,6 +12,11 @@
     &__item-description {
       font-size: $font-size--tiny;
     }
+
+    // Workaround for #62321
+    calcite-dropdown:not([open]) calcite-dropdown-group {
+      display: none;
+    }
   }
 }
 

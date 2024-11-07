@@ -9,17 +9,22 @@
   $hover: "#{$base}--hover";
   $empty: "#{$base}--empty";
   $clear-button: "#{$base}__clear-button";
-  $clear-button-icon: "#{$base}__clear-button-icon";
 
   $width: 90px;
   $height: 40px;
   $padding: map.get($theme, padding);
 
   .#{$base} {
+    height: $height;
     text-align: center;
-    line-height: $height;
+    line-height: $height + 6px; // Center the text visually.
     color: map.get($theme, label-color);
     font-size: $height;
+
+    > span {
+      // The level text can be quite large and sometimes overlaps with the up/down arrows so we don't want it to be clickable.
+      pointer-events: none;
+    }
   }
 
   .#{$base},
@@ -43,28 +48,11 @@
   }
 
   .#{$clear-button} {
-    $size: 20px;
-    $icon-size: 12px;
-
     appearance: none;
     display: none;
     position: absolute;
-    top: 10px; // Align with the label.
-    transition: all 0.1s ease-in-out;
-    margin-left: $side-spacing--quarter;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: ($size - $icon-size) * 0.5;
-    width: $size;
-    height: $size;
-    line-height: $icon-size;
-    color: $interactive-font-color;
-    font-size: $icon-size;
-
-    &:hover {
-      background: $background-color--hover;
-    }
+    inset-block-start: -4px; // Align with the label.
+    margin-inline-start: $side-spacing--half;
   }
 
   // Show the button when we have an active level.
@@ -108,8 +96,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotateX(66deg) rotateZ(45deg);
-      margin-top: 3px;
+      margin-block-start: 3px;
       outline: solid 1px transparent; // So things don't move when focusing
       border: map.get($theme, level-border-width) solid map.get($theme, level-border-color);
       background-color: map.get($theme, level-background-color);
@@ -164,8 +151,6 @@
   $levels-inner-container: "#{$container}__inner-levels-container";
   $label-container: "#{$container}__label-container";
   $no-level: "#{$container}--no-level";
-  $arrow-up: "#{$container}__arrow-up";
-  $arrow-down: "#{$container}__arrow-down";
 
   $padding: 12px;
 
@@ -178,9 +163,9 @@
     level-border-color: $border-color,
     level-border-color--hover: $border-color--active,
     level-border-color--active: $border-color--active,
-    level-background-color: rgba(#fff, 0.7),
-    level-background-color--hover: rgba(#fff, 0.7),
-    level-background-color--active: $border-color--active
+    level-background-color: rgb(from var(--calcite-color-foreground-1) r g b / 70%),
+    level-background-color--hover: rgb(from var(--calcite-color-foreground-1) r g b / 90%),
+    level-background-color--active: $border-color--active,
   );
 
   @include _buildingLevelPickerLabel($container, $theme);
@@ -216,21 +201,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-right: $padding;
+    margin-inline-end: $padding;
     width: 50%;
-    height: 90px;
-  }
+    height: 104px;
 
-  .#{$arrow-up},
-  .#{$arrow-down} {
-    @include arrowButton();
-  }
-
-  .#{$arrow-up} {
-    @extend .esri-arrow-up;
-  }
-
-  .#{$arrow-down} {
-    @extend .esri-arrow-down;
+    &:focus:focus-visible {
+      @include calciteExternalOutline();
+    }
   }
 }

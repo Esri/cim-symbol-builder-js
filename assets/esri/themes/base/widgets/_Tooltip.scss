@@ -2,18 +2,26 @@
 
 @mixin tooltip() {
   .esri-tooltip {
-    --field-height: 14px;
-    --field-height--input: 22px;
+    // Calcite variables
+    --calcite-input-padding-inline: 0.5rem;
+    --calcite-input-height: 1.5rem;
+
+    // Tooltip variables
+    --field-height: 0.875rem;
+    --field-height--input: var(--calcite-input-height);
     --field-row-gap: 1px;
-    --field-column-gap: #{$side-spacing};
-    --font-family: #{$font-family};
+    --field-column-gap: var(--calcite-app-spacing-2);
+    --field-input-width: 6.5rem;
+    --field-title-extra-margin: var(--calcite-app-spacing-6);
+    --field-title-color: var(--calcite-color-text-2);
+    --field-value-color: var(--calcite-color-text-1);
     --font-size: var(--calcite-font-size--3);
-    --header-height: 24px;
-    --content-padding-inline: #{$side-spacing--half};
-    --content-padding-block: #{$cap-spacing--half};
-    --content-gap: var(--content-padding-block);
-    --help-message-border-spacing: #{$cap-spacing--half};
-    --suffix-width: 10px;
+    --font-size--input: var(--calcite-font-size--2);
+    --content-padding-inline: var(--calcite-app-spacing-2);
+    --content-padding-block: var(--calcite-app-spacing-2);
+    --help-message-border-spacing: var(--calcite-app-spacing-2);
+    --help-message-min-width: 7rem;
+    --icon-size--feedback: 0.625rem; // Shrink icon to keep tooltip more compact in feedback mode
 
     position: absolute;
     top: 0;
@@ -21,23 +29,30 @@
     z-index: 1;
     width: fit-content;
     overflow: visible;
+    will-change: transform;
 
     &-content {
       display: flex;
       position: relative;
       flex-direction: column;
-      gap: var(--content-gap);
-      border: solid 1 var(--calcite-ui-border-3);
-      border-radius: 3px;
-      box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
-      background: var(--calcite-ui-foreground-1);
+      gap: var(--content-padding-block);
+      outline: none !important;
+      border: solid 1px var(--calcite-color-border-3);
+      border-radius: 0.25rem; // Same as <calcite-popover>
+      box-shadow:
+        0 6px 20px -4px rgb(0 0 0 / 10%),
+        0 4px 12px -2px rgb(0 0 0 / 8%); // Same as <calcite-alert>
+
+      background: rgb(255 255 255 / 80%);
       padding-block: var(--content-padding-block);
       padding-inline: var(--content-padding-inline);
       width: min-content;
       line-height: 1.1em;
       color: $font-color;
-      font-family: var(--font-family);
       font-size: var(--font-size);
+      backdrop-filter: blur(4px);
+      touch-action: none;
+      view-transition-name: tooltip-content;
 
       // Hide the content altogether when there is nothing inside. Otherwise we'd
       // see a small empty square due to the tooltip padding.
@@ -50,28 +65,60 @@
         justify-content: flex-start;
         margin-block-start: calc(var(--content-padding-block) * -1);
         margin-inline: calc(var(--content-padding-inline) * -1); // Fill the whole width
-        border-block-end: solid 1px var(--calcite-ui-border-3);
+        border-block-end: solid 1px var(--calcite-color-border-3);
         padding-block-end: 0;
-        height: var(--header-height);
+        block-size: 24px; // Ensure the header has a height even if the actions aren't hydrated yet.
+
+        &__spacer {
+          flex-grow: 1;
+          flex-shrink: 1;
+        }
+
+        &__actions {
+          flex-grow: 0;
+          flex-shrink: 0;
+          padding-inline-end: var(--content-padding-inline);
+        }
+
+        calcite-button {
+          --calcite-offset-invert-focus: 1;
+        }
       }
 
       // In input mode we activate pointer events which are disabled by default on the overlay surface.
       &--input {
         --field-height: var(--field-height--input);
 
+        background: var(--calcite-color-foreground-1);
         pointer-events: all;
+        backdrop-filter: none;
+
+        // When the tooltip is in input mode but doesn't have focus in it, we reduce the opacity to
+        // make easier for the user to understand that keyboard input is not going to the tooltip.
+        &:not(:focus-within) {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &.calcite-mode-dark &-content {
+      background: rgb(0 0 0 / 80%);
+
+      &--input {
+        background: var(--calcite-color-foreground-1);
       }
     }
 
     &-table {
       display: grid;
-      grid-template-columns: min-content 1fr;
+      grid-template-columns: max-content 1fr max-content max-content; // 4 columns: label, input/value, unit/suffix, lock icon.
       grid-gap: var(--field-row-gap) var(--field-column-gap);
-      width: 100%;
+      align-items: center;
+      width: max-content;
     }
 
-    &-field,
-    &-editable-field {
+    // Older fields, which are not editable and just display a title and a value.
+    &-field {
       display: contents;
 
       &__title,
@@ -81,81 +128,91 @@
         justify-content: flex-start;
         block-size: var(--field-height);
         white-space: nowrap;
-
-        &__content {
-          display: flex;
-          gap: $side-spacing--eighth;
-          align-items: center;
-        }
+        color: var(--calcite-color-text-3);
       }
 
       &__title {
-        // Shrink icon to keep tooltip more compact in feedback mode
-        --icon-size: 10px;
-
-        calcite-icon {
-          width: var(--icon-size);
-          min-width: var(--icon-size);
-          height: var(--icon-size);
-          min-height: var(--icon-size);
-        }
+        margin-inline-end: var(--field-title-extra-margin);
+        color: var(--field-title-color);
       }
 
       &__value {
-        // Make numbers look nice as they change. See https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric
-        font-variant-numeric: tabular-nums;
+        grid-column: span 3;
+        color: var(--field-value-color);
+      }
+    }
+
+    &-editable-field {
+      display: contents;
+
+      &__title,
+      &__value {
+        align-items: center;
+        justify-content: flex-start;
+        block-size: var(--field-height);
+        white-space: nowrap;
       }
 
-      // In input mode we keep all the values with the same height
+      &__title {
+        display: flex;
+      }
+
+      &__value {
+        display: contents;
+        font-variant-numeric: tabular-nums; // Make numbers look nice as they change
+
+        &__content {
+          display: flex;
+          grid-column: span 3;
+          align-items: center;
+          min-width: max-content;
+
+          &--read-only {
+            padding-inline: var(--calcite-input-padding-inline);
+            block-size: var(--calcite-input-height);
+            line-height: var(--calcite-input-height);
+            font-size: var(--calcite-font-size--2);
+          }
+        }
+      }
+
+      &--feedback#{&}--locked &__value__content {
+        // When en editable field is locked in feedback mode, the value content can only span 2 columns,
+        // because the lock icon takes up the last column.
+        grid-column: span 2;
+      }
+
+      &--feedback &__title {
+        margin-inline-end: var(--field-title-extra-margin);
+        color: var(--field-title-color);
+      }
+
+      &--feedback &__value__content {
+        color: var(--field-value-color);
+      }
+
+      &--feedback &__lock-icon {
+        margin-top: -2px; // Visually align the icon with the text.
+        width: var(--icon-size--feedback);
+        min-width: var(--icon-size--feedback);
+        height: var(--icon-size--feedback);
+        min-height: var(--icon-size--feedback);
+      }
+
       &--input {
         padding: 0;
       }
 
-      &__input {
-        appearance: none;
-        box-sizing: border-box;
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 0;
-        border-color: var(--calcite-ui-border-input);
-        background-color: var(--calcite-ui-foreground-1);
-        padding-inline: 0.5em;
-        width: 70px;
-        block-size: var(--field-height);
-        line-height: var(--field-height);
-        color: var(--calcite-ui-text-1);
-        font-family: inherit;
-        font-size: var(--font-size);
-        font-weight: var(--calcite-font-weight-normal);
-
-        // Match Calcite styles
-        &:focus {
-          outline: 2px solid var(--calcite-ui-focus-color, var(--calcite-ui-brand));
-          outline-offset: calc(-2px * calc(1 - 2 * clamp(0, var(--calcite-ui-focus-offset-invert), 1)));
-        }
-
-        &--disabled {
-          opacity: var(--calcite-ui-opacity-disabled);
-          outline: none;
-        }
-
-        &--readonly {
-          background-color: var(--calcite-ui-background);
-          font-weight: var(--calcite-font-weight-medium);
-        }
+      &--input &__title {
+        font-size: var(--font-size--input);
       }
 
-      &__input-suffix {
-        min-width: var(--suffix-width);
+      &__input {
+        inline-size: var(--field-input-width);
       }
 
       &__button {
-        // Centers the button with the field, even if the field is larger.
-        --button-size: 24px;
-        --button-margin: calc(calc(var(--button-size) * -1) + var(--field-size));
-
-        width: var(--button-margin);
-        height: var(--button-margin);
+        width: var(--field-height--input);
       }
     }
 
@@ -167,25 +224,123 @@
     }
 
     &-help-message {
+      display: flex;
+      gap: var(--calcite-app-spacing-2);
+      align-items: center;
+      justify-content: center;
       margin-inline: calc(var(--content-padding-inline) * -1); // Fill the whole
-      border-block-start: solid 1px var(--calcite-ui-border-3);
-      padding-block-start: calc(var(--help-message-border-spacing) + var(--field-row-gap));
+      border-block-start: solid 1px var(--calcite-color-border-3);
+      border-block-end: solid 1px transparent; // Compensate for the top border, so everything aligns nicely.
+      padding-block-start: var(--content-padding-inline);
       padding-inline: var(--content-padding-inline); // Add back the content padding, because we apply a negative margin
       width: auto;
-      text-align: center;
+      min-width: var(--help-message-min-width);
+      text-align: left;
+      text-wrap: balance;
       white-space: break-spaces;
-      font-family: var(--font-family);
-      font-family: $font-family;
       font-size: var(--font-size);
 
       &:only-child {
         border-block-start: none;
+        border-block-end: none;
         padding-block-start: var(--field-row-gap);
       }
+
+      &__icon {
+        color: var(--calcite-color-status-info);
+      }
+
+      &__text {
+        padding-block-start: 2px; // Visually align the text with the icon, because the baseline of the text is off.
+      }
+    }
+
+    ::view-transition-old(tooltip-content),
+    ::view-transition-new(tooltip-content) {
+      animation-duration: 0.1s;
+    }
+  }
+}
+
+@mixin contentPositioning() {
+  .esri-tooltip {
+    --offset-start: calc(-100% - var(--offset));
+
+    &--debug::after {
+      --size: 10px;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: calc(var(--size) * -0.5);
+      margin-left: calc(var(--size) * -0.5);
+      background: red;
+      width: var(--size);
+      height: var(--size);
+      content: "";
+    }
+
+    &--bottom &-content {
+      transform: translate(-50%, var(--offset));
+    }
+
+    &--bottom-start.esri-tooltip--ltr &-content,
+    &--bottom-end.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset-start), var(--offset));
+    }
+
+    &--bottom-end.esri-tooltip--ltr &-content,
+    &--bottom-start.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset), var(--offset));
+    }
+
+    &--leading.esri-tooltip--ltr &-content,
+    &--trailing.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset-start), -50%);
+    }
+
+    &--leading-start.esri-tooltip--ltr &-content,
+    &--trailing-start.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset-start), var(--offset-start));
+    }
+
+    &--leading-end.esri-tooltip--ltr &-content,
+    &--trailing-end.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset-start), var(--offset));
+    }
+
+    &--top &-content {
+      transform: translate(-50%, var(--offset-start));
+    }
+
+    &--top-start.esri-tooltip--ltr &-content,
+    &--top-end.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset-start), var(--offset-start));
+    }
+
+    &--top-end.esri-tooltip--ltr &-content,
+    &--top-start.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset), var(--offset-start));
+    }
+
+    &--trailing.esri-tooltip--ltr &-content,
+    &--leading.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset), -50%);
+    }
+
+    &--trailing-start.esri-tooltip--ltr &-content,
+    &--leading-start.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset), var(--offset-start));
+    }
+
+    &--trailing-end.esri-tooltip--ltr &-content,
+    &--leading-end.esri-tooltip--rtl &-content {
+      transform: translate(var(--offset), var(--offset));
     }
   }
 }
 
 @if $include_Tooltip == true {
   @include tooltip();
+  @include contentPositioning();
 }

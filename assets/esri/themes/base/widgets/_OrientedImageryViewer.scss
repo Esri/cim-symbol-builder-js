@@ -1,7 +1,13 @@
 @mixin orientedImageryViewerBase() {
+  // variables
+  --esri-oriented-imagery-viewer-action-icon-size: 8px;
+  --esri-oriented-imagery-viewer-min-width: 288px;
+  --esri-oriented-imagery-viewer-min-height: 348px;
+
+  // overrides
   --calcite-font-weight-medium: $font-weight;
   --calcite-font-size-0: $font-size;
-  --calcite-icon-size: 8px;
+  --calcite-icon-size: var(--esri-oriented-imagery-viewer-action-icon-size);
 
   box-sizing: border-box;
   display: flex;
@@ -23,7 +29,7 @@
   height: 78px;
 }
 
-@mixin ToolContainer() {
+@mixin ToolContainer($height: 140px) {
   @include boxShadow("0 0 1px rgba(0, 0, 0, 0.3)");
 
   position: absolute;
@@ -32,29 +38,41 @@
   z-index: 1;
   margin: 0 1%;
   margin-top: auto;
-  border: 1px solid var(--calcite-ui-border-2);
+  border: 1px solid var(--calcite-color-border-2);
   width: 98%;
-  height: 140px;
+  height: #{$height};
+}
+
+@mixin Overlays($arg: 140px) {
+  @include ToolContainer($arg);
+
+  overflow-y: auto;
+
+  &-layer-list {
+    padding: 0 var(--calcite-spacing-md);
+  }
+
+  &-switch {
+    padding: 0 var(--calcite-spacing-md);
+  }
 }
 
 @mixin orientedImageryViewer() {
+  .esri-imagery-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
   .esri-oriented-imagery-viewer {
-    &--floating {
-      @include orientedImageryViewerBase();
+    @include orientedImageryViewerBase();
 
-      min-width: 386px;
-      max-width: 80vw;
-      min-height: 400px;
-      max-height: 78vh;
-    }
+    width: 100%;
+    min-width: var(--esri-oriented-imagery-viewer-min-width);
+    height: 100%;
+    min-height: var(--esri-oriented-imagery-viewer-min-height);
 
-    &--docked {
-      @include orientedImageryViewerBase();
-
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
+    &:has(.esri-widget .esri-oriented-imagery-viewer__image-overlays-no-result) {
+      --esri-oriented-imagery-viewer-min-height: 420px;
     }
 
     &__body {
@@ -67,21 +85,21 @@
       height: 100%;
 
       &-current-coverage {
-        --calcite-ui-icon-color: var(--calcite-ui-danger);
+        --calcite-ui-icon-color: var(--calcite-color-status-danger);
       }
 
       &-additional {
         &-camera-locations {
-          --calcite-ui-icon-color: var(--calcite-ui-brand);
+          --calcite-ui-icon-color: var(--calcite-color-brand);
         }
 
         &-coverage {
-          --calcite-ui-icon-color: var(--calcite-ui-info);
+          --calcite-ui-icon-color: var(--calcite-color-status-info);
         }
       }
 
       &-footprint {
-        --calcite-ui-icon-color: var(--calcite-ui-success);
+        --calcite-ui-icon-color: var(--calcite-color-status-success);
       }
     }
 
@@ -91,8 +109,7 @@
       &-container {
         display: inline-block;
         height: auto;
-        overflow-x: auto;
-        overflow-y: hidden;
+        overflow: auto hidden;
       }
 
       header {
@@ -111,7 +128,7 @@
         &-wrapper--selected {
           @include wrapper();
 
-          border: 2px solid var(--calcite-ui-brand);
+          border: 2px solid var(--calcite-color-brand);
         }
       }
 
@@ -127,7 +144,7 @@
       align-items: center;
       justify-content: center;
       order: 7;
-      background: var(--calcite-ui-foreground-1);
+      background: var(--calcite-color-foreground-1);
       width: 48px;
       height: 59px;
     }
@@ -148,6 +165,23 @@
       }
     }
 
+    &__image-overlays {
+      @include Overlays();
+
+      &-container {
+        display: flex;
+        height: auto;
+      }
+    }
+
+    &__image-overlays-no-result {
+      @include Overlays(auto);
+    }
+
+    &__image-overlays-increased-height {
+      @include Overlays(200px);
+    }
+
     &__viewer {
       display: flex;
       flex-grow: 1;
@@ -155,7 +189,7 @@
       cursor: url("data:text/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2226%22%20width%3D%2226%22%3E%0A%3Cpath%20stroke%3D%22%23000%22%20stroke-width%3D%221px%22%20fill%3D%22%23fff%22%20d%3D%22m15.3%2020.5s6.38-6.73%204.64-8.24-3.47%201.01-3.47%201.01%203.61-5.72%201.41-6.49c-2.2-0.769-3.33%204.36-3.33%204.36s0.873-5.76-1.06-5.76-1.58%205.39-1.58%205.39-0.574-4.59-2.18-4.12c-1.61%200.468-0.572%205.51-0.572%205.51s-1.58-4.89-2.93-3.79c-1.35%201.11%200.258%205.25%200.572%206.62%200.836%202.43%202.03%202.94%202.17%205.55%22%2F%3E%0A%3C%2Fsvg%3E%0A");
       width: 100%;
 
-      &--hide {
+      &--hidden {
         display: none;
       }
 
@@ -165,12 +199,18 @@
         flex-grow: 1;
         align-self: stretch;
         order: 1;
-        border-top: 1px solid var(--calcite-ui-border-3);
+        border-top: 1px solid var(--calcite-color-border-3);
         border-radius: 0 0 3px 3px;
-        background: var(--calcite-ui-foreground-1);
+        background: var(--calcite-color-foreground-1);
         width: 100%;
-        height: calc(100% - 49px);
+        height: 100%;
       }
+    }
+
+    &__alert {
+      position: absolute;
+      inset-block-end: var(--calcite-spacing-md);
+      inset-inline: var(--calcite-spacing-md);
     }
 
     @keyframes rotateOrientedImageryNavigationTool {
@@ -185,11 +225,14 @@
 
     &__message-box {
       display: flex;
-      position: absolute;
+      position: relative;
       align-items: center;
       justify-content: center;
+      padding: 0 25%;
       width: 100%;
       height: 100%;
+      text-align: center;
+      word-break: break-word;
       font-size: $font-size__body;
     }
 
@@ -201,12 +244,12 @@
       }
 
       &-feature {
-        fill: var(--calcite-ui-brand);
-        stroke: var(--calcite-ui-foreground-1);
+        fill: var(--calcite-color-brand);
+        stroke: var(--calcite-color-foreground-1);
         stroke-width: 1;
 
         &.selected {
-          fill: var(--calcite-ui-danger);
+          fill: var(--calcite-color-status-danger);
         }
 
         &-path {
@@ -214,12 +257,12 @@
 
           &-stop {
             &-offset-0 {
-              stop-color: var(--calcite-ui-danger);
+              stop-color: var(--calcite-color-status-danger);
               stop-opacity: 0.4;
             }
 
             &-offset-1 {
-              stop-color: var(--calcite-ui-danger);
+              stop-color: var(--calcite-color-status-danger);
               stop-opacity: 0.2;
             }
           }
@@ -227,7 +270,7 @@
       }
 
       &-pointer {
-        fill: var(--calcite-ui-foreground-1);
+        fill: var(--calcite-color-foreground-1);
         fill-rule: evenodd;
         stroke: rgb(0 0 0 / 0%);
         stroke-dasharray: none;
@@ -237,24 +280,26 @@
         stroke-width: 0;
 
         &-north {
-          fill: var(--calcite-ui-danger);
+          fill: var(--calcite-color-status-danger);
         }
       }
 
       &-wrapper {
         position: absolute;
+        right: 0;
         bottom: 0;
-        inset-inline: calc(100% - 120px) 0;
         z-index: 1;
+        overflow: hidden;
 
         &--zoomed {
-          transform: scale(1.5) translate(-12.5%, -12.5%);
+          transform: scale(1.5);
+          transform-origin: bottom right;
         }
 
         &-boundary {
-          fill: var(--calcite-ui-foreground-1);
+          fill: var(--calcite-color-foreground-1);
           fill-opacity: 0.25;
-          stroke: var(--calcite-ui-border-2);
+          stroke: var(--calcite-color-border-2);
         }
       }
 
@@ -262,29 +307,29 @@
         fill: none;
 
         &-separator {
-          stroke: var(--calcite-ui-border-2);
+          stroke: var(--calcite-color-border-2);
           stroke-width: 1;
         }
 
         &-cross {
-          stroke: var(--calcite-ui-danger);
+          stroke: var(--calcite-color-status-danger);
           stroke-width: 1;
         }
 
         &-enabled {
-          fill: var(--calcite-ui-foreground-1);
-          stroke: var(--calcite-ui-border-2);
+          fill: var(--calcite-color-foreground-1);
+          stroke: var(--calcite-color-border-2);
           stroke-width: 1;
         }
 
         &-disabled {
-          fill: var(--calcite-ui-foreground-3);
-          stroke: var(--calcite-ui-border-2);
+          fill: var(--calcite-color-foreground-3);
+          stroke: var(--calcite-color-border-2);
           stroke-width: 1;
         }
 
         &-outer {
-          fill: var(--calcite-ui-foreground-1);
+          fill: var(--calcite-color-foreground-1);
           fill-opacity: 0.4;
           stroke: none;
         }

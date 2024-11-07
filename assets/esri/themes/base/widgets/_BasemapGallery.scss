@@ -9,13 +9,14 @@
   $item-content-height: 40px;
 
   .esri-basemap-gallery {
-    @include loopingProgressBar(".esri-basemap-gallery__loader");
-
     position: relative;
     background-color: $background-color;
     width: auto;
     overflow-y: auto;
     color: $font-color;
+
+    /* stylelint-disable-next-line order/order */
+    @include loopingProgressBar(".esri-basemap-gallery__loader");
 
     &:focus-within {
       @include outlineStyle();
@@ -36,8 +37,7 @@
     &--grid &__item-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax($thumbnail-width, 1fr));
-      row-gap: $cap-spacing;
-      column-gap: $side-spacing;
+      gap: $cap-spacing $side-spacing;
       padding-block: $cap-spacing;
       padding-inline: $side-spacing;
     }
@@ -112,16 +112,17 @@
         span {
           display: -webkit-box;
           width: 100%;
-
-          // Used for truncating after two lines
-          // https://css-tricks.com/line-clampin/#aa-the-standardized-way
-          // https://drafts.csswg.org/css-overflow-3/#webkit-line-clamp
           overflow: hidden;
           text-align: start;
           text-overflow: ellipsis;
           overflow-wrap: break-word; // Force long words to break
-          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
+
+          // Used for truncating after two lines
+          // https://css-tricks.com/line-clampin/#aa-the-standardized-way
+          // https://drafts.csswg.org/css-overflow-3/#webkit-line-clamp
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
         }
       }
 
@@ -154,11 +155,9 @@
 
         calcite-chip {
           --calcite-font-size--2: var(--calcite-font-size--3);
-          --calcite-chip-spacing-s-internal: 0.15rem;
 
           cursor: inherit;
           max-width: 60px;
-          height: 16px;
         }
       }
 
@@ -172,6 +171,12 @@
     // When we don't have a lot of horizontal space, we make the thumbnails square.
     // See https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/52202
     &--narrow-items &__item {
+      // Ensure we stay above the small breakpoint to avoid going into a loop where the gallery
+      // switches to a grid layout, which becomes wider than the small breakpoint and causes it to
+      // go back to the default layout, which is narrower than the small breakpoint, and so on.
+      // See #63724
+      min-width: var(--esri-basemap-gallery-small);
+
       &-thumbnail {
         width: $thumbnail-width--narrow;
         min-width: $thumbnail-width--narrow;

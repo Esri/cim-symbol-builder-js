@@ -10,28 +10,19 @@
 
   .#{$base} {
     position: relative;
-    padding: $side-spacing;
+    padding: var(--esri-widget-padding);
     width: $panel-width;
     max-width: 100%;
     max-height: calc(100vh - #{$side-spacing--double});
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden auto;
 
     .esri-widget__heading {
       font-weight: $font-weight;
     }
   }
 
-  .#{$loading-container} {
-    text-align: center;
-
-    calcite-loader {
-      box-sizing: content-box;
-    }
-  }
-
   .#{$section}:not(:last-child) {
-    margin-bottom: $side-spacing--double;
+    margin-block-end: $side-spacing--double;
   }
 
   .#{$panel--error} {

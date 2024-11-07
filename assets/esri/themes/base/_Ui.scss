@@ -1,3 +1,13 @@
+// Avoid taking a snapshot of the root.
+:root {
+  view-transition-name: none;
+}
+
+// By default, avoid pointer events on view transition snapshots, so they don't prevent interaction.
+::view-transition {
+  pointer-events: none;
+}
+
 .esri-ui {
   box-sizing: border-box;
   position: absolute;
@@ -17,6 +27,57 @@
     right: 0;
     bottom: 0;
     left: 0;
+  }
+
+  .esri-fov-overlay-outer {
+    display: grid;
+    place-content: center center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .esri-fov-overlay {
+    display: flex;
+    flex-direction: row;
+    gap: $side-spacing--half;
+    align-items: center;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    text-shadow:
+      0 0 1px black,
+      0 0 2px black,
+      0 0 3px black;
+    color: white;
+    font-size: var(--calcite-font-size-3);
+    user-select: none;
+    pointer-events: none;
+
+    &-reset {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    &-text {
+      pointer-events: none;
+    }
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .esri-fov-overlay {
+    animation: none !important;
   }
 }
 

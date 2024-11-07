@@ -1,0 +1,107 @@
+@mixin batchAttributeForm() {
+  .esri-batch-attribute-form {
+    background-color: var(--calcite-color-background);
+    padding: var(--esri-widget-padding);
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__centered-button {
+      align-self: center;
+    }
+
+    &__description-text {
+      color: $interactive-font-color;
+      font-size: $font-size--small;
+    }
+
+    &_label {
+      calcite-notice,
+      .esri-batch-attribute-form__description-text {
+        margin-bottom: $cap-spacing--half;
+      }
+    }
+
+    &__input--switch {
+      margin: $side-spacing--half 0;
+    }
+
+    &__input--radio-label {
+      display: flex;
+      align-items: center;
+    }
+
+    &__input--radio-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__form-header {
+      margin-bottom: $cap-spacing;
+
+      .esri-batch-attribute-form__description-text ~ .esri-widget__heading {
+        margin-bottom: 0;
+      }
+    }
+
+    &__input {
+      width: 100%;
+
+      &:focus {
+        outline: var(--calcite-spacing-base) solid var(--calcite-color-brand);
+        outline-offset: -2px;
+      }
+    }
+
+    &__input--disabled {
+      background-color: var(--calcite-color-background);
+      font-weight: var(--calcite-font-weight-medium);
+    }
+
+    &__individual-element {
+      margin: var(--calcite-spacing-xxl) 0;
+    }
+
+    &__date-input-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-spacing-sm);
+      margin: var(--calcite-spacing-xxl) 0;
+
+      .esri-batch-attribute-form__input {
+        margin-bottom: $cap-spacing--quarter;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__group {
+      background-color: inherit;
+    }
+
+    &__group--sequential {
+      border-bottom: none;
+    }
+
+    &__block {
+      margin-inline: -10px;
+    }
+  }
+
+  [dir="rtl"] {
+    .esri-batch-attribute-form__date-input-part {
+      &:first-child .esri-batch-attribute-form__input {
+        border-right: var(--calcite-spacing-px) solid $border-color;
+        border-left: none;
+      }
+    }
+  }
+}
+
+@if $include_BatchAttributeForm == true {
+  @include batchAttributeForm();
+}

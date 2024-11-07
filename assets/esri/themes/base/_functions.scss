@@ -1,25 +1,23 @@
+@use "sass:color";
+
 //////////////////////////////
 //  Calculations
 @function offset-background-color($color, $percent) {
-  @if lightness($color) < 50 {
-    @return lighten($color, $percent);
+  @if get-lightness($color) < 50 {
+    @return color.adjust($color, $lightness: $percent);
   } @else {
-    @return darken($color, $percent);
+    @return color.adjust($color, $lightness: - $percent);
   }
 }
 
 @function offset-foreground-color($color, $percent) {
-  @if lightness($color) > 50 {
-    @return lighten($color, $percent);
+  @if get-lightness($color) > 50 {
+    @return color.adjust($color, $lightness: $percent);
   } @else {
-    @return darken($color, $percent);
+    @return color.adjust($color, $lightness: - $percent);
   }
 }
 
-@function fade-foreground-color($color, $percent) {
-  @if lightness($color) < 50 {
-    @return lighten($color, $percent);
-  } @else {
-    @return darken($color, $percent);
-  }
+@function get-lightness($color) {
+  @return color.channel(color.to-space($color, hsl), "lightness");
 }

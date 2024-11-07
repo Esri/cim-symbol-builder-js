@@ -14,7 +14,7 @@ $relationship_column_size: 85px;
 
   .esri-legend__service {
     border-bottom: 1px solid $border-color;
-    padding: $cap-spacing $side-spacing;
+    padding: var(--esri-widget-padding);
     word-wrap: break-word;
   }
 

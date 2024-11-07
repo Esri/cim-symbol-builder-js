@@ -29,17 +29,18 @@
   }
 
   .esri-item-list__group__header {
-    color: var(--calcite-ui-text-2);
+    color: var(--calcite-color-text-2);
     font-weight: var(--calcite-font-weight-medium);
   }
 
   .esri-item-list__list-item {
+    cursor: pointer;
+    min-height: $list-item-height;
+
+    /* stylelint-disable-next-line order/order */
     @include icomoonIconSelector("&") {
       padding-inline-end: $font-size * 0.2;
     }
-
-    cursor: pointer;
-    min-height: $list-item-height;
 
     &--disabled {
       cursor: default;
@@ -47,7 +48,9 @@
   }
 
   .esri-item-list__list-item-icon {
+    place-content: center;
     margin-inline: 0.75rem; // Matches default spacing used by Calcite
+    height: $list-item-height;
   }
 
   .esri-item-list__no-matches-message {

@@ -33,6 +33,7 @@
       height: 100%;
 
       a {
+        text-decoration: underline;
         color: $interactive-font-color;
 
         &:hover,
@@ -42,26 +43,153 @@
       }
     }
 
+    .esri-column__content--full {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .esri-column__header {
+      &-content {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-align: start;
+        font-weight: $font-weight;
+
+        &:has(calcite-icon:only-child) {
+          align-items: center;
+          justify-content: center;
+        }
+
+        div {
+          display: flex;
+          flex-flow: column wrap;
+          width: 100%;
+          min-height: var(--calcite-app-sizing-11);
+          overflow: hidden;
+
+          span {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: var(--calcite-app-font-line-height-fixed-3);
+          }
+        }
+
+        calcite-icon {
+          margin-inline-end: var(--calcite-spacing-xxs);
+          height: var(--calcite-app-sizing-9);
+        }
+
+        calcite-dropdown {
+          float: inline-end;
+          max-height: 180px;
+
+          // Avoid issues with menu growing outside of the viewport
+          calcite-dropdown-group {
+            max-width: 200px;
+            overflow-x: auto;
+
+            &:only-of-type {
+              max-height: 180px;
+              overflow: visible;
+            }
+          }
+
+          &[open] {
+            calcite-dropdown-item {
+              display: flex;
+            }
+          }
+
+          // Prevents frozen columns from appearing offset from the table edge on load.
+          // This is because VaadinGrid's positioning logic accounts for 'hidden' calcite dropdown items,
+          // since they use 'visibility: hidden' instead of 'display: none'.
+          calcite-dropdown-item,
+          calcite-dropdown-item[hidden] {
+            display: none;
+          }
+        }
+      }
+
+      &-description {
+        height: var(--calcite-app-sizing-9);
+        color: var(--calcite-color-text-3);
+        font-size: $font-size--small;
+      }
+    }
+
+    .esri-column__sorter:hover {
+      cursor: pointer;
+    }
+
     .esri-column__sorter,
     .esri-column__header-label {
       display: flex;
       flex-grow: 1;
       align-items: center;
-      margin: 0 5px;
-      min-height: 28px;
-      overflow: auto;
+      height: var(--calcite-app-sizing-9);
+      overflow: hidden;
+      color: var(--calcite-color-text-1);
+    }
+  }
+
+  .esri-column__header-menu-icon {
+    margin-inline-end: $side-spacing;
+  }
+
+  .esri-column__cell-input {
+    flex: 1 1 0;
+    border: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .esri-column__cell__input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    input,
+    select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0;
     }
 
-    .esri-column__menu-container {
-      display: inline-block;
-      margin: 0 5px;
-    }
-
-    .esri-column__header-content {
+    div,
+    input,
+    select {
       display: flex;
-      flex-grow: 1;
-      align-items: center;
-      overflow: visible;
+      width: 100%;
+    }
+
+    calcite-action-bar {
+      background-color: transparent;
+    }
+
+    div:first-child {
+      flex-direction: column;
+    }
+
+    calcite-input-time-zone {
+      --calcite-dropdown-width: 200px;
+    }
+
+    // Remove top border between stacked components for cleaner look.
+    // Only remove border on TimePicker when it's not the only visible component (2nd or last).
+    // Always remove the top border from TimeZone component (always displayed last)
+    calcite-input-time-picker:last-child,
+    calcite-input-time-picker:nth-child(2),
+    calcite-input-time-zone {
+      margin-top: -1px;
     }
   }
 }

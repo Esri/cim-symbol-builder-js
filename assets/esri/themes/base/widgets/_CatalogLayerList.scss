@@ -1,0 +1,98 @@
+@mixin catalogLayerList() {
+  .esri-catalog-layer-list {
+    display: flex;
+  }
+
+  .esri-catalog-layer-list__filter-no-results {
+    @include layerListFilterNoResults();
+  }
+
+  .esri-catalog-layer-list__item {
+    @include layerListItem();
+  }
+
+  .esri-catalog-layer-list__item-temporary-icon {
+    margin-inline-start: 0.25rem;
+  }
+
+  .esri-catalog-layer-list__item-table-icon {
+    margin-inline-end: 0;
+  }
+
+  .esri-catalog-layer-list__item-action-image {
+    @include layerListActionImage();
+  }
+
+  .esri-catalog-layer-list__action-menu .esri-catalog-layer-list__action-group {
+    display: none;
+  }
+
+  .esri-catalog-layer-list__action-menu[open] .esri-catalog-layer-list__action-group {
+    display: flex;
+  }
+
+  .esri-catalog-layer-list__visible-icon {
+    visibility: hidden;
+  }
+
+  .esri-catalog-layer-list__item--active:hover,
+  .esri-catalog-layer-list__item--active:focus,
+  .esri-catalog-layer-list__item--active:focus-within {
+    > .esri-catalog-layer-list__visible-toggle > .esri-catalog-layer-list__visible-icon {
+      visibility: visible;
+    }
+  }
+
+  .esri-catalog-layer-list__status-indicator {
+    @include layerListStatusIndicator();
+  }
+
+  .esri-catalog-layer-list__publishing {
+    @include layerListPublishingIndicator();
+
+    transform-origin: var(--calcite-list-item-icon-center) var(--calcite-list-item-icon-center);
+    animation: esri-catalog-layer-list__publishing-anim 2s normal infinite;
+  }
+
+  .esri-catalog-layer-list__updating {
+    @include layerListUpdatingIndicator();
+
+    animation: esri-catalog-layer-list__updating-anim 2s normal infinite;
+  }
+
+  .esri-catalog-layer-list__connection-status {
+    @include layerListConnectionStatus();
+  }
+
+  .esri-catalog-layer-list__connection-status--connected {
+    color: $connection-connected;
+  }
+
+  .esri-catalog-layer-list__item-content {
+    @include layerListItemContent();
+  }
+
+  .esri-catalog-layer-list__item-content-bottom {
+    @include layerListContentBottom();
+  }
+
+  .esri-catalog-layer-list__item-content-bottom .esri-legend__service {
+    @include layerListLegend();
+  }
+
+  .esri-catalog-layer-list__item-message {
+    @include layerListContentBottom();
+  }
+
+  @keyframes esri-catalog-layer-list__updating-anim {
+    @include layerListUpdating();
+  }
+
+  @keyframes esri-catalog-layer-list__publishing-anim {
+    @include layerListPublishing();
+  }
+}
+
+@if $include_CatalogLayerList == true {
+  @include catalogLayerList();
+}
