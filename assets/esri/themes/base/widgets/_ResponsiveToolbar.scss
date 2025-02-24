@@ -1,0 +1,105 @@
+@mixin responsiveToolbar() {
+  .esri-responsive-toolbar__ruler {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &--bar {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      visibility: hidden;
+      height: 0;
+
+      &--vertical {
+        width: 0;
+        height: 100%;
+      }
+    }
+
+    &--pad {
+      // When outside of container, set the width/height to 100%, lets developer
+      // control ultimate size.
+      &--vertical {
+        width: 0;
+        height: 100%;
+      }
+
+      &--horizontal {
+        width: 100%;
+        height: 0;
+      }
+    }
+  }
+
+  .esri-responsive-toolbar__bar {
+    > div {
+      display: contents;
+    }
+
+    &--horizontal {
+      min-width: 100%;
+    }
+
+    &--vertical {
+      min-height: 100%;
+    }
+  }
+
+  .esri-responsive-toolbar__pad {
+    display: contents;
+    width: min-content;
+
+    > div {
+      display: contents;
+    }
+  }
+
+  @container esri-view-canvas (min-height: 0) {
+    .esri-responsive-toolbar__ruler--pad {
+      &--vertical {
+        width: 0;
+        height: min(100vh - 120px, 100cqh - 120px);
+      }
+
+      &--horizontal {
+        width: min(100vw - 60px, 100cqw - 60px);
+        height: 0;
+      }
+    }
+  }
+
+  .esri-split-button--split-part {
+    &--vertical {
+      &--s {
+        max-height: 16px;
+      }
+
+      &--m {
+        max-height: 24px;
+      }
+
+      &--l {
+        // Smallest we can get away with given current Calcite behavior
+        max-height: 40px;
+      }
+    }
+
+    &--horizontal {
+      &--s,
+      &--m {
+        max-width: 16px;
+      }
+
+      &--l {
+        max-width: 24px;
+      }
+    }
+  }
+}
+
+@if $include_ResponsiveToolbar == true {
+  @include responsiveToolbar();
+}

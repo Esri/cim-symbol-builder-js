@@ -20,41 +20,12 @@
   }
 
   .esri-disabled {
+    pointer-events: none;
+
     .esri-slider__content,
     .esri-slider__min,
     .esri-slider__max {
       opacity: 0.4;
-    }
-
-    .esri-slider__thumb {
-      &:hover {
-        transform: none;
-        border-color: $button-color;
-        cursor: default;
-      }
-    }
-
-    .esri-slider__label {
-      &:hover {
-        cursor: default;
-      }
-    }
-
-    .esri-slider__segment {
-      &:hover {
-        cursor: default;
-      }
-    }
-
-    .esri-slider {
-      &--horizontal,
-      &--vertical {
-        .esri-slider__segment--interactive {
-          &:hover {
-            cursor: default;
-          }
-        }
-      }
     }
   }
 

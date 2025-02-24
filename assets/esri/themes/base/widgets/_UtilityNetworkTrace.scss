@@ -1,10 +1,6 @@
 @mixin UtilityNetworkTrace {
-  .esri-utility-trace-network {
+  .esri-utility-network-trace {
     flex: 1 1 auto;
-
-    &.esri-component.esri-widget--panel {
-      min-height: $panel-min-height--medium;
-    }
 
     calcite-icon {
       box-sizing: initial;
@@ -24,14 +20,47 @@
       margin-bottom: 0;
     }
 
+    &.esri-component.esri-widget--panel {
+      min-height: $panel-min-height--medium;
+    }
+
     &__add-button-container {
-      display: flex;
+      display: grid;
       justify-content: center;
       margin: $cap-spacing--plus-half 0 $cap-spacing;
     }
 
-    &__notice-container {
-      padding: $cap-spacing--half;
+    &__block {
+      &-container {
+        height: 95%;
+      }
+
+      &-content {
+        margin: 0;
+        border: {
+          bottom: none;
+        }
+      }
+    }
+
+    &__divider {
+      flex: 0 0 auto;
+      margin: 0 0 $cap-spacing 0;
+      border-bottom: $border;
+      border-color: $border-color--subtle;
+      color: inherit;
+    }
+
+    &__double-pad-top {
+      padding-top: 10px;
+    }
+
+    &__feature-content {
+      height: 300px;
+    }
+
+    &__flow {
+      height: 100%;
     }
 
     &__list-container {
@@ -39,16 +68,20 @@
       padding: $cap-spacing--quarter $side-spacing--quarter;
     }
 
-    &__flow {
-      height: 100%;
-    }
-
-    &__results-container {
-      height: 100%;
+    &__notice-container {
+      padding: $cap-spacing--half;
     }
 
     &__number-input {
       width: 150px;
+    }
+
+    &__pad-bottom {
+      padding-bottom: 5px;
+    }
+
+    &__pad-top {
+      padding-top: 5px;
     }
 
     &__reset-prompt {
@@ -68,22 +101,14 @@
       color: $font-color;
     }
 
-    &__divider {
-      flex: 0 0 auto;
-      margin: 0 0 $cap-spacing 0;
-      border-bottom: $border;
-      border-color: $border-color--subtle;
-      color: inherit;
-    }
-
-    &__padTop {
-      padding-top: 5px;
+    &__results-container {
+      height: 100%;
     }
   }
 }
 
 @media (prefers-reduced-motion) {
-  .esri-utility-trace-network__reset-prompt {
+  .esri-utility-network-trace__reset-prompt {
     animation: none;
   }
 }

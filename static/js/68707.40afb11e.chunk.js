@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[68707],{68707:(t,e,s)=>{s.d(e,{G:()=>i,S:()=>m});class i{*[Symbol.iterator](){let t=this.next();for(;t;)yield t,t=this.next()}}class m extends i{constructor(t){super(),this.m_iGeom=-1,this.m_aGeoms=t?t.slice():[]}next(){if(this.m_iGeom<this.m_aGeoms.length-1){const t=this.m_aGeoms[++this.m_iGeom];return this.m_aGeoms[this.m_iGeom]=null,t}return null}tock(){return!1}getGeometryID(){return this.m_iGeom}getRank(){return 1}}}}]);
+//# sourceMappingURL=68707.40afb11e.chunk.js.map

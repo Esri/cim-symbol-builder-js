@@ -66,6 +66,8 @@
     // container in order to center the phases and decide their size.
     &__arrow-left,
     &__arrow-right {
+      --calcite-internal-action-padding-inline: 0;
+
       width: var(--arrow-width);
       min-width: var(--arrow-width);
     }

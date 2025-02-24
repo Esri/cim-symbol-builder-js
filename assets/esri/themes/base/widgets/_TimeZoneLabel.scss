@@ -12,7 +12,7 @@
       color: var(--calcite-color-text-1);
 
       &--disabled {
-        opacity: var(--calcite-color-opacity-disabled);
+        opacity: var(--calcite-opacity-disabled);
       }
 
       &--hidden {
@@ -25,13 +25,25 @@
     }
 
     &__name {
-      align-self: center;
+      --calcite-color-background: transparent;
+      --calcite-color-border-input: transparent;
+      --calcite-font-weight-medium: normal;
+
+      pointer-events: none;
+
+      &--hidden {
+        display: none;
+      }
+    }
+
+    &__label {
+      --calcite-label-margin-bottom: 0;
+
+      align-items: center;
       padding-inline: var(--calcite-spacing-sm);
-      color: var(--calcite-color-text-1);
-      font-size: var(--calcite-font-size--2);
 
       &--disabled {
-        opacity: var(--calcite-color-opacity-disabled);
+        opacity: var(--calcite-opacity-disabled);
       }
 
       &--hidden {

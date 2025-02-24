@@ -64,6 +64,7 @@
 
   .esri-print__layout-tab {
     display: flex;
+    gap: $side-spacing--half;
     align-items: center;
     justify-content: center;
     margin: 0;

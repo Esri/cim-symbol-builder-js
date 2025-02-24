@@ -3,6 +3,10 @@
     background-color: var(--calcite-color-background);
     padding: var(--esri-widget-padding);
 
+    &__notice-error {
+      margin: 0 0 var(--calcite-spacing-xxl);
+    }
+
     &__form {
       display: flex;
       flex-direction: column;
@@ -14,13 +18,30 @@
 
     &__description-text {
       color: $interactive-font-color;
-      font-size: $font-size--small;
     }
 
-    &_label {
-      calcite-notice,
-      .esri-batch-attribute-form__description-text {
-        margin-bottom: $cap-spacing--half;
+    &__label {
+      @include wordbreak();
+
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      transition:
+        opacity 250ms,
+        margin 250ms;
+      opacity: 1;
+      margin-bottom: $cap-spacing--half;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-text-content {
+        @include wordbreak();
+
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -36,6 +57,11 @@
     &__input--radio-group {
       display: flex;
       flex-direction: column;
+    }
+
+    &__input--radio-placeholder {
+      color: var(--calcite-color-text-3);
+      font-style: italic;
     }
 
     &__form-header {
@@ -68,7 +94,6 @@
       display: flex;
       flex-direction: column;
       gap: var(--calcite-spacing-sm);
-      margin: var(--calcite-spacing-xxl) 0;
 
       .esri-batch-attribute-form__input {
         margin-bottom: $cap-spacing--quarter;
@@ -80,11 +105,14 @@
     }
 
     &__group {
+      margin: 0 0 $cap-spacing 0;
+      margin-inline: calc(var(--calcite-spacing-md) * -1); // offset to align form elements
       background-color: inherit;
     }
 
     &__group--sequential {
       border-bottom: none;
+      border-inline-start: 3px solid $border-color;
     }
 
     &__block {

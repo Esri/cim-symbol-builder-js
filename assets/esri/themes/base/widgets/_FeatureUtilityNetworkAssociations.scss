@@ -1,0 +1,33 @@
+@mixin featureUtilityNetworkAssociations() {
+  .esri-feature-utility-network-associations {
+    background-color: transparent;
+
+    &__list {
+      min-height: $list-item-height;
+    }
+
+    &__loading-container {
+      display: flex;
+      justify-content: center;
+      padding: $cap-spacing 0;
+      width: 100%;
+
+      &--sticky {
+        display: flex;
+        position: sticky;
+        bottom: 10px;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+        height: $list-item-height;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@if $include_FeatureUtilityNetworkAssociations == true {
+  @include featureUtilityNetworkAssociations();
+}

@@ -1,4 +1,1 @@
-{
-  "chooseDate": "Choose date",
-  "dateFormat": "Date Format:"
-}
+{"chooseDate":"Choose date","dateFormat":"Date Format: {format}"}

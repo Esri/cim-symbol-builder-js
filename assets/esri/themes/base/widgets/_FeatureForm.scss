@@ -7,6 +7,23 @@
     background-color: $panel-background-color;
     padding: var(--esri-widget-padding);
 
+    .esri-feature-utility-network-associations,
+    .esri-feature-form-utility-network-association-list {
+      margin-block-end: $cap-spacing;
+    }
+
+    .esri-feature-utility-network-associations {
+      .esri-feature-element-info {
+        &__description {
+          color: #6e6e6e;
+        }
+
+        h5 {
+          font-size: inherit;
+        }
+      }
+    }
+
     &__form {
       display: flex;
       flex-direction: column;
@@ -58,8 +75,6 @@
   }
 
   .esri-feature-form__label {
-    @include wordbreak();
-
     display: flex;
     position: relative;
     flex-direction: column;
@@ -75,6 +90,8 @@
     }
 
     &-text-content {
+      @include wordbreak();
+
       display: flex;
       align-items: center;
     }

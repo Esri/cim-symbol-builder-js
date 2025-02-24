@@ -9,6 +9,10 @@
   .esri-snapping-controls__layer-list-block {
     border-bottom: none;
     min-width: $panel-width--three-quarters;
+
+    &[open] {
+      margin-block: 0;
+    }
   }
 
   .esri-snapping-controls__layer-list {
@@ -28,11 +32,6 @@
         calcite-icon {
           margin-inline-start: 0;
         }
-      }
-
-      calcite-checkbox {
-        margin-left: 1rem;
-        padding-left: 2px;
       }
 
       calcite-icon {

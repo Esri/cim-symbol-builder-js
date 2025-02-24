@@ -1,5 +1,6 @@
 @mixin itemList() {
   $border: 1px solid $border-color;
+  $list-item-thumbnail-preview-height: calc($list-item-height - 10px);
 
   .esri-item-list {
     width: 100%;
@@ -48,9 +49,30 @@
   }
 
   .esri-item-list__list-item-icon {
-    place-content: center;
-    margin-inline: 0.75rem; // Matches default spacing used by Calcite
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: $list-item-height; // consistent width ensures labels line up even with variable icon sizes
     height: $list-item-height;
+
+    // CIM generator produces a span, and Esri's widget styling was setting a line height,
+    // causing image to be offset incorrectly.
+    span {
+      line-height: 0;
+    }
+  }
+
+  // In the case of shared templates,
+  // we get a massive 64x64 png icon. Point symbols take about 8px in the center.
+  // Lines and polygons fill the whole width. Solution is to show the thumbnail
+  // as the background of a precisely sized div.
+  // This actually works pretty well for now and the ~40px of dead space for points
+  // is hidden, and the cropped lines and polygons look basically unchanged from
+  // full-size version.
+  .esri-thumbnail-preview {
+    background-position: center;
+    width: $list-item-thumbnail-preview-height;
+    height: $list-item-thumbnail-preview-height;
   }
 
   .esri-item-list__no-matches-message {

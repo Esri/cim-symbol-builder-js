@@ -1,0 +1,19 @@
+@mixin filterBuilder() {
+  .esri-filter-builder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    calcite-fab {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      margin-block: var(--calcite-spacing-md);
+    }
+  }
+}
+
+@if $include_FilterBuilder == true {
+  @include filterBuilder();
+}

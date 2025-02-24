@@ -1,0 +1,80 @@
+@mixin featureFormUtilityNetworkAssociationLayers() {
+  .esri-feature-form-utility-network-association-layers {
+    background-color: transparent;
+
+    &__header {
+      > * {
+        margin-block-end: $cap-spacing;
+      }
+
+      > :last-child {
+        color: var(--calcite-color-text-3);
+      }
+    }
+
+    &__heading-content {
+      display: flex;
+      align-items: center;
+
+      calcite-icon {
+        margin-inline-end: $cap-spacing;
+      }
+    }
+
+    &__list-container {
+      min-height: $list-item-height;
+    }
+
+    &__feature-observer {
+      position: relative;
+      bottom: 20px;
+      z-index: 2;
+      text-align: center;
+    }
+
+    &__filter-container {
+      top: $cap-spacing;
+      z-index: 1;
+      margin-bottom: $cap-spacing;
+    }
+
+    &__filter-options-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__filter-options-header {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      span {
+        flex-grow: 1;
+      }
+    }
+
+    &__sticky-loading-container {
+      display: flex;
+      position: sticky;
+      bottom: 10px;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      margin: 0;
+      padding: 0;
+      height: $list-item-height;
+      pointer-events: none;
+    }
+
+    &__loading-container {
+      display: flex;
+      justify-content: center;
+      padding: $cap-spacing 0;
+      width: 100%;
+    }
+  }
+}
+
+@if $include_FeatureFormUtilityNetworkAssociationLayers == true {
+  @include featureFormUtilityNetworkAssociationLayers();
+}

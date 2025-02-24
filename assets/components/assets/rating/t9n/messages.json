@@ -1,4 +1,1 @@
-{
-  "rating": "Rating",
-  "stars": "Stars: {num}"
-}
+{"rating":"Rating","stars":"Stars: {num}"}

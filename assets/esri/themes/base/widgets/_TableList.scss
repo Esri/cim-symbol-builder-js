@@ -33,10 +33,6 @@
     animation: esri-table-layer-list__publishing-anim 2s normal infinite;
   }
 
-  .esri-table-list__item-content {
-    @include layerListItemContent();
-  }
-
   .esri-table-list__item-content-bottom {
     @include layerListContentBottom();
   }

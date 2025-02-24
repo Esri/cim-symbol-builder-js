@@ -14,6 +14,7 @@
     position: relative;
     isolation: isolate;
     padding: var(--esri-widget-padding);
+    container-type: inline-size;
 
     &.esri-component.esri-widget--panel {
       width: var(--width);
@@ -102,22 +103,22 @@
 
     // Portrait mode
     // We have vertical space so we'll size the chart and let the widget scale vertically.
+    @container (max-width: 400px) {
+      .esri-component.esri-widget--panel {
+        height: auto;
+      }
 
-    &--portrait,
-    &--portrait.esri-component.esri-widget--panel {
-      height: auto;
-    }
+      .esri-elevation-profile__footer {
+        flex-direction: column;
+      }
 
-    &--portrait &__footer {
-      flex-direction: column;
-    }
+      .esri-elevation-profile__action-button {
+        align-self: stretch;
+        margin-inline-start: 0;
 
-    &--portrait &__action-button {
-      align-self: stretch;
-      margin-inline-start: 0;
-
-      &:not(:last-of-type) {
-        margin-bottom: var(--actions-spacing-v);
+        &:not(:last-of-type) {
+          margin-bottom: var(--actions-spacing-v);
+        }
       }
     }
   }

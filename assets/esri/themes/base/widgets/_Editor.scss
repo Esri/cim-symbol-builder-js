@@ -52,6 +52,10 @@
       display: flex;
       flex-direction: row;
     }
+
+    &__half-width-button {
+      width: 50%;
+    }
   }
 }
 
@@ -224,6 +228,41 @@
 
     &__panel-content__scrim-container {
       overflow: hidden;
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // Pending Feature List
+    // ---------------------------------------------------------------------------------------------
+
+    &__pending-feature-list-icon {
+      display: flex;
+
+      &[icon="exclamation-mark-triangle"] {
+        color: var(--calcite-color-status-warning, #edd317);
+      }
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // Sketch
+    // ---------------------------------------------------------------------------------------------
+
+    &__sketch-container {
+      // Default calcite-action-* border behavior is ugly in the docked toolbar in horizontal layout
+      --calcite-action-group-border-color: transparent;
+
+      position: relative;
+      flex-shrink: 0;
+      margin: var(--calcite-spacing-sm, 8px);
+      border-width: var(--calcite-border-width-sm, 1px);
+      border-style: solid;
+      border-radius: var(--calcite-corner-radius-round, 4px);
+      border-color: var(--calcite-color-border-3, #dfdfdf);
+      min-height: min-content;
+      overflow: hidden;
+    }
+
+    &__sketch-container + &__panel-content {
+      padding-block-start: 0;
     }
 
     // ---------------------------------------------------------------------------------------------

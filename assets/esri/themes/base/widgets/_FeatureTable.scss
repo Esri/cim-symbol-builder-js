@@ -203,7 +203,7 @@
       &__list__thumbnail {
         align-items: center;
         justify-content: center;
-        margin-block: var(--calcite-size-sm);
+        margin-block: var(--calcite-spacing-sm);
 
         a {
           display: flex;
@@ -220,13 +220,14 @@
     }
 
     &__menu-popover {
-      @include defaultBoxShadow();
-
-      // Avoid issues with menu growing outside of the viewport
-      // 256px is roughly the height of a filter and 5 menu items.
-      max-width: 300px;
-      max-height: 256px;
-      overflow-y: auto;
+      calcite-list {
+        // Avoid issues with menu growing outside of the viewport
+        // 260px is roughly the height of a filter and 5 menu items.
+        // No scrollbar should be shown until there are 6+ menu items.
+        max-width: 300px;
+        max-height: 260px;
+        overflow-y: auto;
+      }
     }
 
     .esri-grid {
@@ -309,7 +310,7 @@
       overflow: hidden;
 
       > div:first-child {
-        margin-inline-end: var(--calcite-size-xxl);
+        margin-inline-end: var(--calcite-spacing-xxl);
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -317,7 +318,7 @@
 
       span {
         position: absolute;
-        inset-inline-end: var(--calcite-size-xxxl);
+        inset-inline-end: var(--calcite-spacing-xxxl);
         align-self: center;
       }
     }
@@ -342,10 +343,11 @@
   .esri-attachments-column__content {
     calcite-icon,
     img {
-      align-self: center;
+      display: inline-flex;
       margin-inline-end: var(--calcite-spacing-xxs);
       max-width: var(--calcite-app-sizing-9);
       max-height: var(--calcite-app-sizing-9);
+      vertical-align: middle;
     }
   }
 }
