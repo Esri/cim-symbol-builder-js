@@ -1,0 +1,13 @@
+@mixin featureUtilityNetworkAssociationList() {
+  .esri-feature-utility-network-association-list {
+    background-color: transparent;
+
+    &__list-item--hidden {
+      display: none;
+    }
+  }
+}
+
+@if $include_FeatureUtilityNetworkAssociationList == true {
+  @include featureUtilityNetworkAssociationList();
+}

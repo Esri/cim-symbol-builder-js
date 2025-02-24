@@ -16,6 +16,14 @@
   overflow: hidden;
   font-size: $font-size;
   pointer-events: none;
+  container: esri-view-canvas/size;
+  contain: layout;
+
+  calcite-flow,
+  calcite-panel {
+    position: relative;
+    z-index: 1;
+  }
 
   .esri-component {
     pointer-events: auto;

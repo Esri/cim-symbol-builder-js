@@ -1,0 +1,31 @@
+@mixin utilityNetworkAssociationList() {
+  .esri-utility-network-association-list {
+    &__feature-observer {
+      position: relative;
+      bottom: 20px;
+      z-index: 2;
+      text-align: center;
+    }
+
+    &__filter-container {
+      top: $cap-spacing;
+      z-index: 1;
+      margin-bottom: $cap-spacing;
+    }
+
+    &__limit-notice-container {
+      margin-bottom: $cap-spacing;
+    }
+
+    &__loading-container {
+      display: flex;
+      justify-content: center;
+      padding: $cap-spacing 0;
+      width: 100%;
+    }
+  }
+}
+
+@if $include_UtilityNetworkAssociationList == true {
+  @include utilityNetworkAssociationList();
+}

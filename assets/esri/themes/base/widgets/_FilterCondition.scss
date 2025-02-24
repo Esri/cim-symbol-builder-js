@@ -1,0 +1,12 @@
+@mixin filterCondition() {
+  .esri-filter-condition {
+    display: flex;
+    flex-direction: column;
+    gap: var(--calcite-spacing-sm);
+    width: 100%;
+  }
+}
+
+@if $include_FilterCondition == true {
+  @include filterCondition();
+}

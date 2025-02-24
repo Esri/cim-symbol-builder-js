@@ -3,16 +3,17 @@
     display: flex;
   }
 
+  .esri-basemap-layer-list__editing-form {
+    display: flex;
+    height: 100%;
+  }
+
   .esri-basemap-layer-list__filter-no-results {
     @include layerListFilterNoResults();
   }
 
   .esri-basemap-layer-list__item {
     @include layerListItem();
-  }
-
-  .esri-basemap-layer-list__item-temporary-icon {
-    margin-inline-start: 0.25rem;
   }
 
   .esri-catalog-layer-list__item-table-icon {
@@ -69,10 +70,6 @@
 
   .esri-basemap-layer-list__connection-status--connected {
     color: $connection-connected;
-  }
-
-  .esri-basemap-layer-list__item-content {
-    @include layerListItemContent();
   }
 
   .esri-basemap-layer-list__item-content-bottom {

@@ -11,10 +11,6 @@
     @include layerListItem();
   }
 
-  .esri-catalog-layer-list__item-temporary-icon {
-    margin-inline-start: 0.25rem;
-  }
-
   .esri-catalog-layer-list__item-table-icon {
     margin-inline-end: 0;
   }
@@ -66,10 +62,6 @@
 
   .esri-catalog-layer-list__connection-status--connected {
     color: $connection-connected;
-  }
-
-  .esri-catalog-layer-list__item-content {
-    @include layerListItemContent();
   }
 
   .esri-catalog-layer-list__item-content-bottom {

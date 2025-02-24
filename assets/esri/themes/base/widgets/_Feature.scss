@@ -33,6 +33,10 @@
     display: none;
   }
 
+  .esri-feature-utility-network-associations {
+    position: relative;
+  }
+
   .esri-feature__filter-container {
     position: sticky;
     top: $cap-spacing;

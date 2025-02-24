@@ -1,7 +1,10 @@
 @mixin utilityNetworkAssociations() {
   .esri-un-associations {
+    $header_height: 48px;
+    $panel_padding: 0.5rem;
+
     &__action {
-      height: 48px;
+      height: $header_height;
 
       &-refresh {
         --calcite-color-icon-color: #077ac2;
@@ -24,12 +27,20 @@
       }
     }
 
+    &__combobox {
+      max-width: 300px;
+    }
+
+    &__combobox-item {
+      max-width: 300px;
+    }
+
     &__div-controls {
       &-main {
         display: grid;
-        gap: 0.5rem;
+        gap: $panel_padding;
         background: var(--calcite-color-foreground-1) /* color */;
-        padding: 0.5rem 0;
+        padding: $panel_padding 0;
       }
 
       &-symbol-picker {
@@ -85,6 +96,11 @@
     &__label {
       height: 1rem;
 
+      &-and-combobox {
+        display: flex;
+        flex-direction: column;
+      }
+
       &-and-slider {
         display: flex;
         flex-direction: column;
@@ -101,14 +117,18 @@
       }
     }
 
+    &__panel {
+      max-height: calc(100vh - $header_height - $panel_padding);
+    }
+
     &__slider {
       padding: 0 0.5rem;
     }
 
     &__status-icon {
       &-container {
-        width: 48px;
-        height: 48px;
+        width: $header_height;
+        height: $header_height;
       }
 
       &-warning {
@@ -123,16 +143,16 @@
       padding: 0.5rem;
 
       &-container {
-        display: grid;
-        width: 48px;
-        height: 48px;
+        display: flex;
+        width: $header_height;
+        height: $header_height;
       }
     }
 
     &__widget-container {
       margin: 0;
       border-bottom: none;
-      width: 330px;
+      width: 350px;
     }
   }
 }

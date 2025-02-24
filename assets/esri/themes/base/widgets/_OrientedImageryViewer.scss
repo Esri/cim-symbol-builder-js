@@ -5,6 +5,8 @@
   --esri-oriented-imagery-viewer-min-height: 348px;
 
   // overrides
+  --calcite-dialog-size-x: 210px;
+  --calcite-dialog-min-size-y: 90px;
   --calcite-font-weight-medium: $font-weight;
   --calcite-font-size-0: $font-size;
   --calcite-icon-size: var(--esri-oriented-imagery-viewer-action-icon-size);
@@ -182,6 +184,29 @@
       @include Overlays(200px);
     }
 
+    &__measurement-results {
+      width: auto;
+      height: fit-content;
+    }
+
+    &__measurements-table {
+      margin-block-start: var(--calcite-spacing-sm);
+    }
+
+    &__measurements-bar {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    &__measurements-button {
+      display: flex;
+    }
+
+    &__measurement-display {
+      margin-block-end: var(--calcite-spacing-xxs);
+      text-align: center;
+    }
+
     &__viewer {
       display: flex;
       flex-grow: 1;
@@ -344,6 +369,15 @@
         height: 100%;
         max-height: unset;
       }
+    }
+
+    &__sketch-tools {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
   }
 }

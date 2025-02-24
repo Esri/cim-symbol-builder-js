@@ -9,11 +9,6 @@
     display: flex;
     flex-direction: column;
 
-    calcite-flow {
-      position: relative;
-      z-index: 1;
-    }
-
     img {
       image-orientation: from-image;
     }
@@ -36,6 +31,10 @@
     background-color: transparent;
   }
 
+  .esri-features .esri-feature-utility-network-associations {
+    background-color: transparent;
+  }
+
   .esri-features__heading {
     word-break: break-word;
     word-wrap: break-word;
@@ -44,8 +43,16 @@
   .esri-features__header,
   .esri-features__footer {
     display: flex;
+    flex: 1;
+    align-items: center;
     justify-content: flex-end;
     background-color: var(--calcite-color-foreground-1);
+  }
+
+  .esri-features__pagination-text {
+    padding-inline: var(--calcite-spacing-sm);
+    color: var(--calcite-color-text-3);
+    font-size: var(--calcite-font-size-sm);
   }
 
   .esri-features__loader {
@@ -55,7 +62,10 @@
 
   .esri-features__pagination-action-bar {
     flex: 1;
-    border-inline-end: 1px solid var(--calcite-color-border-3);
+  }
+
+  .esri-features__pagination-menu-button {
+    border-inline-start: 1px solid var(--calcite-color-border-3);
   }
 
   .esri-features__icon {
@@ -72,10 +82,6 @@
     background-size: contain;
     width: $action-size--image;
     height: $action-size--image;
-  }
-
-  .esri-features__footer {
-    flex: 1;
   }
 
   .esri-features__header {

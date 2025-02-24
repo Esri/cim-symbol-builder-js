@@ -113,7 +113,7 @@
       display: grid;
       grid-template-columns: max-content 1fr max-content max-content; // 4 columns: label, input/value, unit/suffix, lock icon.
       grid-gap: var(--field-row-gap) var(--field-column-gap);
-      align-items: center;
+      align-items: flex-start;
       width: max-content;
     }
 
@@ -188,10 +188,12 @@
       }
 
       &--feedback &__value__content {
+        align-self: center;
         color: var(--field-value-color);
       }
 
       &--feedback &__lock-icon {
+        align-self: center;
         margin-top: -2px; // Visually align the icon with the text.
         width: var(--icon-size--feedback);
         min-width: var(--icon-size--feedback);
@@ -207,8 +209,18 @@
         font-size: var(--font-size--input);
       }
 
-      &__input {
+      &__input-wrapper {
         inline-size: var(--field-input-width);
+      }
+
+      &__input-message {
+        margin-block-end: var(--calcite-input-message-spacing-value);
+        width: 100%;
+        text-wrap: auto;
+      }
+
+      &__input-suffix {
+        line-height: var(--field-height--input);
       }
 
       &__button {

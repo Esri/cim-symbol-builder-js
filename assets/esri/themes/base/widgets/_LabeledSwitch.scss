@@ -10,6 +10,7 @@
       gap: $side-spacing--half;
       align-items: center;
       text-wrap: balance;
+      z-index: 1; // Above the switch. Otherwise tooltips can appear below
 
       > div {
         flex-grow: 1;
@@ -30,6 +31,7 @@
 
     &__tooltip {
       text-wrap: wrap;
+      position: fixed;
     }
   }
 }

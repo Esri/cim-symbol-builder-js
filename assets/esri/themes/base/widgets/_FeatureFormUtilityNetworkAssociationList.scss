@@ -1,0 +1,46 @@
+@mixin featureFormUtilityNetworkAssociationList() {
+  .esri-feature-form-utility-network-association-list {
+    background-color: transparent;
+
+    &__header {
+      > * {
+        margin-block-end: $cap-spacing;
+      }
+
+      > :last-child {
+        color: var(--calcite-color-text-3);
+      }
+
+      calcite-block {
+        margin-block-start: calc($cap-spacing--plus-half * -1);
+        margin-inline: calc($side-spacing * -1);
+      }
+    }
+
+    &__heading-content {
+      display: flex;
+      align-items: center;
+
+      calcite-icon {
+        margin-inline-end: $cap-spacing;
+      }
+    }
+
+    &__list-container {
+      display: flex;
+      flex-direction: column;
+      min-height: $list-item-height;
+
+      calcite-fab {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        margin-block: var(--calcite-spacing-md);
+      }
+    }
+  }
+}
+
+@if $include_FeatureFormUtilityNetworkAssociationList == true {
+  @include featureFormUtilityNetworkAssociationList();
+}
