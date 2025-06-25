@@ -24,7 +24,8 @@
 
       // Checkerboard pattern (see https://www.magicpattern.design/tools/css-backgrounds)
       background-color: $checkerboard-light;
-      background-image: repeating-linear-gradient(
+      background-image:
+        repeating-linear-gradient(
           45deg,
           $checkerboard-dark 25%,
           transparent 25%,

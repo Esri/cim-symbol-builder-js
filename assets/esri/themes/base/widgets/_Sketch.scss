@@ -13,6 +13,10 @@
       gap: var(--calcite-spacing-sm, 8px);
       justify-content: flex-start;
 
+      &:dir(rtl) {
+        flex-flow: row-reverse wrap;
+      }
+
       &.esri-sketch--vertical {
         flex-flow: column wrap;
         justify-content: flex-start;
@@ -40,10 +44,6 @@
       &.esri-sketch--vertical {
         flex-flow: row;
       }
-    }
-
-    &:dir(rtl) {
-      flex-flow: row-reverse wrap;
     }
 
     &__popover-wrapper {

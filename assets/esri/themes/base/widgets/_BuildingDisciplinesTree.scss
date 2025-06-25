@@ -6,7 +6,6 @@
     &__label {
       --calcite-label-margin-bottom: 0;
 
-      padding-block: var(--calcite-spacing-xs);
       word-break: break-all; // Allow long words to break: #63859
     }
   }

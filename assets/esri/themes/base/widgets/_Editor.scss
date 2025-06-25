@@ -82,12 +82,35 @@
 
     &__actions {
       display: flex;
+      flex-direction: column;
       row-gap: $cap-spacing--half;
       width: 100%;
+
+      > * {
+        display: flex;
+        flex-direction: row;
+      }
+
+      &--notice {
+        display: flex;
+        flex-direction: row;
+        gap: $cap-spacing--half;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        calcite-icon {
+          --calcite-icon-color: var(--calcite-color-brand);
+        }
+      }
 
       calcite-button {
         flex-grow: 1;
       }
+    }
+
+    &__update-actions .esri-editor__selection-toolbar-container {
+      margin: 0;
     }
 
     &__update-actions-list {
@@ -102,7 +125,8 @@
       width: 100%;
     }
 
-    .esri-feature-form {
+    .esri-feature-form,
+    .esri-batch-attribute-form {
       padding: 0;
       width: 100%;
 
@@ -246,7 +270,8 @@
     // Sketch
     // ---------------------------------------------------------------------------------------------
 
-    &__sketch-container {
+    &__sketch-container,
+    &__selection-toolbar-container {
       // Default calcite-action-* border behavior is ugly in the docked toolbar in horizontal layout
       --calcite-action-group-border-color: transparent;
 
@@ -261,7 +286,8 @@
       overflow: hidden;
     }
 
-    &__sketch-container + &__panel-content {
+    &__sketch-container + &__panel-content,
+    &__selection-toolbar-container + &__panel-content {
       padding-block-start: 0;
     }
 
@@ -337,6 +363,20 @@
         word-break: break-all;
         font-size: var(--calcite-font-size--3);
       }
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // Selection
+    // ---------------------------------------------------------------------------------------------
+
+    .esri-selection-toolbar {
+      background-color: transparent;
+    }
+
+    .esri-selection-list {
+      margin-inline: -$panel-padding-inline;
+      width: auto;
+      max-height: max-content;
     }
 
     // ---------------------------------------------------------------------------------------------

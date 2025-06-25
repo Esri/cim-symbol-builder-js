@@ -93,9 +93,9 @@
       }
 
       &--small {
+        inset-inline-start: 0;
         top: -22px; // Align top of the chart with icon of header buttons;
         left: unset;
-        inset-inline-start: 0;
         transform: none;
         color: var(--calcite-color-brand);
       }
@@ -171,8 +171,8 @@
 
     &__color-indicator {
       position: absolute;
-      top: 0;
       inset-inline-start: 0;
+      top: 0;
       width: 3px;
       height: 100%;
     }

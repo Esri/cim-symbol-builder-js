@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[386,90596],{90596:(a,r,t)=>{t.d(r,{g:()=>o});const o=()=>[2,1,1,1,3].map((a=>{let r="";for(let t=0;t<a;t++)r+=(65536*(1+Math.random())|0).toString(16).substring(1);return r})).join("-")},29845:(a,r,t)=>{t.r(r),t.d(r,{Loader:()=>o.Loader});var o=t(94004)}}]);
+//# sourceMappingURL=386.baccc18f.chunk.js.map

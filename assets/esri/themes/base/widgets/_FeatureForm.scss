@@ -97,6 +97,10 @@
     }
   }
 
+  .esri-feature-form__disabled-notice {
+    margin-bottom: $cap-spacing--plus-half;
+  }
+
   .esri-feature-form__form-header {
     margin-bottom: $cap-spacing;
 
@@ -196,7 +200,8 @@
         outline-offset 0s;
       border-style: none;
       background-color: transparent;
-      background-image: linear-gradient(currentColor, currentColor),
+      background-image:
+        linear-gradient(currentColor, currentColor),
         linear-gradient(var(--calcite-color-brand-underline), var(--calcite-color-brand-underline));
       background-position-x: 0%, 100%;
       background-position-y: min(1.5em, 100%);

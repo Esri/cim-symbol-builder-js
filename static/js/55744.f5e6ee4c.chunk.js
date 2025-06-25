@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[55744],{55744:(p,s,e)=>{e.r(s),e.d(s,{execute:()=>a.e,supportsCurves:()=>a.s});var a=e(1736);e(31633),e(58067)}}]);
