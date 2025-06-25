@@ -33,10 +33,15 @@
     flex: 1 1 auto;
   }
 
+  // Cancel out default widget styles when inside of the expand widget.
+  .esri-ui-corner .esri-expand__popover-content,
+  .esri-ui-corner .esri-expand__panel-content,
   .esri-expand__popover-content,
   .esri-expand__panel-content {
-    .esri-widget {
+    .esri-widget,
+    .esri-widget.esri-component {
       box-sizing: border-box;
+      margin-bottom: 0;
       box-shadow: none;
     }
   }

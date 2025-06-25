@@ -87,9 +87,10 @@
 
       display: flex;
       align-items: center;
-      background-color: var(--calcite-ui-foreground-1);
+      background-color: var(--calcite-color-foreground-1);
       padding-block-start: var(--calcite-spacing-base); // Height of calcite progress component
       width: 100%;
+      line-height: initial;
 
       calcite-action:first-child {
         transform: scaleX(-1);
@@ -154,6 +155,10 @@
 
           fieldset {
             border: none;
+
+            calcite-label {
+              word-break: break-all;
+            }
 
             calcite-button {
               margin-bottom: var(--calcite-spacing-sm);

@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunkmy_app=globalThis.webpackChunkmy_app||[]).push([[15273],{15273:(e,s,t)=>{t.d(s,{NonSimpleResult:()=>n});class n{assign(e){this.m_reason=e.m_reason,this.m_vertexIndex1=e.m_vertexIndex1,this.m_vertexIndex2=e.m_vertexIndex2}constructor(e,s,t){void 0!==e?(this.m_reason=e,this.m_vertexIndex1=s,this.m_vertexIndex2=t):(this.m_reason=0,this.m_vertexIndex1=-1,this.m_vertexIndex2=-2)}clear(){this.m_reason=0,this.m_vertexIndex1=-1,this.m_vertexIndex2=-1}}}}]);
+//# sourceMappingURL=15273.6fc6b445.chunk.js.map

@@ -1,0 +1,96 @@
+@mixin selectionList() {
+  .esri-selection-list {
+    display: flex;
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+
+    &__flow-item,
+    &__panel,
+    &__container {
+      display: flex;
+    }
+
+    &__flow-item {
+      overflow: auto;
+
+      &[scale="s"] .esri-selection-list__container {
+        gap: var(--calcite-spacing-sm);
+        padding: var(--calcite-spacing-sm) 0;
+      }
+
+      &[scale="m"] .esri-selection-list__container {
+        gap: var(--calcite-spacing-md);
+        padding: var(--calcite-spacing-md) 0;
+      }
+
+      &[scale="l"] .esri-selection-list__container {
+        gap: var(--calcite-spacing-lg);
+        padding: var(--calcite-spacing-lg) 0;
+      }
+    }
+
+    &__container {
+      flex-direction: column;
+      background-color: var(--calcite-color-foreground-1);
+
+      > * {
+        background-color: var(--calcite-color-foreground-1);
+
+        &[scale="s"] {
+          padding: 0 var(--calcite-spacing-sm) 0 var(--calcite-spacing-sm);
+          font-size: var(--calcite-font-size-sm);
+        }
+
+        &[scale="m"] {
+          padding: 0 var(--calcite-spacing-md) 0 var(--calcite-spacing-md);
+          font-size: var(--calcite-font-size-md);
+        }
+
+        &[scale="l"] {
+          padding: 0 var(--calcite-spacing-lg) 0 var(--calcite-spacing-lg);
+          font-size: var(--calcite-font-size-lg);
+        }
+      }
+    }
+
+    .esri-selection-list__list-item__feature-icon {
+      .esri-selection-list__list-item__icon {
+        margin-inline-start: calc(var(--calcite-spacing-lg) * -1);
+      }
+    }
+
+    .esri-selection-list__list-item__icon {
+      min-width: var(--calcite-spacing-xxl);
+      height: var(--calcite-spacing-xxl);
+    }
+
+    &__list-item {
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          line-height: 0;
+        }
+      }
+    }
+
+    &__total-count {
+      align-self: center;
+      margin-inline: var(--calcite-spacing-xxs);
+      line-height: initial;
+    }
+
+    &__item-count {
+      display: flex;
+      gap: 0.5em;
+      align-items: center;
+    }
+  }
+}
+
+@if $include_SelectionList == true {
+  @include selectionList();
+}

@@ -251,6 +251,80 @@
         width: auto;
       }
     }
+
+    &__print-document {
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: var(--calcite-z-index-overlay);
+      background-color: var(--calcite-color-foreground-1);
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    &__print-body {
+      display: flex;
+      flex-direction: column;
+      padding-inline: var(--calcite-spacing-md);
+    }
+
+    &__print-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--calcite-spacing-lg);
+      border-block-end: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+    }
+
+    &__print-header-label {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding-block: var(--calcite-spacing-sm);
+      line-height: var(--calcite-font-line-height-relative-snug);
+      color: var(--calcite-color-text-3);
+      font-size: var(--calcite-font-size--2);
+      font-weight: var(--calcite-font-weight-bold);
+    }
+
+    &__print-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: var(--calcite-spacing-md);
+    }
+
+    &__print-header-buttons {
+      display: flex;
+      padding-inline-end: var(--calcite-spacing-md);
+    }
+
+    &__print--avoid-page-break {
+      break-inside: avoid;
+    }
+
+    @media print {
+      &__print-document {
+        position: static;
+        height: auto;
+        overflow: visible;
+      }
+
+      &__print--hide-on-print {
+        display: none;
+      }
+    }
+  }
+}
+
+@media print {
+  body.esri-directions__print-media {
+    margin: 0;
+    padding: 0;
+
+    > *:not(div.esri-directions__print-document) {
+      display: none;
+    }
   }
 }
 

@@ -521,6 +521,10 @@
       line-height: 1.1em;
       word-break: normal;
       font-size: $font-size--tiny-time-slider;
+
+      &.primary-tick__label--keep-all {
+        word-break: keep-all;
+      }
     }
 
     .esri-slider__label {

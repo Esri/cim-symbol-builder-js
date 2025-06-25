@@ -22,6 +22,7 @@
     }
 
     &__list-container {
+      margin-bottom: $cap-spacing;
       min-height: $list-item-height;
     }
 
@@ -51,6 +52,25 @@
       span {
         flex-grow: 1;
       }
+    }
+
+    &__spatial-select-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: $cap-spacing--half;
+    }
+
+    &__spatial-select-toolbar {
+      --calcite-action-group-border-color: transparent;
+
+      border-width: var(--calcite-border-width-sm, 1px);
+      border-style: solid;
+      border-radius: var(--calcite-corner-radius-round, 4px);
+      border-color: var(--calcite-color-border-3, #dfdfdf);
+      width: 100%;
+      min-height: min-content;
+      overflow: hidden;
     }
 
     &__sticky-loading-container {

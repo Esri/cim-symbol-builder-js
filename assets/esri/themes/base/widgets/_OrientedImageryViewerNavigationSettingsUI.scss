@@ -1,0 +1,16 @@
+@mixin OrientedImageryViewerNavigationSettingsUI() {
+  .esri-oriented-imagery-viewer__navigation-settings-ui {
+    [slot="content-bottom"] {
+      display: none;
+      padding: 0.5rem;
+    }
+
+    [selected] > [slot="content-bottom"] {
+      display: block;
+    }
+  }
+}
+
+@if $include_OrientedImageryViewerNavigationSettingsUI == true {
+  @include OrientedImageryViewerNavigationSettingsUI();
+}

@@ -4,14 +4,20 @@
 @mixin buildingPhasePicker() {
   .esri-building-phase-picker {
     --num-phases: 7; // Should be an odd number so that we can have a phase in the middle
-    --divider-width: var(--calcite-spacing-xs);
     --container-width: 100cqw;
+    --phase-size: 24px;
     --arrow-width: 16px;
     --padding: var(--calcite-spacing-xxs);
-    --dividers-width: (var(--num-phases) - 1) * var(--divider-width);
-    --arrows-width: 2 * var(--arrow-width);
-    --phase-width: calc(
-      (var(--container-width) - var(--dividers-width) - var(--arrows-width) - var(--padding)) / var(--num-phases)
+    --divider-width-min: var(--calcite-spacing-base);
+    --divider-width-max: var(--calcite-spacing-xl);
+
+    // prettier-ignore
+    --divider-width: calc(
+      (var(--container-width) -
+        (var(--phase-size) * var(--num-phases)) -
+        (var(--arrow-width) * 2) -
+        (var(--padding) * 2)
+      ) / (var(--num-phases) - 1)
     );
 
     container-type: inline-size;
@@ -32,15 +38,22 @@
 
     &__phase {
       appearance: none;
+      display: flex;
       flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
       border: solid var(--calcite-border-width-sm) $border-color;
-      border-radius: 100%;
+      border-radius: var(--calcite-corner-radius-pill);
       background: var(--calcite-color-background);
       cursor: pointer;
-      width: var(--phase-width);
-      aspect-ratio: 1;
+      padding: 0;
+      padding-top: 1px; // Visually center the text
+      width: var(--phase-size);
+      height: var(--phase-size);
       color: var(--calcite-color-text-1);
-      font-weight: $font-weight;
+      font-family: var(--calcite-sans-family);
+      font-size: var(--calcite-font-size);
+      font-weight: var(--calcite-font-weight-regular);
 
       &:hover {
         border-width: var(--calcite-border-width-md);
@@ -75,7 +88,7 @@
     &__divider {
       flex: 0;
       background: var(--calcite-color-border-1);
-      min-width: var(--divider-width);
+      min-width: clamp(var(--divider-width-min), var(--divider-width), var(--divider-width-max));
       height: var(--calcite-border-width-sm);
 
       &--active {
