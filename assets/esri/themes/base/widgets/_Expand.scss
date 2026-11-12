@@ -1,6 +1,6 @@
 @mixin expand() {
   .esri-expand {
-    --esri-widget-panel-max-height: 95vh;
+    --esri-widget-panel-max-height: 95svh;
     --calcite-sheet-max-height: var(--esri-widget-panel-max-height);
     --calcite-sheet-height: auto;
 

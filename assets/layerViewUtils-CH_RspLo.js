@@ -1,0 +1,1 @@
+import"./Error-BHEe1KT4.js";import{x as e}from"./string-BMjYH0yQ.js";function t(e){return e&&typeof e.highlight==`function`}var n=()=>!e(`disable-feature:layer-based-scale-visibility`);export{t as n,n as t};

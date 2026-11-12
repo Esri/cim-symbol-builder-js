@@ -1,6 +1,6 @@
 @mixin popup() {
   // z-indexes
-  $container-z: 1;
+  $container-z: 401;
   $main-z: 1;
 
   // main container
@@ -251,8 +251,8 @@
   // DOCKED
   .esri-popup--is-docked {
     inset: 0;
-    margin: $docked-margin $docked-margin $docked-margin--double $docked-margin;
     animation: esri-docking-animation 250ms ease-out;
+    margin: $docked-margin $docked-margin $docked-margin--double $docked-margin;
   }
 
   .esri-ui .esri-popup--is-docked {

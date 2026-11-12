@@ -1,16 +1,30 @@
 @mixin attribution() {
   .esri-attribution {
+    --arcgis-internal-attribution-font-size: var(--calcite-font-size-sm);
+    --arcgis-internal-attribution-font-size-sm: var(--calcite-font-size-xs);
+
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba($background-color, 0.8);
+    margin-right: var(--arcgis-layout-overlay-space-right, 0);
+    margin-left: var(--arcgis-layout-overlay-space-left, 0);
+    background-color: var(--calcite-color-transparent-tint, $background-color);
     line-height: 16px; // TODO: refactor to let Attribution inherit line-height.
-    font-size: $font-size--small;
+    color: var(--calcite-color-text-1, currentColor);
+    font-size: var(--calcite-font-size--2, $font-size--small);
+  }
+
+  /* Used by the new Attribution to be positioned */
+  .esri-view-attribution {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    contain: paint;
   }
 
   .esri-attribution__link {
-    text-decoration: none;
     color: currentColor;
 
     &:hover,
@@ -24,11 +38,11 @@
   .esri-attribution__sources {
     flex: 1 0;
     align-self: flex-start;
-    padding: 0 5px;
+    padding: 0 4px 0 16px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-weight: $font-weight--light;
+    font-weight: var(--calcite-font-weight-light, $font-weight--light);
   }
 
   .esri-attribution__sources[role="button"] {
@@ -37,10 +51,10 @@
 
   .esri-attribution__powered-by {
     align-self: flex-end;
-    padding: 0 5px;
+    padding: 0 16px 0 4px;
     text-align: right;
     white-space: nowrap;
-    font-weight: $font-weight;
+    font-weight: var(--calcite-font-weight-normal, $font-weight);
   }
 
   .esri-attribution--open {
@@ -49,6 +63,18 @@
 
   .esri-attribution__sources--open {
     white-space: normal;
+  }
+
+  @media (pointer: coarse) and (width <= 767px) {
+    .esri-attribution__sources,
+    .esri-attribution__sources + .esri-attribution__powered-by {
+      font-size: var(--arcgis-internal-attribution-font-size-sm);
+    }
+
+    .esri-attribution__sources--open,
+    .esri-attribution__sources--open + .esri-attribution__powered-by {
+      font-size: var(--arcgis-internal-attribution-font-size);
+    }
   }
 }
 

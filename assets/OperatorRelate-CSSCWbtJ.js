@@ -1,0 +1,1 @@
+import{T as e,gt as t,m as n,pt as r}from"./UnitFactory-DqUrR2QU.js";var i=class{supportsCurves(){return!0}getOperatorType(){return 1}execute(e,t,n,i,a){return r(e,t,n,i,a)}isValidDE9IM(e){return t(e)===0}accelerateGeometry(e,t,r){return n(e,t,r)}canAccelerateGeometry(t){return e(t)}};export{i as OperatorRelate};

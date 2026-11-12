@@ -69,7 +69,7 @@
   }
 
   .esri-feature {
-    --calcite-color-background: $background-color;
+    --calcite-color-background: #{$background-color};
 
     width: 100%;
   }

@@ -1,14 +1,11 @@
 @mixin utilityNetworkAssociations() {
   .esri-un-associations {
     $header_height: 48px;
+    $icon_width: 32px;
     $panel_padding: 0.5rem;
 
     &__action {
       height: $header_height;
-
-      &-refresh {
-        --calcite-color-icon-color: #077ac2;
-      }
     }
 
     &__block {
@@ -126,27 +123,21 @@
     }
 
     &__status-icon {
-      &-container {
-        width: $header_height;
-        height: $header_height;
+      &-loading {
+        width: $icon_width;
       }
 
       &-warning {
-        --calcite-color-icon-color: #edd317;
-
-        padding: 16px;
+        width: $icon_width;
+        color: var(--calcite-color-high-saturation-yellow-h-yy-060);
       }
     }
 
     &__switch {
-      align-self: center;
-      padding: 0.5rem;
-
-      &-container {
-        display: flex;
-        width: $header_height;
-        height: $header_height;
-      }
+      display: flex;
+      align-items: center;
+      width: $icon_width;
+      height: $header_height;
     }
 
     &__widget-container {

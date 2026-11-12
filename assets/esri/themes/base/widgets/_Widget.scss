@@ -98,10 +98,10 @@
       justify-content: center;
       border: none;
       background-color: transparent;
-      cursor: pointer;
       padding: 0;
       width: $header-button-width;
       color: $interactive-font-color;
+      cursor: pointer;
     }
   }
 
@@ -147,8 +147,8 @@
       margin: 0 $side-spacing--half;
       border: 0;
       background-color: transparent;
-      cursor: pointer;
       padding: $cap-spacing $side-spacing;
+      cursor: pointer;
 
       &:hover,
       &:focus {
@@ -192,8 +192,8 @@
     &__list-item {
       border-top: solid 1px $border-color;
       border-left: $border-size--active solid transparent;
-      cursor: pointer;
       padding: 0.8em 1em;
+      cursor: pointer;
 
       /* stylelint-disable-next-line order/order */
       @include icomoonIconSelector() {
@@ -310,7 +310,6 @@
       border 125ms ease-in-out;
     border: 1px solid $button-color;
     background-color: $button-color;
-    cursor: pointer;
     padding: $cap-spacing--half $side-spacing--half;
     width: 100%;
     min-height: $button-height;
@@ -320,6 +319,7 @@
     color: $button-color--inverse;
     font-family: inherit;
     font-size: $font-size;
+    cursor: pointer;
 
     &:hover {
       border: 1px solid $button-color--hover;
@@ -377,10 +377,10 @@
     border: none;
     border-radius: $border-radius;
     background-color: $background-color;
-    cursor: pointer;
     padding: $cap-spacing $side-spacing--half;
     text-align: unset;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -431,13 +431,13 @@
     border: 1px solid $border-color--input;
     border-radius: 0;
     background: url($select_caret) no-repeat right center $background-color;
-    cursor: pointer;
     padding: 0 0.5em;
     width: 100%;
     height: $button-height;
     color: $font-color;
     font-family: inherit;
     font-size: 0.85em;
+    cursor: pointer;
 
     &[disabled] {
       cursor: auto;
@@ -482,12 +482,12 @@
   .esri-widget__loader-animation {
     display: block;
     transform: translateZ(0);
+    animation: esri-rotate 1250ms infinite linear;
     border: 0.15em solid transparent;
     border-radius: 100%;
     border-color: rgba($font-color, 0.8) $border-color $border-color $border-color;
     width: 1em;
     height: 1em;
-    animation: esri-rotate 1250ms infinite linear;
     font-size: $spinning-loader-size;
   }
 
@@ -503,7 +503,6 @@
     transition: background-color 125ms ease-in-out;
     margin: 0;
     background-color: $background-color;
-    cursor: pointer;
     padding: 0;
     width: $button-width;
     height: $button-height;
@@ -511,12 +510,13 @@
     text-align: center;
     color: $interactive-font-color;
     font-size: $font-size;
+    cursor: pointer;
 
     // Make Calcite widget button's default background match all other widget
     // buttons, unless a custom appearance was specified
     &:not([appearance]),
     &[appearance="solid"] {
-      --calcite-color-foreground-3: $background-color;
+      --calcite-color-foreground-3: #{$background-color};
     }
 
     &:hover {
@@ -534,7 +534,7 @@
 
       // Make calcite-button's icon color match calcite-action's
       &:not(:hover) {
-        --calcite-ui-icon-color: var(--calcite-color-text-3);
+        --calcite-icon-color: var(--calcite-color-text-3);
       }
     }
 

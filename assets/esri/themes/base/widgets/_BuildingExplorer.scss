@@ -26,8 +26,8 @@
   }
 
   .#{$panel--error} {
-    margin: 0;
     animation: esri-fade-in 250ms ease-in-out;
+    margin: 0;
     color: $font-color--error;
   }
 }

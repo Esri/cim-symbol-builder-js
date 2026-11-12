@@ -1,0 +1,1 @@
+{"shadowDuration":"Total tid i skygge: {duration}","sunlightDuration":"Samlet tid i sollys: {duration}","shadowDurationMoreThanUpTo":"Total tid i skygge: {minDuration} – {maxDuration}","sunlightDurationLessThan":"Total tid i sollys: < {duration}","sunlightDurationAtLeastLessThan":"Total tid i sollys: {minDuration} – {maxDuration}"}

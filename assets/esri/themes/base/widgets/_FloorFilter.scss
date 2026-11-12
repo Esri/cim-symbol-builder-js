@@ -46,11 +46,6 @@ $floor-filter-scrollbar-track--color: #fafafa;
           flex-direction: column;
           max-width: $button-width--plus-half;
 
-          .esri-icon {
-            position: relative;
-            top: 2px;
-          }
-
           .esri-floor-filter__browse-button {
             border: none;
             padding: 12px;
@@ -89,11 +84,6 @@ $floor-filter-scrollbar-track--color: #fafafa;
           display: flex;
           flex-direction: column;
           max-width: $panel-width;
-
-          .esri-icon {
-            position: relative;
-            top: 2px;
-          }
 
           .esri-floor-filter__button-info {
             margin-right: auto;
@@ -194,6 +184,15 @@ $floor-filter-scrollbar-track--color: #fafafa;
 
     .esri-floor-filter__button-container {
       @include defaultBoxShadow();
+
+      .esri-floor-filter__button-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .esri-floor-filter__button-label {
+        line-height: 1.25rem;
+      }
     }
 
     .esri-floor-filter__filter-menu {
@@ -215,13 +214,13 @@ $floor-filter-scrollbar-track--color: #fafafa;
         line-height: $line-height;
         color: $font-color;
 
-        .esri-icon-close {
+        .esri-floor-filter__icon-close {
           display: flex;
           align-items: center;
           margin: 0 0 0 auto;
           border: none;
           background-color: $background-color;
-          padding: 26px 12px;
+          padding: 22px 8px;
           color: $interactive-font-color;
         }
       }
@@ -234,15 +233,15 @@ $floor-filter-scrollbar-track--color: #fafafa;
         border: none;
         border-right: 1px solid $border-color;
         background-color: $background-color;
-        padding: 26px 0;
+        padding: 22px 0;
         min-width: 28px;
         color: $interactive-font-color;
       }
 
       .esri-floor-filter__filter-menu-header-back:hover {
         background: $background-color--hover;
-        cursor: pointer;
         color: $interactive-font-color--hover;
+        cursor: pointer;
       }
 
       .esri-floor-filter__filter-menu-header-text-group {
@@ -279,10 +278,10 @@ $floor-filter-scrollbar-track--color: #fafafa;
         -webkit-box-orient: vertical;
       }
 
-      .esri-icon-close:hover {
+      .esri-floor-filter__icon-close:hover {
         background: $background-color--hover;
-        cursor: pointer;
         color: $interactive-font-color--hover;
+        cursor: pointer;
       }
 
       .esri-floor-filter__filter-menu-search {
@@ -292,7 +291,7 @@ $floor-filter-scrollbar-track--color: #fafafa;
         margin-bottom: 1px;
         box-shadow: 0 0.5px 0 $Calcite_Gray_300;
         background: $background-color--hover;
-        padding: 10px;
+        padding: 7px;
 
         .esri-floor-filter__filter-menu-search-input {
           margin-left: 6px;
@@ -304,8 +303,9 @@ $floor-filter-scrollbar-track--color: #fafafa;
           font-size: $font-size;
         }
 
-        .esri-icon-close {
+        .esri-floor-filter__icon-close {
           margin-inline-end: 2px;
+          cursor: pointer;
         }
       }
 
@@ -360,7 +360,7 @@ $floor-filter-scrollbar-track--color: #fafafa;
             text-align: left;
           }
 
-          .esri-icon-right {
+          .esri-floor-filter__icon-right {
             margin-left: auto;
           }
         }
@@ -388,6 +388,10 @@ $floor-filter-scrollbar-track--color: #fafafa;
     .esri-floor-filter {
       width: max-content;
     }
+  }
+
+  :is(.esri-ui-top-left, .esri-ui-bottom-left) .esri-floor-filter__icon-flip {
+    transform: rotate(180deg);
   }
 
   .esri-view-height-less-than-small .esri-floor-filter,
@@ -457,7 +461,7 @@ $floor-filter-scrollbar-track--color: #fafafa;
       }
     }
 
-    .esri-icon-close {
+    .esri-floor-filter__icon-close {
       margin: 0 auto 0 0;
     }
 
@@ -474,7 +478,7 @@ $floor-filter-scrollbar-track--color: #fafafa;
     .esri-floor-filter__filter-menu-items {
       .esri-floor-filter__filter-menu-site,
       .esri-floor-filter__filter-menu-facility {
-        .esri-icon-left {
+        .esri-floor-filter__icon-left {
           margin-right: auto;
         }
       }

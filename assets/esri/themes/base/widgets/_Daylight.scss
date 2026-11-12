@@ -25,8 +25,8 @@
     }
 
     &__panel--error {
-      padding: 0 $side-spacing;
       animation: esri-fade-in 250ms ease-in-out;
+      padding: 0 $side-spacing;
     }
 
     &__container {
@@ -65,8 +65,14 @@
       }
     }
 
+    // Ensure the date picker stays below the timezone popover (which has a z-index=2) - https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/60677
+    // But also on top of other elements such as the checkboxes at the bottom.
+    &__date-picker {
+      z-index: 1;
+    }
+
     .esri-slider.esri-slider--horizontal {
-      z-index: 2; // Ensure the timezone popover stays on top of the date picker (which has a z-index=1) - #60677
+      z-index: 2; // Ensure the timezone popover stays on top of the date picker (which has a z-index=1) - https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/60677
 
       .esri-slider-with-dropdown__box {
         display: flex;

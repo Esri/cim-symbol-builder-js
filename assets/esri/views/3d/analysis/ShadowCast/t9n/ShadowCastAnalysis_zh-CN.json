@@ -1,0 +1,1 @@
+{"shadowDuration":"阴影总时间：{duration}","sunlightDuration":"光照总时长：{duration}","shadowDurationMoreThanUpTo":"阴影总时间：{minDuration} - {maxDuration}","sunlightDurationLessThan":"光照总时长：<{duration}","sunlightDurationAtLeastLessThan":"光照总时长：{minDuration} - {maxDuration}"}

@@ -1,0 +1,1 @@
+var e=class{constructor(e){this._import=e,this.module=null,this._promise=null}getImportPromise(){return this._promise??=this._import().then(async e=>(this.module=e,e)),this._promise}};function t(t){return new e(t)}export{t};

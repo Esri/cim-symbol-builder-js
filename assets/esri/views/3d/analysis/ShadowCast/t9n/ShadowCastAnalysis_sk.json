@@ -1,0 +1,1 @@
+{"shadowDuration":"Celkový čas v tieni: {duration}","sunlightDuration":"Celkový čas na slnečnom svetle: {duration}","shadowDurationMoreThanUpTo":"Celkový čas v tieni: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Celkový čas na slnku: <{duration}","sunlightDurationAtLeastLessThan":"Celkový čas na slnku: {minDuration} - {maxDuration}"}

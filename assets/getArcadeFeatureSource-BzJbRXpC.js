@@ -1,0 +1,1 @@
+var e=Symbol(`arcadeFeatureSource`);function t(t){return t!=null&&e in t}function n(n){return t(n)?n[e]:null}export{n,e as t};

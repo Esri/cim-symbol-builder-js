@@ -13,10 +13,10 @@
       justify-content: center;
       border: none;
       background: transparent;
-      cursor: pointer;
       padding-block: $cap-spacing--half;
       padding-inline: $side-spacing--half;
       color: $interactive-font-color;
+      cursor: pointer;
 
       &:hover,
       &:focus {

@@ -1,0 +1,1 @@
+{"shadowDuration":"Durée totale dans l’ombre : {duration}","sunlightDuration":"Durée totale au soleil : {duration}","shadowDurationMoreThanUpTo":"Durée totale dans l’ombre : {minDuration} – {maxDuration}","sunlightDurationLessThan":"Durée totale d’ensoleillement : < {duration}","sunlightDurationAtLeastLessThan":"Durée totale d’ensoleillement : {minDuration} – {maxDuration}"}

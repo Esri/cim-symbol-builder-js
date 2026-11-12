@@ -69,11 +69,11 @@
     justify-content: center;
     margin: 0;
     border: 1px solid rgb(0 0 0 / 0%);
-    cursor: pointer;
     padding: 5px;
     width: 100%;
     text-align: center;
     color: $interactive-font-color;
+    cursor: pointer;
   }
 
   .esri-print__layout-tab:hover,
@@ -190,10 +190,10 @@
   .esri-print__advanced-options-button {
     border: none;
     background-color: transparent;
-    cursor: pointer;
     padding: $cap-spacing--half $side-spacing--half;
     width: 100%;
     font-family: inherit;
+    cursor: pointer;
   }
 
   .esri-print__advanced-options-button[aria-expanded="true"] .esri-print__advanced-options-button-icon--closed,
@@ -313,8 +313,8 @@
   }
 
   .esri-print__exported-file--error {
-    cursor: pointer;
     color: $font-color--error;
+    cursor: pointer;
   }
 
   .esri-print .esri-print__exported-file--error:hover {

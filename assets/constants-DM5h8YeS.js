@@ -1,0 +1,1 @@
+var e=`system`,t=`unknown`,n=Intl.DateTimeFormat().resolvedOptions().timeZone;export{n,t as r,e as t};

@@ -7,21 +7,22 @@
     --calcite-input-height: 1.5rem;
 
     // Tooltip variables
-    --field-height: 0.875rem;
+    --field-height: 1rem;
     --field-height--input: var(--calcite-input-height);
-    --field-row-gap: 1px;
-    --field-column-gap: var(--calcite-app-spacing-2);
+    --field-row-gap: 2px;
+    --field-column-gap: var(--calcite-spacing-xs);
     --field-input-width: 6.5rem;
-    --field-title-extra-margin: var(--calcite-app-spacing-6);
+    --field-title-extra-margin: var(--calcite-spacing-lg);
     --field-title-color: var(--calcite-color-text-2);
     --field-value-color: var(--calcite-color-text-1);
     --font-size: var(--calcite-font-size--3);
     --font-size--input: var(--calcite-font-size--2);
-    --content-padding-inline: var(--calcite-app-spacing-2);
-    --content-padding-block: var(--calcite-app-spacing-2);
-    --help-message-border-spacing: var(--calcite-app-spacing-2);
+    --content-padding-inline: var(--calcite-spacing-xs);
+    --content-padding-block: var(--calcite-spacing-xs);
+    --help-message-border-spacing: var(--calcite-spacing-xs);
     --help-message-min-width: 7rem;
     --icon-size--feedback: 0.625rem; // Shrink icon to keep tooltip more compact in feedback mode
+    --elevation-mode-icon-size--feedback: 1rem;
 
     position: absolute;
     top: 0;
@@ -43,6 +44,7 @@
         0 6px 20px -4px rgb(0 0 0 / 10%),
         0 4px 12px -2px rgb(0 0 0 / 8%); // Same as <calcite-alert>
 
+      backdrop-filter: blur(4px);
       background: rgb(255 255 255 / 80%);
       padding-block: var(--content-padding-block);
       padding-inline: var(--content-padding-inline);
@@ -50,7 +52,6 @@
       line-height: 1.1em;
       color: $font-color;
       font-size: var(--font-size);
-      backdrop-filter: blur(4px);
       touch-action: none;
       view-transition-name: tooltip-content;
 
@@ -88,10 +89,11 @@
       // In input mode we activate pointer events which are disabled by default on the overlay surface.
       &--input {
         --field-height: var(--field-height--input);
+        --field-row-gap: 1px;
 
+        backdrop-filter: none;
         background: var(--calcite-color-foreground-1);
         pointer-events: all;
-        backdrop-filter: none;
 
         // When the tooltip is in input mode but doesn't have focus in it, we reduce the opacity to
         // make easier for the user to understand that keyboard input is not going to the tooltip.
@@ -139,6 +141,33 @@
       &__value {
         grid-column: span 3;
         color: var(--field-value-color);
+      }
+    }
+
+    &-elevation-mode {
+      &__feedback {
+        display: flex;
+        align-items: center;
+        margin-inline-start: var(--field-column-gap);
+
+        calcite-icon {
+          opacity: var(--calcite-opacity-half);
+          width: var(--elevation-mode-icon-size--feedback);
+          min-width: var(--elevation-mode-icon-size--feedback);
+          height: var(--elevation-mode-icon-size--feedback);
+          min-height: var(--elevation-mode-icon-size--feedback);
+        }
+      }
+
+      &__dropdown {
+        display: flex;
+
+        calcite-button {
+          --calcite-offset-invert-focus: 1;
+
+          block-size: calc(var(--field-height--input) - 2 * var(--calcite-border-width-sm));
+          inline-size: var(--field-height--input);
+        }
       }
     }
 
@@ -213,6 +242,16 @@
         inline-size: var(--field-input-width);
       }
 
+      &__input-action {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        border: var(--calcite-border-width-sm) solid
+          var(--calcite-input-border-color, var(--calcite-color-border-input));
+        border-inline-start: 0;
+        block-size: var(--field-height--input);
+      }
+
       &__input-message {
         margin-block-end: var(--calcite-input-message-spacing-value);
         width: 100%;
@@ -237,7 +276,7 @@
 
     &-help-message {
       display: flex;
-      gap: var(--calcite-app-spacing-2);
+      gap: var(--calcite-spacing-xs);
       align-items: center;
       justify-content: center;
       margin-inline: calc(var(--content-padding-inline) * -1); // Fill the whole
@@ -255,7 +294,7 @@
       &:only-child {
         border-block-start: none;
         border-block-end: none;
-        padding-block-start: var(--field-row-gap);
+        padding-block-start: 1px;
       }
 
       &__icon {

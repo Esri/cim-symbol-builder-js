@@ -1,0 +1,1 @@
+var e=`circle`,t=`sphere`;export{t as n,e as t};

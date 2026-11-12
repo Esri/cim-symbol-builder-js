@@ -1,0 +1,1 @@
+import{qt as e}from"./UnitFactory-DqUrR2QU.js";var t=new e;function n(e,n,r){return t.execute(e,n,r,null)}export{n as execute};

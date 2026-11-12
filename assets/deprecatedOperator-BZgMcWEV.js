@@ -1,0 +1,1 @@
+import{n as e,u as t}from"./Error-BHEe1KT4.js";function n(n,r,i){t(e.getLogger(`esri.geometry.operators.${n}`),`${r} is deprecated. Refactor using @arcgis/codemod or manually replace usages with ${i} instead.`,{replacement:i,warnOnce:!0})}export{n as t};

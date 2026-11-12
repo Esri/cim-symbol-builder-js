@@ -1,6 +1,6 @@
 @mixin compass() {
   .esri-compass {
-    --calcite-color-foreground-3: $background-color;
+    --calcite-color-foreground-3: #{$background-color};
 
     border-radius: 50%;
 

@@ -1,0 +1,1 @@
+import{T as e}from"./dom-DmwM1UMu.js";function t(e){return n(e)?e[e.openProp]:e.open}function n(e){return e.openProp!==void 0}async function r(n){await n.updateComplete,t(n)?n.onBeforeOpen():n.onBeforeClose(),await n.updateComplete;let r=n.transitionRef?.value??n.transitionEl;r&&await e(r,n.transitionProp),t(n)?n.onOpen():n.onClose()}export{r as t};

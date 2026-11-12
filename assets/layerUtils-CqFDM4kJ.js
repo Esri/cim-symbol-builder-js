@@ -1,0 +1,1 @@
+function e(e){return e?.type===`fill`}function t(e){return e?.type===`extrude`}function n(e){return e?.type===`object`}function r(e){return e?.type===`text`}export{t as i,r as n,n as r,e as t};

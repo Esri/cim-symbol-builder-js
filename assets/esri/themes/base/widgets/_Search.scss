@@ -36,6 +36,18 @@ $search_width: 240px !default;
     margin: 0;
     padding: 0;
   }
+
+  .esri-search__submit-button {
+    position: absolute;
+    margin: -1px;
+    border-width: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+  }
 }
 
 @if $include_Search == true {

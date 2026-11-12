@@ -1,0 +1,1 @@
+import{c as e,o as t}from"./jsonTypeUtils-BfCqidaL.js";import{n}from"./zscale-DhAgcKPb.js";function r(r,i,a){let o;for(let s of r)if(!(!s||!e(s)||`vertexAttributes`in s)){if(!o){let e=`type`in s?s.type:t(s);if(o=n(e,i,a),!o)return}o(s)}}export{r as t};

@@ -12,11 +12,11 @@
   box-sizing: border-box;
   position: absolute;
   inset: 0;
+  container: esri-view-canvas/size;
   z-index: 0; // creates root stacking context
   overflow: hidden;
   font-size: $font-size;
   pointer-events: none;
-  container: esri-view-canvas/size;
   contain: layout;
 
   calcite-flow,
@@ -59,8 +59,8 @@
       0 0 3px black;
     color: white;
     font-size: var(--calcite-font-size-3);
-    user-select: none;
     pointer-events: none;
+    user-select: none;
 
     &-reset {
       cursor: pointer;
@@ -189,9 +189,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  cursor: crosshair;
   width: 100%;
   height: 100%;
+  cursor: crosshair;
 }
 
 .esri-zoom-box__overlay-background {

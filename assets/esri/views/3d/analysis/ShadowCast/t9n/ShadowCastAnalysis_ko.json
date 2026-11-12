@@ -1,0 +1,1 @@
+{"shadowDuration":"총 그림자 시간: {duration}","sunlightDuration":"태양광에 노출된 총 시간: {duration}","shadowDurationMoreThanUpTo":"총 음영 시간: {minDuration} - {maxDuration}","sunlightDurationLessThan":"총 일조 시간: <{duration}","sunlightDurationAtLeastLessThan":"총 일조 시간: {minDuration} - {maxDuration}"}

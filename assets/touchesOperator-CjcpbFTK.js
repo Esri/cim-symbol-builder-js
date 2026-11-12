@@ -1,0 +1,1 @@
+import{n as e}from"./OperatorTouches-BBrT1K8I.js";import"./deprecatedOperator-BZgMcWEV.js";import{c as t,r as n}from"./jsonConverter-n8Hyav0r.js";var r=new e;function i(e,t,n){return r.execute(e,t,n,null)}function a(e,r){let a=n(e);return i(a.getGeometry(),t(r),a.getSpatialReference())}export{a as touchesExecute};

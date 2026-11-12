@@ -10,10 +10,10 @@
   }
 
   .esri-grid-controls {
-    user-select: none;
     display: flex;
     flex-flow: column wrap;
     padding: var(--esri-widget-padding);
+    user-select: none;
 
     // Update spacing on LabeledSwitch to have the same padding
     // as other labeled elements in the form

@@ -4,7 +4,11 @@
     padding: var(--esri-widget-padding);
 
     &__notice-error {
-      margin: 0 0 var(--calcite-spacing-xxl);
+      margin: 0 0 var(--calcite-space-2xl);
+    }
+
+    &__disabled-notice {
+      margin-bottom: var(--calcite-spacing-xl);
     }
 
     &__form {
@@ -17,7 +21,7 @@
     }
 
     &__description-text {
-      color: $interactive-font-color;
+      color: var(--calcite-color-text-3);
     }
 
     &__label {
@@ -31,7 +35,7 @@
         opacity 250ms,
         margin 250ms;
       opacity: 1;
-      margin-bottom: $cap-spacing--half;
+      margin-bottom: var(--calcite-space-xs);
 
       &:last-child {
         margin-bottom: 0;
@@ -64,8 +68,25 @@
       font-style: italic;
     }
 
+    &__multiple-choice-input,
+    &__multiple-choice-input__other-choice {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-sm);
+    }
+
+    &__multiple-choice-input__select-all {
+      border-block-end: var(--calcite-border-width-sm) solid var(--calcite-color-border-1);
+      padding-block-end: var(--calcite-space-sm);
+    }
+
+    &__multiple-choice-input__other-choice--with-select-all {
+      border-block-start: var(--calcite-border-width-sm) solid var(--calcite-color-border-1);
+      padding-block-start: var(--calcite-space-sm);
+    }
+
     &__form-header {
-      margin-bottom: $cap-spacing;
+      margin-bottom: var(--calcite-space-md);
 
       .esri-batch-attribute-form__description-text ~ .esri-widget__heading {
         margin-bottom: 0;
@@ -75,10 +96,17 @@
     &__input {
       width: 100%;
 
-      &:focus {
-        outline: var(--calcite-spacing-base) solid var(--calcite-color-brand);
+      &:not(calcite-checkbox):focus {
+        outline: var(--calcite-space-base) solid var(--calcite-color-brand);
         outline-offset: -2px;
       }
+    }
+
+    // Firefox will add scroll bars after the input has been interacted with when the input is contained in a
+    // calcite-panel. This prevents unnecessary scroll bars from appearing. This serves as a stop-gap until calcite
+    // can address https://github.com/Esri/calcite-design-system/issues/15187
+    calcite-autocomplete.esri-batch-attribute-form__input {
+      overflow: clip;
     }
 
     &__input--disabled {
@@ -87,16 +115,16 @@
     }
 
     &__individual-element {
-      margin: var(--calcite-spacing-xxl) 0;
+      margin: var(--calcite-space-2xl) 0;
     }
 
     &__date-input-container {
       display: flex;
       flex-direction: column;
-      gap: var(--calcite-spacing-sm);
+      gap: var(--calcite-space-sm);
 
       .esri-batch-attribute-form__input {
-        margin-bottom: $cap-spacing--quarter;
+        margin-bottom: var(--calcite-space-base);
       }
 
       :last-child {
@@ -105,26 +133,440 @@
     }
 
     &__group {
-      margin: 0 0 $cap-spacing 0;
-      margin-inline: calc(var(--calcite-spacing-md) * -1); // offset to align form elements
+      margin: 0 0 var(--calcite-space-md) 0;
+      margin-inline: calc(var(--calcite-space-md) * -1); // offset to align form elements
       background-color: inherit;
     }
 
     &__group--sequential {
       border-bottom: none;
-      border-inline-start: 3px solid $border-color;
+      border-inline-start: 3px solid var(--calcite-color-border-1);
     }
 
-    &__block {
-      margin-inline: -10px;
+    &__group--active {
+      border-inline-start-color: var(--calcite-color-brand);
     }
-  }
 
-  [dir="rtl"] {
-    .esri-batch-attribute-form__date-input-part {
-      &:first-child .esri-batch-attribute-form__input {
-        border-right: var(--calcite-spacing-px) solid $border-color;
-        border-left: none;
+    &__relationship-element-input {
+      margin-block-end: var(--calcite-space-lg);
+
+      &_header {
+        color: var(--calcite-color-text-1);
+      }
+
+      &_header,
+      &_description {
+        margin-bottom: var(--calcite-space-xs);
+      }
+
+      calcite-notice,
+      &_list {
+        margin-bottom: var(--calcite-space-md-plus);
+      }
+
+      &_list {
+        min-height: var(--calcite-space-2xl);
+      }
+
+      &_list-observer {
+        position: relative;
+        bottom: 20px;
+        z-index: 2;
+        text-align: center;
+      }
+
+      &_showing-all &_add-button {
+        margin-block: var(--calcite-space-md);
+      }
+    }
+
+    &__attachment-element-input {
+      margin-bottom: var(--calcite-space-2xl);
+    }
+
+    &__attachment-element-label {
+      @include wordbreak();
+
+      margin-bottom: var(--calcite-space-2xs);
+      color: var(--calcite-color-text-1);
+      font-weight: var(--calcite-font-weight-medium);
+    }
+
+    &__attachment-element-list {
+      margin-block: var(--calcite-space-sm);
+      border-block: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+    }
+
+    &__attachment-element-list-item {
+      --calcite-list-item-border-color: var(--calcite-color-border-3);
+
+      @include wordbreak();
+
+      min-block-size: var(--calcite-spae-2xl);
+    }
+
+    &__attachment-element-list-item-start {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--calcite-corner-radius-sm);
+      background-color: var(--calcite-color-surface-3);
+      block-size: var(--calcite-space-3xl);
+      inline-size: var(--calcite-space-3xl);
+      color: var(--calcite-color-text-2);
+    }
+
+    &__attachment-element-list-item-staged-indicator {
+      display: inline-flex;
+      border-radius: 50%;
+      background-color: var(--calcite-color-brand);
+      block-size: var(--calcite-space-xs);
+      inline-size: var(--calcite-space-xs);
+    }
+
+    &__attachment-element-list-item-thumb {
+      border-radius: inherit;
+      block-size: 100%;
+      inline-size: 100%;
+      object-fit: cover;
+    }
+
+    &__attachment-element-list-item-icon {
+      color: inherit;
+    }
+
+    &__attachment-element-empty-state {
+      padding-block: var(--calcite-space-sm);
+      color: var(--calcite-color-text-2);
+      font-size: var(--calcite-font-size--1);
+    }
+
+    &__attachment-element-add-actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-sm);
+      align-items: flex-start;
+      justify-content: flex-start;
+      inline-size: 100%;
+    }
+
+    &__attachment-element-capture-notice {
+      inline-size: 100%;
+    }
+
+    &__attachment-element-empty-action-hint {
+      line-height: var(--calcite-font-line-height-fixed-base);
+      color: var(--calcite-color-text-3);
+      font-size: var(--calcite-font-size--1);
+      font-weight: var(--calcite-font-weight-regular);
+    }
+
+    &__attachment-element-empty-action-hint-value {
+      color: var(--calcite-color-text-1);
+      font-weight: var(--calcite-font-weight-medium);
+    }
+
+    &__attachment-element-all-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-md);
+      padding: var(--calcite-space-sm);
+    }
+
+    &__attachment-element-file-input {
+      display: none;
+    }
+
+    &__attachment-element-add-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-md);
+      padding: var(--calcite-space-sm);
+    }
+
+    &__attachment-element-add-dropzone {
+      box-sizing: border-box;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 0;
+      align-items: center;
+      justify-content: center;
+      transition:
+        border-color var(--calcite-animation-timing) ease-in-out,
+        background-color var(--calcite-animation-timing) ease-in-out,
+        box-shadow var(--calcite-animation-timing) ease-in-out;
+      border: var(--calcite-border-width-sm) dashed var(--calcite-color-border-input);
+      border-radius: var(--calcite-corner-radius-sm);
+      background-color: var(--calcite-color-surface-2);
+      padding: var(--calcite-space-lg) var(--calcite-space-md);
+      min-block-size: 10.875rem;
+      inline-size: 100%;
+      text-align: center;
+    }
+
+    &__attachment-element-add-dropzone-icon {
+      margin-block-end: var(--calcite-space-sm);
+      color: var(--calcite-color-text-3);
+    }
+
+    &__attachment-element-add-dropzone-heading {
+      margin-block-end: var(--calcite-space-xs);
+      line-height: var(--calcite-font-line-height-fixed-base);
+      color: var(--calcite-color-text-1);
+      font-size: var(--calcite-font-size-0);
+      font-weight: var(--calcite-font-weight-regular);
+    }
+
+    &__attachment-element-add-dropzone-detail {
+      @include wordbreak();
+
+      margin-block-end: var(--calcite-space-md);
+      max-inline-size: 13rem;
+      line-height: var(--calcite-font-line-height-fixed-base);
+      color: var(--calcite-color-text-3);
+      font-size: var(--calcite-font-size--1);
+      font-weight: var(--calcite-font-weight-regular);
+    }
+
+    &__attachment-element-add-dropzone calcite-button {
+      align-self: center;
+    }
+
+    &__attachment-element-validation-criteria {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-xs);
+      padding: var(--calcite-space-sm);
+    }
+
+    &__attachment-element-detail {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-md);
+      padding: var(--calcite-space-sm);
+    }
+
+    &__attachment-element-detail-metadata-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-2xs);
+    }
+
+    &__attachment-element-detail-file-name-row {
+      display: flex;
+      gap: var(--calcite-space-2xs);
+      align-items: center;
+      inline-size: 100%;
+    }
+
+    &__attachment-element-detail-file-name-input {
+      flex: 1 1 auto;
+      min-inline-size: 0;
+    }
+
+    &__attachment-element-detail-preview {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-sm);
+      align-items: center;
+      justify-content: center;
+      border: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+      border-radius: var(--calcite-corner-radius-sm);
+      background-color: var(--calcite-color-surface-2);
+      padding: var(--calcite-space-sm);
+      inline-size: 100%;
+    }
+
+    &__attachment-element-dialog-preview {
+      box-sizing: border-box;
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      gap: var(--calcite-space-sm);
+      align-items: center;
+      justify-content: center;
+      border: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+      border-radius: var(--calcite-corner-radius-sm);
+      background-color: var(--calcite-color-surface-2);
+      padding: var(--calcite-space-sm);
+      block-size: 100%;
+      min-block-size: 0;
+      max-block-size: 100%;
+      inline-size: 100%;
+      overflow: hidden;
+
+      .esri-batch-attribute-form__attachment-element-detail-preview-image {
+        max-block-size: 100%;
+        max-inline-size: 100%;
+      }
+    }
+
+    &__attachment-element-detail-preview-image {
+      display: block;
+      block-size: auto;
+      max-block-size: min(24rem, 50vh);
+      inline-size: 100%;
+      object-fit: contain;
+    }
+
+    &__attachment-element-detail-preview-icon {
+      color: var(--calcite-color-text-2);
+    }
+
+    &__attachment-element-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--calcite-space-xs);
+    }
+
+    &__attachment-element-detail-metadata {
+      display: flex;
+      flex-direction: column;
+      gap: var(--calcite-space-md);
+      padding-block-start: var(--calcite-space-lg);
+    }
+
+    &__attachment-element-detail-metadata-label {
+      line-height: var(--calcite-font-line-height-fixed-base);
+      color: var(--calcite-color-text-2);
+      font-size: var(--calcite-font-size--1);
+      font-weight: var(--calcite-font-weight-regular);
+      font-style: normal;
+    }
+
+    &__attachment-element-detail-metadata-value {
+      @include wordbreak();
+
+      // Is it intentional to mix fixed line height with relative font size?
+      line-height: var(--calcite-font-line-height-relative-snug);
+      color: var(--calcite-color-text-2);
+      font-size: var(--calcite-font-size-0);
+      font-weight: var(--calcite-font-weight-regular);
+      font-style: normal;
+    }
+
+    &__text-element-input {
+      line-height: var(--calcite-font-line-height-relative-snug);
+      color: var(--calcite-color-text-3);
+      font-size: var(--calcite-font-size--1);
+      font-weight: var(--calcite-font-weight-regular);
+
+      a {
+        display: inline;
+        position: relative;
+        transition:
+          background-color,
+          block-size,
+          border-color,
+          box-shadow,
+          color,
+          inset-block-end,
+          inset-block-start,
+          inset-inline-end,
+          inset-inline-start inset-size,
+          opacity,
+          outline-color,
+          transform var(--calcite-animation-timing) ease-in-out 0s,
+          outline 0s,
+          outline-offset 0s;
+        border-style: none;
+        background-color: transparent;
+        background-image:
+          linear-gradient(currentColor, currentColor),
+          linear-gradient(var(--calcite-color-brand-underline), var(--calcite-color-brand-underline));
+        background-position-x: 0%, 100%;
+        background-position-y: min(1.5em, 100%);
+        background-repeat: no-repeat, no-repeat;
+        background-size:
+          0% 1px,
+          100% 1px;
+        padding: 0;
+        text-decoration: none;
+        color: var(--calcite-color-text-link);
+
+        &:hover,
+        &:focus {
+          background-size:
+            100% 1px,
+            100% 1px;
+        }
+
+        &:active {
+          background-size:
+            100% 2px,
+            100% 2px;
+        }
+
+        &.calcite--rtl {
+          background-position:
+            100% 100%,
+            100% 100%;
+        }
+      }
+
+      code {
+        border: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+        border-radius: var(--calcite-corner-radius-xs);
+        background-color: var(--calcite-color-surface-4);
+        padding: var(--calcite-space-2xs);
+        white-space: normal;
+        word-break: break-word;
+        color: var(--calcite-color-text-2);
+        font-family: var(--calcite-code-family);
+        font-size: 85%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin-bottom: var(--calcite-space-2xs);
+        line-height: var(--calcite-font-line-height-relative-snug);
+        color: var(--calcite-color-text-1);
+        font-size: var(--calcite-font-size-0);
+        font-weight: var(--calcite-font-weight-bold);
+      }
+
+      h5 {
+        font-weight: var(--calcite-font-weight-medium);
+      }
+
+      h6 {
+        margin-bottom: var(--calcite-space-2xs);
+        line-height: var(--calcite-font-line-height-relative-snug);
+        color: var(--calcite-color-text-2);
+        font-size: var(--calcite-font-size--1);
+        font-weight: var(--calcite-font-weight-medium);
+      }
+
+      p {
+        margin-bottom: var(--calcite-space-lg);
+        line-height: var(--calcite-font-line-height-relative-snug);
+        color: var(--calcite-color-text-3);
+        font-size: var(--calcite-font-size--1);
+        font-weight: var(--calcite-font-weight-regular);
+      }
+
+      strong {
+        font-weight: var(--calcite-font-weight-bold);
+      }
+    }
+
+    &__utility-network-associations-element-input {
+      margin-block-end: var(--calcite-space-md);
+
+      .esri-feature-utility-network-associations {
+        .esri-feature-element-info__description {
+          color: var(--calcite-color-text-3);
+        }
+
+        h5 {
+          color: var(--calcite-color-text-1);
+          font-size: inherit;
+        }
       }
     }
   }

@@ -74,14 +74,20 @@
   .esri-split-button--split-part {
     &--vertical {
       &--s {
+        --calcite-size-sm: 16px;
+
         max-height: 16px;
       }
 
       &--m {
+        --calcite-size-md: 24px;
+
         max-height: 24px;
       }
 
       &--l {
+        --calcite-size-l: 40px;
+
         // Smallest we can get away with given current Calcite behavior
         max-height: 40px;
       }

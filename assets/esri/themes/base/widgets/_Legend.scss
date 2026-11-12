@@ -417,9 +417,9 @@ $relationship_column_size: 85px;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
       width: $button-width--half;
       height: auto;
+      cursor: pointer;
     }
 
     .esri-legend--card__carousel-indicator::before {

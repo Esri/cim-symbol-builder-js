@@ -15,7 +15,14 @@
       display: flex;
       align-self: center;
       margin-inline: var(--calcite-spacing-xxs);
+      margin-inline-start: auto;
       line-height: initial;
+    }
+
+    calcite-dropdown {
+      calcite-icon {
+        margin-inline-start: var(--calcite-spacing-xxs);
+      }
     }
   }
 

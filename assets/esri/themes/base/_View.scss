@@ -151,6 +151,10 @@
     cursor: nwse-resize;
   }
 
+  .esri-view-surface[data-cursor="not-allowed"] {
+    cursor: not-allowed;
+  }
+
   .esri-view-surface[data-cursor="none"] {
     cursor: none;
   }

@@ -1,0 +1,1 @@
+import{i as e,n as t}from"./luxon-Cz3ywxbI.js";var n=class{static{this.instance=t.parseSpecifier(`UTC`)}};function r(t){return t instanceof e?t===n.instance:t?.toString().toLowerCase()===`unknown`}function i(e){return r(e)?n.instance:e}export{n,r,i as t};

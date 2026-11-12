@@ -35,8 +35,8 @@
   }
 
   .esri-item-list__list-item {
-    cursor: pointer;
     min-height: $list-item-height;
+    cursor: pointer;
 
     /* stylelint-disable-next-line order/order */
     @include icomoonIconSelector("&") {

@@ -98,7 +98,7 @@
   }
 
   .esri-feature-form__disabled-notice {
-    margin-bottom: $cap-spacing--plus-half;
+    margin-bottom: var(--calcite-spacing-xl, 1.25rem);
   }
 
   .esri-feature-form__form-header {

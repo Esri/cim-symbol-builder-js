@@ -1,0 +1,1 @@
+{"shadowDuration":"Temps total a l'obra: {duration}","sunlightDuration":"Temps total d'exposició solar: {duration}","shadowDurationMoreThanUpTo":"Temps total a l'ombra: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Temps total al sol: <{duration}","sunlightDurationAtLeastLessThan":"Temps total al sol: {minDuration} - {maxDuration}"}

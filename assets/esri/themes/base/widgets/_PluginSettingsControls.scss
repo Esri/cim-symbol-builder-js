@@ -1,0 +1,29 @@
+@mixin pluginSettingsControls() {
+  .esri-plugin-settings-controls {
+    display: flex;
+    flex-flow: column wrap;
+    min-width: 100%;
+
+    &__block {
+      border-block-end: none;
+    }
+
+    &__block-content {
+      display: flex;
+      flex-direction: column;
+      gap: $cap-spacing;
+    }
+
+    &__control-row {
+      padding-inline-start: 0;
+    }
+
+    calcite-label.esri-labeled-switch__label {
+      margin-block-end: 0;
+    }
+  }
+}
+
+@if $include_PluginSettingsControls == true {
+  @include pluginSettingsControls();
+}

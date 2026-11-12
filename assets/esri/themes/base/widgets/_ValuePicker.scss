@@ -6,6 +6,11 @@
   .esri-value-picker {
     @include defaultBoxShadow();
 
+    calcite-action {
+      width: var(--calcite-font-line-height-fixed-4xl);
+      height: var(--calcite-font-line-height-fixed-4xl);
+    }
+
     .esri-slider {
       flex: auto;
       background: transparent;
@@ -37,6 +42,9 @@
     }
 
     &__action-bar {
+      --calcite-action-bar-items-space: 0;
+      --calcite-spacing-sm: 0;
+
       background-color: var(--calcite-color-foreground-1);
     }
 

@@ -1,0 +1,1 @@
+function e(e){return typeof e==`number`}function t(e){return typeof e==`number`&&isFinite(e)&&Math.floor(e)===e}function n(e){return typeof e==`boolean`}function r(e){return typeof e==`string`||e instanceof String}function i(e){return e==null||r(e)}function a(e){return Array.isArray(e)}function o(e){return e instanceof Date}export{r as a,n as i,e as n,o,i as r,t as s,a as t};

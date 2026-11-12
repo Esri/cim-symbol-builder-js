@@ -373,10 +373,10 @@
     width: 100%;
   }
   #{$selector}:after {
+    animation: looping-progresss-bar-ani $looping-progress-bar-params;
     z-index: 0;
     background-color: $interactive-font-color;
     width: $looping-progress-bar-width;
-    animation: looping-progresss-bar-ani $looping-progress-bar-params;
   }
 }
 
@@ -394,13 +394,13 @@
   transition: all 0.1s ease-in-out;
   border: none;
   background: none;
-  cursor: pointer;
   padding: $padding;
   width: $size;
   height: $size;
   text-align: center;
   line-height: $icon-size;
   font-size: $icon-size;
+  cursor: pointer;
 
   &:hover:not(:disabled) {
     background: $background-color--hover;

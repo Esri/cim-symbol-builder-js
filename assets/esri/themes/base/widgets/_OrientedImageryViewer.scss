@@ -7,8 +7,8 @@
   // overrides
   --calcite-dialog-size-x: 210px;
   --calcite-dialog-min-size-y: 90px;
-  --calcite-font-weight-medium: $font-weight;
-  --calcite-font-size-0: $font-size;
+  --calcite-font-weight-medium: #{$font-weight};
+  --calcite-font-size-0: #{$font-size};
   --calcite-icon-size: var(--esri-oriented-imagery-viewer-action-icon-size);
 
   box-sizing: border-box;
@@ -65,9 +65,14 @@
     height: 100%;
   }
 
+  .esri-image-viewer__slider-container {
+    @include videoSliderContainer();
+  }
+
   .esri-oriented-imagery-viewer {
     @include orientedImageryViewerBase();
 
+    container-type: size;
     width: 100%;
     min-width: var(--esri-oriented-imagery-viewer-min-width);
     height: 100%;
@@ -87,21 +92,18 @@
       height: 100%;
 
       &-current-coverage {
-        --calcite-ui-icon-color: var(--calcite-color-status-danger);
+        --calcite-icon-color: var(--calcite-color-status-danger);
       }
 
       &-additional {
+        &-coverage,
         &-camera-locations {
-          --calcite-ui-icon-color: var(--calcite-color-brand);
-        }
-
-        &-coverage {
-          --calcite-ui-icon-color: var(--calcite-color-status-info);
+          --calcite-icon-color: var(--calcite-color-status-info);
         }
       }
 
       &-footprint {
-        --calcite-ui-icon-color: var(--calcite-color-status-success);
+        --calcite-icon-color: var(--calcite-color-status-success);
       }
     }
 
@@ -115,8 +117,8 @@
       }
 
       header {
-        --calcite-font-weight-medium: $font-weight--light;
-        --calcite-font-size-0: $font-size--tiny;
+        --calcite-font-weight-medium: #{$font-weight--light};
+        --calcite-font-size-0: #{$font-size--tiny};
       }
 
       &-item {
@@ -167,6 +169,23 @@
       }
     }
 
+    &__submenu {
+      @include ToolContainer(auto);
+    }
+
+    &__superimpose-tools {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      height: auto;
+
+      .esri-oriented-imagery-viewer__image-enhancement-tool-container {
+        margin-block: 0;
+        padding-block: var(--calcite-spacing-sm) var(--calcite-spacing-md);
+        width: 100%;
+      }
+    }
+
     &__image-overlays {
       @include Overlays();
 
@@ -211,8 +230,8 @@
       display: flex;
       flex-grow: 1;
       margin: 0;
-      cursor: url("data:text/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2226%22%20width%3D%2226%22%3E%0A%3Cpath%20stroke%3D%22%23000%22%20stroke-width%3D%221px%22%20fill%3D%22%23fff%22%20d%3D%22m15.3%2020.5s6.38-6.73%204.64-8.24-3.47%201.01-3.47%201.01%203.61-5.72%201.41-6.49c-2.2-0.769-3.33%204.36-3.33%204.36s0.873-5.76-1.06-5.76-1.58%205.39-1.58%205.39-0.574-4.59-2.18-4.12c-1.61%200.468-0.572%205.51-0.572%205.51s-1.58-4.89-2.93-3.79c-1.35%201.11%200.258%205.25%200.572%206.62%200.836%202.43%202.03%202.94%202.17%205.55%22%2F%3E%0A%3C%2Fsvg%3E%0A");
       width: 100%;
+      cursor: url("data:text/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2226%22%20width%3D%2226%22%3E%0A%3Cpath%20stroke%3D%22%23000%22%20stroke-width%3D%221px%22%20fill%3D%22%23fff%22%20d%3D%22m15.3%2020.5s6.38-6.73%204.64-8.24-3.47%201.01-3.47%201.01%203.61-5.72%201.41-6.49c-2.2-0.769-3.33%204.36-3.33%204.36s0.873-5.76-1.06-5.76-1.58%205.39-1.58%205.39-0.574-4.59-2.18-4.12c-1.61%200.468-0.572%205.51-0.572%205.51s-1.58-4.89-2.93-3.79c-1.35%201.11%200.258%205.25%200.572%206.62%200.836%202.43%202.03%202.94%202.17%205.55%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 
       &--hidden {
         display: none;
@@ -225,7 +244,6 @@
         align-self: stretch;
         order: 1;
         border-top: 1px solid var(--calcite-color-border-3);
-        border-radius: 0 0 3px 3px;
         background: var(--calcite-color-foreground-1);
         width: 100%;
         height: 100%;
@@ -245,7 +263,6 @@
       align-self: stretch;
       order: 1;
       border-top: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
-      border-radius: 0 0 var(--calcite-corner-radius-round) var(--calcite-corner-radius-round);
       background: var(--calcite-color-foreground-1);
       width: 100%;
       height: 50%;
@@ -261,19 +278,6 @@
       }
     }
 
-    &__message-box {
-      display: flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      padding: 0 25%;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      word-break: break-word;
-      font-size: $font-size__body;
-    }
-
     &__navigation {
       transform: rotate(var(--oi-navigation-tool-rotation-to, 0deg));
 
@@ -282,7 +286,7 @@
       }
 
       &-feature {
-        fill: var(--calcite-color-brand);
+        fill: var(--calcite-color-status-info);
         stroke: var(--calcite-color-foreground-1);
         stroke-width: 1;
 
@@ -329,6 +333,10 @@
         z-index: 1;
         overflow: hidden;
 
+        &--video {
+          inset-block-end: calc(var(--calcite-spacing-xxxl) * 3);
+        }
+
         &--zoomed {
           transform: scale(1.5);
           transform-origin: bottom right;
@@ -374,6 +382,18 @@
       }
     }
 
+    &__alert {
+      > [slot="message"] {
+        display: block;
+      }
+    }
+
+    @container (width <= 386px) or (height <= 348px) {
+      .esri-oriented-imagery-viewer__alert > [slot="message"] {
+        display: none;
+      }
+    }
+
     &__pro {
       .esri-oriented-imagery-viewer {
         position: static;
@@ -392,6 +412,27 @@
       justify-content: center;
       width: 100%;
     }
+
+    &--notice {
+      margin-block: auto;
+    }
+  }
+}
+
+@mixin videoSliderContainer() {
+  --calcite-block-padding: 0;
+
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  padding-inline: var(--calcite-spacing-md);
+  width: 100%;
+  overflow: hidden;
+
+  calcite-slider {
+    width: 100%;
   }
 }
 

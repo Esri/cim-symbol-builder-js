@@ -1,0 +1,1 @@
+import{t as e}from"./SimpleGeometryCursor-Bz9Gb7aZ.js";import"./Envelope2D-BrdY7QNT.js";import"./MultiPathImpl-BfyvKuVG.js";import{kt as t}from"./UnitFactory-DqUrR2QU.js";var n=new t;function r(t,r){return n.executeMany(new e(t),r,null).next()}export{r as executeMany};

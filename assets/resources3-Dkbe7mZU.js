@@ -1,0 +1,1 @@
+var e={brand:`lightbulb`,danger:`exclamationMarkTriangle`,info:`information`,success:`checkCircle`,warning:`exclamationMarkTriangle`},t={danger:`exclamationMarkTriangleF`,info:`informationF`,success:`checkCircleF`,warning:`exclamationMarkTriangleF`};function n(e){return t=>t?.localName===e}export{t as n,n as r,e as t};

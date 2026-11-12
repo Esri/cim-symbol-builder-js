@@ -1,0 +1,1 @@
+import{x as e}from"./string-BMjYH0yQ.js";function t(){return e(`curve-densification-coarse-segments`)}function n(){return e(`curve-densification-max-segments`)}function r(){return e(`curve-densification-min-segments`)}function i(){return e(`curve-densification-pixel-deviation`)}export{n as i,r as n,i as r,t};

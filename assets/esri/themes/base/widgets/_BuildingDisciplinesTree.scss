@@ -6,7 +6,7 @@
     &__label {
       --calcite-label-margin-bottom: 0;
 
-      word-break: break-all; // Allow long words to break: #63859
+      word-break: break-all; // Allow long words to break: https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/63859
     }
   }
 }

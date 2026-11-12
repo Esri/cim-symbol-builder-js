@@ -1,0 +1,1 @@
+{"shadowDuration":"影の合計時間: {duration}","sunlightDuration":"日照時間の合計: {duration}","shadowDurationMoreThanUpTo":"影の合計時間: {minDuration} - {maxDuration}","sunlightDurationLessThan":"日照時間の合計: <{duration}","sunlightDurationAtLeastLessThan":"日照時間の合計: {minDuration} - {maxDuration}"}

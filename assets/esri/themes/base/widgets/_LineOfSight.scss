@@ -21,8 +21,8 @@
 
     &__error,
     &__hint {
-      overflow: hidden;
       animation: esri-fade-in 250ms ease-in-out;
+      overflow: hidden;
 
       p {
         margin: 0;

@@ -1,0 +1,1 @@
+{"shadowDuration":"Kokonaisaika varjossa: {duration}","sunlightDuration":"Kokonaisaika auringonpaisteessa: {duration}","shadowDurationMoreThanUpTo":"Kokonaisaika varjossa: {minDuration}–{maxDuration}","sunlightDurationLessThan":"Kokonaisaika auringonvalossa: < {duration}","sunlightDurationAtLeastLessThan":"Kokonaisaika auringonvalossa: {minDuration}–{maxDuration}"}

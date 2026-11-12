@@ -1,0 +1,1 @@
+import{r as e}from"./resources3-Dkbe7mZU.js";var t={title:`title`,firstTitle:`first-title`,separator:`separator`},n=e(`calcite-dropdown-group`);export{n,t};

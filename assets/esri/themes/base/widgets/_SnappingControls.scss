@@ -52,7 +52,7 @@
     flex-direction: column;
 
     :only-child {
-      border-block-end: none; // Issue #55500
+      border-block-end: none; // Issue https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/55500
     }
   }
 
@@ -71,8 +71,8 @@
     border-radius: 2px;
     border-color: transparent;
     background-color: $background-color;
-    cursor: pointer;
     padding: 3px;
+    cursor: pointer;
   }
 
   .esri-snapping-controls__item-action-icon {
@@ -95,10 +95,10 @@
     opacity: 1;
     margin: 0;
     border: 1px solid transparent;
-    cursor: pointer;
     padding: $cap-spacing--half $side-spacing;
     width: 100%;
     font-size: $font-size--small;
+    cursor: pointer;
 
     .esri-snapping-controls__item-action-title {
       margin-left: 0;

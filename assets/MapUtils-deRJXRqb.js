@@ -1,0 +1,1 @@
+function e(e,t){for(let n of e.values())if(t(n))return!0;return!1}function t(e,t){for(let n of e.values())if(t(n))return n;return null}function n(e,t,n){let r=e.get(t);if(r!==void 0)return r;let i=n();return e.set(t,i),i}function r(e){let t=new Map;return n=>(t.has(n)||t.set(n,e(n)),t.get(n))}export{t as i,e as n,n as r,r as t};
