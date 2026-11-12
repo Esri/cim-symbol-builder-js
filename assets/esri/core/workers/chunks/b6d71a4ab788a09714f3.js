@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkRemoteClient=self.webpackChunkRemoteClient||[]).push([[6553],{76553(e,n,i){function t(e){return e&&"getAtOrigin"in e&&"originOf"in e}i.d(n,{H:()=>t})}}]);

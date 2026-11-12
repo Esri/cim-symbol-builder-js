@@ -7,12 +7,12 @@
   bottom: 0;
   left: 0;
   flex-flow: column nowrap;
+  animation: esri-fade-in-up 250ms ease-in-out;
   border-top: solid 3px $contextColor;
   background-color: var(--calcite-color-background);
   padding-block: $cap-spacing;
   padding-inline: $side-spacing;
   max-height: 85%;
-  animation: esri-fade-in-up 250ms ease-in-out;
   color: $font-color;
 
   .esri-editor__prompt {
@@ -192,7 +192,7 @@
       width: 100%;
 
       // When there are tooltip options and snapping options at the same time, we need to restore
-      // the border between them. Issue #55500
+      // the border between them. Issue https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/55500
       .esri-sketch-tooltip-controls:not(:only-child) calcite-block {
         border-block-end-width: 1px;
         border-style: solid;
@@ -206,8 +206,10 @@
       }
     }
 
-    &__notice {
-      margin-bottom: $cap-spacing;
+    &__notices-panel-section {
+      display: flex;
+      flex-direction: column;
+      gap: $cap-spacing;
     }
 
     .esri-snapping-controls__layer-list {
@@ -272,9 +274,6 @@
 
     &__sketch-container,
     &__selection-toolbar-container {
-      // Default calcite-action-* border behavior is ugly in the docked toolbar in horizontal layout
-      --calcite-action-group-border-color: transparent;
-
       position: relative;
       flex-shrink: 0;
       margin: var(--calcite-spacing-sm, 8px);
@@ -286,9 +285,18 @@
       overflow: hidden;
     }
 
+    &__sketch-container {
+      // Default calcite-action-* border behavior is ugly in the docked toolbar in horizontal layout
+      --calcite-action-group-border-color: transparent;
+    }
+
     &__sketch-container + &__panel-content,
     &__selection-toolbar-container + &__panel-content {
       padding-block-start: 0;
+    }
+
+    &__update-action-bar {
+      margin-bottom: $cap-spacing;
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -393,6 +401,39 @@
 
     &__prompt--danger {
       @include esri-editor__prompt(var(--calcite-color-status-danger));
+    }
+
+    &__merge-features-list-section {
+      /** Intent: fill 50% of panel height, but shrink no smaller than is needed to show three items. **/
+      max-height: max(50%, 150px);
+    }
+
+    &__merge-features-list {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      calcite-list {
+        margin-inline: -$panel-padding-inline;
+        overflow-y: auto;
+
+        .esri-item-list__scroller {
+          // Override the negative margin applied to the scroller class in
+          // general, since we apply the negative margin to the parent container
+          // above
+          margin-inline: 0;
+        }
+      }
+
+      calcite-chip {
+        line-height: initial;
+        cursor: pointer;
+      }
+
+      &__item--preserved {
+        --calcite-color-foreground-2: var(--calcite-color-status-success);
+        --calcite-chip-text-color: var(--calcite-color-text-inverse);
+      }
     }
   }
 

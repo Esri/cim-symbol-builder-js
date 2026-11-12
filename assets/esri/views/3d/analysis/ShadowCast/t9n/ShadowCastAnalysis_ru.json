@@ -1,0 +1,1 @@
+{"shadowDuration":"Общее время в тени: {duration}","sunlightDuration":"Общее время на солнце: {duration}","shadowDurationMoreThanUpTo":"Общее время в тени: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Общее время на солнце: <{duration}","sunlightDurationAtLeastLessThan":"Общее время на солнце: {minDuration} - {maxDuration}"}

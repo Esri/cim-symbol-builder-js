@@ -1,0 +1,1 @@
+{"shadowDuration":"Gesamtzeit im Schatten: {duration}","sunlightDuration":"Gesamtdauer des Sonnenlichts: {duration}","shadowDurationMoreThanUpTo":"Gesamtzeit im Schatten: {minDuration} – {maxDuration}","sunlightDurationLessThan":"Gesamtdauer des Sonnenlichts: < {duration}","sunlightDurationAtLeastLessThan":"Gesamtdauer des Sonnenlichts: {minDuration} – {maxDuration}"}

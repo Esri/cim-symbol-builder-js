@@ -1,0 +1,1 @@
+import{t as e}from"./BidiEngine-CE7XSOzo.js";var t=new e;function n(e,n=!0){if(!t.hasBidiChar(e))return[e,!1,{...t}];let r=t.checkContextual(e),i;i=r===`rtl`?`IDNNN`:`ICNNN`;let a=n?`VLYSN`:`VLYNN`;return[t.bidiTransform(e,i,a),!0,{...t}]}export{n as t};

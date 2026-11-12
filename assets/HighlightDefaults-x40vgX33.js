@@ -1,0 +1,1 @@
+import{t as e}from"./Color-j2sPw1Kk.js";var t=new e(`cyan`),n=.25,r=new e(`black`),i=.4,a=.2,o=`default`,s=`temporary`,c=new e(`yellow`);export{a,c,s as i,o as n,n as o,r,t as s,i as t};

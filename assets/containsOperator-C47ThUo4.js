@@ -1,0 +1,1 @@
+import{n as e,t}from"./operatorContains-BruTtuon.js";import{a as n,i as r,t as i}from"./apiConverter-C3rqpA3E.js";import"./deprecatedOperator-BZgMcWEV.js";function a(t,a){let o=n(t);return e(r(t),r(a),i(o))}t();export{a as containsExecute};

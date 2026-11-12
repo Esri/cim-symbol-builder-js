@@ -1,0 +1,1 @@
+import{h as e}from"./intersectWithPolygonOffset-Cb5WCdc0.js";var t=class{constructor(e){this.layout=e}elementCount(e){return e.get(`position`).indices.length}write(t,n,r,i){i!=null&&e(r,this.layout,t,n,i)}};export{t};

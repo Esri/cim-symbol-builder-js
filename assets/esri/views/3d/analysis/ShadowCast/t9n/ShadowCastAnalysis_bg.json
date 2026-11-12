@@ -1,0 +1,1 @@
+{"shadowDuration":"Общо време в сянка: {duration}","sunlightDuration":"Общо време при слънчева светлина: {duration}","shadowDurationMoreThanUpTo":"Общо време в сянка: {minDuration} – {maxDuration}","sunlightDurationLessThan":"Общо време на слънчева светлина: < {duration}","sunlightDurationAtLeastLessThan":"Общо време на слънчева светлина: {minDuration} – {maxDuration}"}

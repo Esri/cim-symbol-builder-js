@@ -1,0 +1,1 @@
+var e=3.14159265359/180,t=3.14159265359/128,n=180/3.141592654,r=1.1,i=1e-5,a=.05,o=1e-30,s=16777216,c=1.1;export{n as a,t as c,i,o as l,c as n,r as o,e as r,a as s,s as t};

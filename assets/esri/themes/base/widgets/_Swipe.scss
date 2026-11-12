@@ -32,14 +32,14 @@
 
   .esri-swipe--horizontal .esri-swipe__container {
     margin-left: -$button-width--half;
-    cursor: col-resize;
     height: 100%;
+    cursor: col-resize;
   }
 
   .esri-swipe--vertical .esri-swipe__container {
     margin-top: -$button-height--half;
-    cursor: row-resize;
     width: 100%;
+    cursor: row-resize;
   }
 
   .esri-swipe--disabled .esri-swipe__container {

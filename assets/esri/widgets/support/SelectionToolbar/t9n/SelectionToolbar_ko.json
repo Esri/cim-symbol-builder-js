@@ -1,1 +1,1 @@
-{"widgetLabel":"선택 도구모음","clearSelection":"선택 해제","pan":"이동","selectFeatures":"피처 선택","selectByLasso":"라쏘로 선택","selectByPoint":"포인트로 선택","selectByRectangle":"사각형으로 선택"}
+{"widgetLabel":"선택 도구모음","addToSelection":"선택 항목에 추가","clearSelection":"선택 해제","pan":"이동","removeFromSelection":"선택 항목에서 제거","replaceSelection":"선택 항목 바꾸기","selectFeatures":"피처 선택","selectByLasso":"라쏘로 선택","selectByPoint":"포인트로 선택","selectByRectangle":"사각형으로 선택"}

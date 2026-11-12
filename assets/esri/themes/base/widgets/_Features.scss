@@ -4,7 +4,7 @@
   $action-size--image: $button-width--half !default;
 
   .esri-features {
-    --calcite-color-background: $background-color;
+    --calcite-color-background: #{$background-color};
 
     display: flex;
     flex-direction: column;

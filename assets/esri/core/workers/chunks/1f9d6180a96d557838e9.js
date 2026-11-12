@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkRemoteClient=self.webpackChunkRemoteClient||[]).push([[6810],{46810(e,t,r){r.d(t,{OperatorTouches:()=>u});var s=r(39117);class u extends s.Z{getOperatorType(){return 5}execute(e,t,r,u){return(0,s._)(e,t,r,8,u)}}}}]);

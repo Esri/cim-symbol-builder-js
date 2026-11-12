@@ -12,9 +12,9 @@
     --actions-spacing-v: #{$cap-spacing--half};
 
     position: relative;
+    container-type: inline-size;
     isolation: isolate;
     padding: var(--esri-widget-padding);
-    container-type: inline-size;
 
     &.esri-component.esri-widget--panel {
       width: var(--width);
@@ -165,8 +165,8 @@
     }
 
     &--disabled {
-      filter: grayscale(1);
       opacity: $opacity--disabled;
+      filter: grayscale(1);
     }
 
     &__color-indicator {

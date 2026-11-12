@@ -15,7 +15,7 @@
 
     .esri-widget--button {
       // Prevent scroll/zoom which can happen when quickly tapping button.
-      // https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+      // https://developer.mozilla.org/docs/Web/CSS/touch-action
       touch-action: none;
     }
   }
@@ -65,8 +65,8 @@
   .esri-date-picker__day-item--header {
     border-top: $cell_border;
     background: $background-color--offset;
-    cursor: auto;
     font-weight: $font-weight__heading;
+    cursor: auto;
   }
 
   .esri-date-picker__day-item {
@@ -75,9 +75,9 @@
     justify-content: center;
     border-right: $cell_border;
     border-bottom: $cell_border;
-    cursor: pointer;
     width: 30px;
     height: 30px;
+    cursor: pointer;
   }
 
   .esri-date-picker__day-item:first-child {
@@ -107,16 +107,16 @@
 
   .esri-date-picker__year-picker-item {
     margin: 0 4px;
-    cursor: pointer;
     padding: $section_margin;
     color: $font-color;
+    cursor: pointer;
   }
 
   .esri-date-picker__day-item--selected,
   .esri-date-picker__year-picker-item--selected {
     background-color: $button-color;
-    cursor: auto;
     color: $button-color--inverse;
+    cursor: auto;
   }
 
   .esri-date-picker__input {

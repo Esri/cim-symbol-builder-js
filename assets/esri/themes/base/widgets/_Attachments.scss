@@ -69,12 +69,12 @@ $border: 1px solid $border-color;
     border-radius: $border-radius;
     border-color: transparent;
     background-color: $background-color;
-    cursor: pointer;
     padding: $cap-spacing--half $side-spacing--half;
     width: 100%;
     text-align: unset;
     text-decoration: none;
     color: $interactive-font-color;
+    cursor: pointer;
 
     &:focus,
     &:hover {
@@ -234,8 +234,8 @@ $border: 1px solid $border-color;
 
     .esri-attachments__item-chevron-icon {
       flex: 0 0 auto;
-      cursor: pointer;
       padding: 0 $side-spacing;
+      cursor: pointer;
     }
   }
 
@@ -305,11 +305,11 @@ $border: 1px solid $border-color;
   .esri-attachments__error-message {
     @include defaultBoxShadow();
 
+    animation: esri-fade-in-down 250ms ease-in-out;
     margin: $cap-spacing--half $side-spacing--half;
     border-top: 3px solid $border-color--error;
     background-color: $background-color;
     padding: $cap-spacing $side-spacing;
-    animation: esri-fade-in-down 250ms ease-in-out;
   }
 
   .esri-attachments__progress-bar {

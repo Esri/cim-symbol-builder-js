@@ -5,8 +5,8 @@
 
   .esri-sketch {
     display: flex;
-    user-select: none;
     pointer-events: none;
+    user-select: none;
 
     &-pad {
       flex-flow: row wrap;
@@ -55,7 +55,7 @@
       user-select: none;
 
       // When there are tooltip options and snapping options at the same time, we need to restore
-      // the border between them. Issue #55500
+      // the border between them. Issue https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/55500
       .esri-sketch-tooltip-controls:not(:only-child) calcite-block {
         border-block-end-width: 1px;
         border-style: solid;
@@ -65,13 +65,10 @@
 
     &__selection-count-chip--horizontal {
       align-self: center;
-      margin-block: var(--calcite-spacing-xxs);
-      margin-inline: var(--calcite-spacing-xs);
     }
 
     &__selection-count-chip--vertical {
       align-self: center;
-      margin-block: calc(var(--calcite-spacing-md) * var(--sketch-chip-margin-scale-factor, 1));
       margin-inline: 0;
       scale: var(--sketch-chip-rescale, 1);
 
@@ -156,6 +153,15 @@
   .esri-expand__popover-content {
     .esri-sketch {
       gap: 0;
+    }
+  }
+
+  .esri-sketch__simplification-progress-loader {
+    --calcite-loader-track-color: transparent;
+
+    // Fixes an issue with layout within calcite-action in small scale toolbar
+    &[scale="s"] {
+      margin-inline-start: 2px;
     }
   }
 }

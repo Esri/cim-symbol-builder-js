@@ -1,1 +1,1 @@
-{"all":"Alle","allSelected":"Alle ausgewählt","clear":"Wert löschen","removeTag":"Tag entfernen","selected":"ausgewählt"}
+{"add":"Hinzufügen: {text}","all":"Alle","allSelected":"Alle ausgewählt","clear":"Wert löschen","noMatches":"Keine Übereinstimmungen","removeTag":"Tag '{value}' entfernen","required":"Erforderlich","selectAll":"Alle auswählen","selected":"ausgewählt","nonEditable":"{value} ist schreibgeschützt.","disabledSelectedCount":"+{count}"}

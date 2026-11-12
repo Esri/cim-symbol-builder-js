@@ -74,6 +74,12 @@
       padding: var(--calcite-spacing-md);
     }
 
+    &__edit-information-container {
+      border-bottom: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
+      background-color: var(--calcite-color-surface-1);
+      padding: var(--calcite-spacing-md);
+    }
+
     &__edit-toolbar-container {
       display: flex;
       flex-flow: column nowrap;
@@ -138,11 +144,15 @@
       align-items: center;
       margin: 0;
       border: none;
-      background-color: var(--calcite-color-foreground-1);
+      background-color: transparent;
       padding: var(--calcite-spacing-sm) var(--calcite-spacing-md);
       padding-inline-end: var(--calcite-spacing-xs);
       text-align: unset;
       font-family: var(--calcite-font-family);
+
+      calcite-icon {
+        color: var(--calcite-action-text-color);
+      }
     }
 
     &__route-item-button:hover {
@@ -252,32 +262,34 @@
       }
     }
 
-    &__print-document {
+    &__print-preview-dialog {
       box-sizing: border-box;
-      position: fixed;
       top: 0;
       left: 0;
-      z-index: var(--calcite-z-index-overlay);
+      margin: 0;
+      border: none;
       background-color: var(--calcite-color-foreground-1);
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      max-width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
       overflow-y: scroll;
     }
 
-    &__print-body {
+    &__print-preview-content {
       display: flex;
       flex-direction: column;
       padding-inline: var(--calcite-spacing-md);
     }
 
-    &__print-header {
+    &__print-preview-header {
       display: flex;
       align-items: center;
       margin-bottom: var(--calcite-spacing-lg);
       border-block-end: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
     }
 
-    &__print-header-label {
+    &__print-preview-header-label {
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -288,29 +300,29 @@
       font-weight: var(--calcite-font-weight-bold);
     }
 
-    &__print-section {
+    &__print-preview-section {
       display: flex;
       flex-direction: column;
       margin-top: var(--calcite-spacing-md);
     }
 
-    &__print-header-buttons {
+    &__print-preview-header-buttons {
       display: flex;
       padding-inline-end: var(--calcite-spacing-md);
     }
 
-    &__print--avoid-page-break {
+    &__print-preview--avoid-page-break {
       break-inside: avoid;
     }
 
     @media print {
-      &__print-document {
+      &__print-preview-dialog {
         position: static;
         height: auto;
         overflow: visible;
       }
 
-      &__print--hide-on-print {
+      &__print-preview--hide-on-print {
         display: none;
       }
     }
@@ -318,11 +330,8 @@
 }
 
 @media print {
-  body.esri-directions__print-media {
-    margin: 0;
-    padding: 0;
-
-    > *:not(div.esri-directions__print-document) {
+  body.esri-directions__print-preview-media {
+    > *:not(dialog.esri-directions__print-preview-dialog) {
       display: none;
     }
   }

@@ -1,9 +1,9 @@
 @mixin coordinateConversion() {
   .esri-coordinate-conversion {
     position: relative;
-    cursor: default;
     width: 400px;
     font-size: $font-size--small;
+    cursor: default;
 
     .esri-select option[disabled] {
       color: $interactive-font-color--disabled;
@@ -204,12 +204,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: esri-fade-in 250ms linear;
     opacity: 0.8;
     z-index: 1;
     background-color: $background-color--inverse;
     padding: 1em;
     width: 50%;
-    animation: esri-fade-in 250ms linear;
     text-align: center;
     white-space: inherit;
     color: $interactive-font-color--inverse;

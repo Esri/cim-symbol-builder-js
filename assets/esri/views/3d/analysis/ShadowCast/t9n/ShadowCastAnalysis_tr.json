@@ -1,0 +1,1 @@
+{"shadowDuration":"Gölgedeki toplam süre: {duration}","sunlightDuration":"Toplam gün ışığı süresi: {duration}","shadowDurationMoreThanUpTo":"Toplam gölge süresi: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Toplam gün ışığı süresi: <{duration}","sunlightDurationAtLeastLessThan":"Toplam gün ışığı süresi: {minDuration} - {maxDuration}"}

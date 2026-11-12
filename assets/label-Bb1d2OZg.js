@@ -1,0 +1,1 @@
+function e(e){return e.label||e.labelEl?.textContent?.trim()||``}export{e as t};

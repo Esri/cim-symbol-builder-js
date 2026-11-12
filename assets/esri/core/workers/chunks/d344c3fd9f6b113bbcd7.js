@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkRemoteClient=self.webpackChunkRemoteClient||[]).push([[1735],{91735(e,t,n){n.d(t,{execute:()=>s,f:()=>c}),n(76061);const u=new(n(5247).O);function s(e,t,n,s){return u.execute(e,t,n,s,null)}function c(){return u.supportsCurves()}}}]);

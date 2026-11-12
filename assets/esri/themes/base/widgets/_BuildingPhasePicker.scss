@@ -6,7 +6,7 @@
     --num-phases: 7; // Should be an odd number so that we can have a phase in the middle
     --container-width: 100cqw;
     --phase-size: 24px;
-    --arrow-width: 16px;
+    --arrow-width: 24px;
     --padding: var(--calcite-spacing-xxs);
     --divider-width-min: var(--calcite-spacing-base);
     --divider-width-max: var(--calcite-spacing-xl);
@@ -45,7 +45,6 @@
       border: solid var(--calcite-border-width-sm) $border-color;
       border-radius: var(--calcite-corner-radius-pill);
       background: var(--calcite-color-background);
-      cursor: pointer;
       padding: 0;
       padding-top: 1px; // Visually center the text
       width: var(--phase-size);
@@ -54,6 +53,7 @@
       font-family: var(--calcite-sans-family);
       font-size: var(--calcite-font-size);
       font-weight: var(--calcite-font-weight-regular);
+      cursor: pointer;
 
       &:hover {
         border-width: var(--calcite-border-width-md);
@@ -79,8 +79,6 @@
     // container in order to center the phases and decide their size.
     &__arrow-left,
     &__arrow-right {
-      --calcite-internal-action-padding-inline: 0;
-
       width: var(--arrow-width);
       min-width: var(--arrow-width);
     }

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkRemoteClient=self.webpackChunkRemoteClient||[]).push([[9126],{49126(e,s,r){r.d(s,{default:()=>l});var t=r(10788);class l extends t.p{constructor(){super(...arguments),this.errors=null}syntaxError(e,s,r,t,l,n){this.errors||(this.errors=[]),this.errors.push({line:r,column:t,msg:l,e:n})}}}}]);

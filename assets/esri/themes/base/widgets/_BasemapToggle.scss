@@ -49,9 +49,9 @@ $basemap_toggle_size: $button-width--double !default;
   .esri-basemap-toggle__image--secondary {
     @include defaultBoxShadow();
 
+    animation: esri-basemap-slide 2000ms ease-in-out;
     margin-top: $basemap_toggle_offset;
     margin-left: $basemap_toggle_offset;
-    animation: esri-basemap-slide 2000ms ease-in-out;
   }
 
   .esri-basemap-thumbnail__overlay-scrim {

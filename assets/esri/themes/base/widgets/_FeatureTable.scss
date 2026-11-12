@@ -55,6 +55,8 @@
       flex: 1 1 0;
       margin: 0;
       padding: 0;
+      width: 100%;
+      height: 100%;
       min-height: 0;
 
       calcite-panel > div {
@@ -75,8 +77,8 @@
             display: flex;
             align-items: center;
             margin-inline-end: var(--calcite-spacing-md);
-            cursor: default;
             height: 100%;
+            cursor: default;
           }
         }
       }
@@ -131,36 +133,72 @@
 
     &__attachments-view {
       border-block-start: var(--calcite-border-width-sm) solid var(--calcite-color-text-2);
+      background-color: var(--calcite-color-foreground-1);
       min-width: 300px;
 
       &__content {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        background-color: var(--calcite-color-background);
         padding: var(--calcite-spacing-md);
         width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
       }
 
+      &__details,
       &__drop-area {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: var(--calcite-border-width-sm) dashed var(--calcite-color-border-input);
-        border-radius: var(--calcite-corner-radius-round);
         width: 100%;
+      }
+
+      &__details {
+        padding: var(--calcite-spacing-xl);
+        max-height: 100%;
+
+        img {
+          display: block;
+          padding: var(--calcite-spacing-sm);
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        calcite-action {
+          --calcite-action-text-color: var(--calcite-color-brand);
+
+          position: sticky;
+        }
+      }
+
+      &__drop-area {
+        border: var(--calcite-border-width-sm) dashed var(--calcite-color-border-input);
+        border-radius: var(--calcite-corner-radius-sm);
+        text-align: center;
+
+        &__label {
+          margin-bottom: var(--calcite-spacing-md);
+          font-size: var(--calcite-font-size-md);
+        }
+
+        &__message {
+          margin-bottom: var(--calcite-spacing-md);
+          word-break: break-all;
+        }
 
         form {
           display: flex;
           justify-content: center;
 
           fieldset {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             border: none;
 
-            calcite-label {
-              word-break: break-all;
-            }
-
-            calcite-button {
+            calcite-button,
+            span {
               margin-bottom: var(--calcite-spacing-sm);
             }
           }
@@ -176,26 +214,24 @@
       &__information {
         flex-direction: column;
         padding: var(--calcite-spacing-md);
-        padding-inline-start: 0;
         max-width: 200px;
         overflow-y: auto;
 
-        calcite-icon {
+        &__data {
           margin-block-end: var(--calcite-spacing-md);
+          word-wrap: break-word;
+          color: var(--calcite-color-text-1);
         }
 
-        img {
-          margin-block-end: var(--calcite-spacing-md);
-        }
-
-        label {
+        &__label {
           color: var(--calcite-color-text-3);
           font-weight: $font-weight;
         }
 
-        span {
+        calcite-button,
+        calcite-icon,
+        img {
           margin-block-end: var(--calcite-spacing-md);
-          color: var(--calcite-color-text-1);
         }
       }
 
@@ -210,12 +246,12 @@
         justify-content: center;
         margin-block: var(--calcite-spacing-sm);
 
-        a {
+        span {
           display: flex;
           align-items: center;
           justify-content: center;
           border: var(--calcite-border-width-sm) solid var(--calcite-color-border-3);
-          border-radius: var(--calcite-corner-radius-round);
+          border-radius: var(--calcite-corner-radius-sm);
           width: var(--icon-size);
           height: var(--icon-size);
           overflow: hidden;
@@ -235,6 +271,64 @@
       }
     }
 
+    &__dialog {
+      --calcite-dialog-content-space: 0;
+
+      &__header {
+        display: flex;
+        flex-direction: row;
+        gap: var(--calcite-spacing-sm);
+        justify-content: space-between;
+        width: 100%;
+
+        span {
+          align-self: center;
+          word-break: break-all;
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+      }
+
+      calcite-progress {
+        position: sticky;
+        top: 0;
+        margin-bottom: var(--calcite-spacing-sm);
+      }
+
+      calcite-pagination {
+        justify-content: center;
+        width: 100%;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+    }
+
+    &__footer__message {
+      display: flex;
+      gap: var(--calcite-spacing-sm);
+      align-items: center;
+      margin: 0 var(--calcite-spacing-md);
+    }
+
+    &__footer__icon {
+      &--danger {
+        color: var(--calcite-color-status-danger);
+      }
+
+      &--success {
+        color: var(--calcite-color-status-success);
+      }
+    }
+
     .esri-grid {
       background-color: inherit;
 
@@ -244,49 +338,9 @@
       }
     }
 
-    vaadin-grid {
-      --_lumo-grid-secondary-border-color: var(--calcite-color-border-3);
-
-      border-bottom: none;
-      border-inline: none;
-      background-color: inherit;
-      color: inherit;
-      font-family: inherit;
-      font-size: $font-size;
-    }
-
-    vaadin-grid::part(body-cell) {
-      font-size: $font-size;
-
-      &:hover {
-        background-color: var(--calcite-color-foreground-2);
-      }
-    }
-
-    vaadin-grid::part(header-cell invalid) {
-      font-weight: var(--calcite-font-weight-bold);
-    }
-
-    vaadin-grid::part(body-cell invalid) {
-      color: var(--calcite-color-text-3);
-      font-style: italic;
-    }
-
-    vaadin-grid::part(header-cell) {
-      background-color: var(--calcite-color-background);
-    }
-
-    vaadin-grid::part(header-cell direction) {
-      border-bottom: var(--calcite-border-width-sm) solid var(--calcite-color-brand);
-      background-color: var(--calcite-color-foreground-1);
-    }
-
-    vaadin-grid::part(body-cell highlight) {
-      background-color: var(--calcite-color-foreground-3);
-    }
-
     calcite-scrim > div:first-child {
       position: relative;
+      min-width: 300px;
       max-width: 400px;
       max-height: 100%;
     }
@@ -350,8 +404,8 @@
     img {
       display: inline-flex;
       margin-inline-end: var(--calcite-spacing-xxs);
-      max-width: var(--calcite-app-sizing-9);
-      max-height: var(--calcite-app-sizing-9);
+      max-width: var(--calcite-spacing-xxl);
+      max-height: var(--calcite-spacing-xxl);
       vertical-align: middle;
     }
   }

@@ -31,9 +31,9 @@
   .#{$empty} {
     position: relative;
     transition: opacity 0.3s;
-    cursor: pointer;
     width: $width;
     text-align: center;
+    cursor: pointer;
 
     &.#{$active} {
       color: map.get($theme, label-color--active);
@@ -41,10 +41,10 @@
   }
 
   .#{$empty} {
-    cursor: default;
     color: map.get($theme, label-color--empty);
     font-size: $font-size;
     font-weight: $font-weight--light;
+    cursor: default;
   }
 
   .#{$clear-button} {
@@ -122,8 +122,8 @@
 
   .#{$item-container} {
     border: 1px solid transparent;
-    will-change: height;
     touch-action: none;
+    will-change: height;
 
     &,
     .#{$base},
@@ -187,9 +187,9 @@
     align-items: center;
     justify-content: flex-start;
     transform: rotate(180deg); // So that our levels stack properly.
-    cursor: pointer;
     padding: 20px 0;
     width: 50%;
+    cursor: pointer;
   }
 
   .#{$levels-inner-container} {

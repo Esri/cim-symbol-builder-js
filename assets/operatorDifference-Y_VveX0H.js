@@ -1,0 +1,1 @@
+import"./Envelope2D-BrdY7QNT.js";import{ot as e}from"./UnitFactory-DqUrR2QU.js";import"./MultiPathImpl-BfyvKuVG.js";var t=new e;function n(e,n,r){return t.execute(e,n,r,null)}function r(){return t.supportsCurves()}export{n as execute,r as supportsCurves};

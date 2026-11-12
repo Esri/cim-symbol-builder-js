@@ -1,26 +1,209 @@
 @mixin grid() {
   .esri-grid {
-    // Uses shade of primary theme color for highlight
-    $row-selected-color: rgba($button-color, 0.2);
-
-    // Sets 'primary' color that other properties inherit from
-    --lumo-base-color: #{$background-color};
-    --lumo-primary-color: #{$button-color};
-    --lumo-primary-text-color: var(--lumo-primary-color);
-    --lumo-primary-color-10pct: #{$row-selected-color};
-
-    // grid and checkbox background color(s) default and hover
-    --lumo-contrast-20pct: #{$interactive-font-color};
-    --lumo-contrast-30pct: #{$interactive-font-color--hover};
-
-    // grid border color(s)
-    --lumo-contrast-10pct: #{$background-color--hover};
-
-    // row hover
-    --lumo-row-background-hover: #{$background-color--hover};
-
+    background-color: var(--calcite-color-foreground-1);
     width: 100%;
     height: 100%;
+
+    a {
+      text-decoration: underline;
+      color: var(--calcite-color-text-link);
+
+      &:hover,
+      &:focus {
+        color: var(--calcite-color-text-highlight);
+      }
+    }
+
+    vaadin-grid {
+      border-block-end: none;
+      border-inline: none;
+      background-color: inherit;
+      overflow: visible;
+      color: inherit;
+      font-family: inherit;
+      font-size: var(--calcite-font-size);
+    }
+
+    /*
+    Prevents flicker on drag-and-drop; replaces fading of non-target (and frozen) columns.
+    https://devtopia.esri.com/WebGIS/webgis-sdk/issues/11728
+    */
+    vaadin-grid[reordering]::part(cell)::after {
+      content: normal;
+    }
+
+    vaadin-grid[reordering]::part(frozen-cell),
+    vaadin-grid[reordering]::part(frozen-to-end-cell),
+    vaadin-grid[reordering]::part(reorder-allowed-cell) {
+      filter: brightness(0.9) contrast(1.1);
+    }
+
+    vaadin-grid::part(empty-state) {
+      border-block-start: var(--calcite-border-width-sm) solid var(--calcite-color-border-2);
+      color: var(--calcite-color-text-1);
+    }
+
+    vaadin-grid::part(cell editing) {
+      z-index: 2;
+    }
+
+    vaadin-grid::part(frozen-cell),
+    vaadin-grid::part(frozen-to-end-cell) {
+      z-index: 4;
+    }
+
+    vaadin-grid::part(cell last-frozen-cell) {
+      overflow: visible;
+    }
+
+    vaadin-grid::part(cell text-wrap) {
+      text-wrap: wrap;
+    }
+
+    vaadin-grid-cell-content {
+      box-sizing: border-box !important;
+      align-items: center;
+      padding: var(--calcite-spacing-xxs) var(--calcite-spacing-sm);
+      height: 100%;
+      min-height: var(--calcite-font-line-height-fixed-3xl);
+    }
+
+    vaadin-grid::part(cell) {
+      border-inline-end: var(--calcite-border-width-sm) solid;
+      border-color: var(--calcite-color-border-2);
+      line-height: 28px;
+      color: var(--calcite-color-text-1);
+    }
+
+    vaadin-grid::part(cell):focus::after {
+      outline-color: var(--calcite-color-brand);
+    }
+
+    [dir="rtl"] vaadin-grid::part(cell) {
+      border-inline-start: var(--calcite-border-width-sm) solid;
+    }
+
+    // Adds darkened border to selection column on scroll
+    vaadin-grid[overflow~="start"]::part(cell last-frozen-cell) {
+      border-inline-end: var(--calcite-border-width-sm) solid var(--calcite-color-text-3);
+    }
+
+    [dir="rtl"] vaadin-grid[overflow~="start"]::part(cell last-frozen-cell) {
+      border-inline-start: var(--calcite-border-width-sm) solid var(--calcite-color-text-3);
+    }
+
+    // Adds darkened border to action column on overflow
+    vaadin-grid[overflow~="end"]::part(cell first-frozen-to-end-cell) {
+      border-inline-start: var(--calcite-border-width-sm) solid var(--calcite-color-text-3);
+    }
+
+    [dir="rtl"] vaadin-grid[overflow~="end"]::part(cell first-frozen-to-end-cell) {
+      border-inline-end: var(--calcite-border-width-sm) solid var(--calcite-color-text-3);
+    }
+
+    vaadin-grid::part(body-cell) {
+      background-color: var(--calcite-color-foreground-1);
+    }
+
+    vaadin-grid::part(body-cell):hover {
+      background-color: var(--calcite-color-foreground-2);
+    }
+
+    vaadin-grid::part(body-cell invalid) {
+      color: var(--calcite-color-text-3);
+      font-style: italic;
+    }
+
+    vaadin-grid::part(header-cell) {
+      border-color: var(--calcite-color-border-2);
+      background-color: var(--calcite-color-background);
+    }
+
+    vaadin-grid::part(header-cell invalid) {
+      font-weight: var(--calcite-font-weight-bold);
+    }
+
+    // Adds darkened bottom border to header cells on overflow
+    vaadin-grid[overflow~="top"]::part(header-cell) {
+      border-bottom: var(--calcite-border-width-sm) solid var(--calcite-color-text-3);
+    }
+
+    // Adds brand border to sorted header cell
+    vaadin-grid::part(header-cell direction) {
+      border-bottom: var(--calcite-border-width-sm) solid var(--calcite-color-brand);
+      background-color: var(--calcite-color-foreground-1);
+    }
+
+    // Adds darkened border to sorted header cell on overflow
+    vaadin-grid[overflow~="top"]::part(header-cell direction) {
+      border-bottom: var(--calcite-border-width-sm) solid var(--calcite-color-brand);
+    }
+
+    vaadin-grid::part(body-cell highlight) {
+      background-color: var(--calcite-color-foreground-3);
+    }
+
+    // For specific cells with valid pending edits
+    vaadin-grid::part(body-cell pending-edit) {
+      border: var(--calcite-border-width-md) solid var(--calcite-color-status-success);
+      background-color: color-mix(in sRGB, var(--calcite-color-status-success) 20%, var(--calcite-color-foreground-1));
+
+      &:hover {
+        background-color: color-mix(
+          in sRGB,
+          var(--calcite-color-status-success-hover) 20%,
+          var(--calcite-color-foreground-1)
+        );
+      }
+    }
+
+    // For specific cells with invalid pending edits
+    vaadin-grid::part(body-cell pending-edit-invalid) {
+      border: var(--calcite-border-width-md) dashed var(--calcite-color-status-danger);
+      background-color: color-mix(in sRGB, var(--calcite-color-status-danger) 20%, var(--calcite-color-foreground-1));
+      font-weight: var(--calcite-font-weight-bold);
+
+      &:hover {
+        background-color: color-mix(
+          in sRGB,
+          var(--calcite-color-status-danger-hover) 20%,
+          var(--calcite-color-foreground-1)
+        );
+      }
+    }
+
+    // For all cells when a different row has invalid pending edits
+    // Does not apply to 'valid' cells in the invalid row itself
+    vaadin-grid::part(body-cell pending-edit-other) {
+      color: var(--calcite-color-text-3);
+      cursor: not-allowed;
+    }
+
+    vaadin-grid::part(selected-row-cell) {
+      background-color: color-mix(in sRGB, var(--calcite-color-brand) 10%, var(--calcite-color-foreground-1));
+    }
+
+    vaadin-grid::part(selected-row-cell):hover {
+      background-color: color-mix(in sRGB, var(--calcite-color-brand) 20%, var(--calcite-color-foreground-1));
+    }
+
+    vaadin-checkbox {
+      line-height: var(--calcite-font-line-height-relative-snug);
+    }
+
+    vaadin-checkbox::part(checkbox) {
+      background-color: var(--calcite-color-text-3);
+      line-height: var(--calcite-font-line-height-relative-snug);
+    }
+
+    vaadin-checkbox[checked]::part(checkbox) {
+      background-color: var(--calcite-color-brand);
+    }
+
+    vaadin-grid-sorter[direction]::part(indicators),
+    vaadin-grid-sorter[direction]::part(order) {
+      color: var(--calcite-color-text-1);
+    }
 
     .esri-grid__content {
       background-color: inherit;
@@ -29,18 +212,9 @@
     }
 
     .esri-grid__grid {
+      border-radius: 0;
       width: 100%;
       height: 100%;
-
-      a {
-        text-decoration: underline;
-        color: $interactive-font-color;
-
-        &:hover,
-        &:focus {
-          color: $interactive-font-color--hover;
-        }
-      }
     }
 
     .esri-column__content--full {
@@ -59,7 +233,7 @@
         height: 100%;
         overflow: hidden;
         text-align: start;
-        font-weight: $font-weight;
+        font-weight: var(--calcite-font-weight-normal);
 
         &:has(calcite-icon:only-child) {
           align-items: center;
@@ -70,20 +244,21 @@
           display: flex;
           flex-flow: column wrap;
           width: 100%;
-          min-height: var(--calcite-app-sizing-11);
+          min-height: var(--calcite-spacing-xxxl);
           overflow: hidden;
 
           span {
             width: 100%;
             overflow: hidden;
             text-overflow: ellipsis;
-            line-height: var(--calcite-app-font-line-height-fixed-3);
+            line-height: var(--calcite-font-line-height-fixed-xl);
           }
         }
 
         calcite-icon {
           margin-inline-end: var(--calcite-spacing-xxs);
-          height: var(--calcite-app-sizing-9);
+          height: var(--calcite-spacing-xxl);
+          color: var(--calcite-color-text-1);
         }
 
         calcite-dropdown {
@@ -118,9 +293,8 @@
       }
 
       &-description {
-        height: var(--calcite-app-sizing-9);
         color: var(--calcite-color-text-3);
-        font-size: $font-size--small;
+        font-size: var(--calcite-font-size-sm);
       }
     }
 
@@ -133,7 +307,7 @@
       display: flex;
       flex-grow: 1;
       align-items: center;
-      height: var(--calcite-app-sizing-9);
+      height: var(--calcite-font-line-height-fixed-xl);
       overflow: hidden;
       color: var(--calcite-color-text-1);
     }
@@ -172,7 +346,7 @@
     }
 
     calcite-action-bar {
-      background-color: transparent;
+      --calcite-action-bar-background-color: transparent;
     }
 
     div:first-child {
@@ -181,6 +355,11 @@
 
     calcite-input-time-zone {
       --calcite-dropdown-width: 200px;
+    }
+
+    calcite-combobox {
+      position: absolute;
+      font-weight: var(--calcite-font-weight-normal);
     }
 
     // Remove top border between stacked components for cleaner look.

@@ -1,0 +1,1 @@
+import{Nt as e}from"./UnitFactory-DqUrR2QU.js";var t=new e;function n(e,n,r){return t.execute(e,n,r,null)}function r(){return t.supportsCurves()}export{n,r as t};

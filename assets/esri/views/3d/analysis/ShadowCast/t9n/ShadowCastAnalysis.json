@@ -1,0 +1,1 @@
+{"shadowDuration":"Total time in shadow: {duration}","sunlightDuration":"Total time in sunlight: {duration}","shadowDurationMoreThanUpTo":"Total time in shadow: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Total time in sunlight: <{duration}","sunlightDurationAtLeastLessThan":"Total time in sunlight: {minDuration} - {maxDuration}"}

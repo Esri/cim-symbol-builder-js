@@ -13,10 +13,10 @@
 
   .esri-basemap-gallery {
     position: relative;
+    container-type: inline-size;
     background-color: $background-color;
     overflow-y: auto;
     color: $font-color;
-    container-type: inline-size;
 
     /* stylelint-disable-next-line order/order */
     @include loopingProgressBar(".esri-basemap-gallery__loader");
@@ -39,14 +39,14 @@
 
     &--source-refreshing &__item-container,
     &.esri-disabled &__item {
-      opacity: $opacity--disabled;
       animation: none;
+      opacity: $opacity--disabled;
       pointer-events: none;
     }
 
     &__empty-message {
-      padding: $cap-spacing $side-spacing;
       animation: esri-fade-in $animation-duration ease-in-out;
+      padding: $cap-spacing $side-spacing;
     }
 
     &__item {
@@ -60,10 +60,10 @@
       flex-direction: row;
       align-items: center;
       transition: $transition;
-      border: $item-border-size solid transparent;
-      cursor: pointer;
-      width: 100%;
       animation: esri-fade-in $animation-duration ease-in-out;
+      border: $item-border-size solid transparent;
+      width: 100%;
+      cursor: pointer;
 
       &:hover {
         border-color: $interactive-font-color;
@@ -87,9 +87,9 @@
         flex-shrink: 0;
         transition: $transition;
         border-inline-end: $item-border-size solid $border-color--subtle;
+        aspect-ratio: 1.5;
         width: $thumbnail-width;
         min-width: $thumbnail-width;
-        aspect-ratio: 1.5;
       }
 
       &-title {
@@ -166,9 +166,10 @@
     // See https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/52202
     @container (width > #{$size--sm}) and (width <= #{$size--md}) {
       .esri-basemap-gallery__item-thumbnail {
+        aspect-ratio: 1;
         width: $thumbnail-width--narrow;
         min-width: $thumbnail-width--narrow;
-        aspect-ratio: 1;
+        object-position: left; /* https://devtopia.esri.com/WebGIS/arcgis-js-api/issues/78080 */
       }
     }
 
@@ -224,9 +225,9 @@
       top: 0;
       right: 0;
       left: 0;
+      animation: esri-fade-in $animation-duration ease-in-out;
       width: 100%;
       height: 2px;
-      animation: esri-fade-in $animation-duration ease-in-out;
     }
   }
 

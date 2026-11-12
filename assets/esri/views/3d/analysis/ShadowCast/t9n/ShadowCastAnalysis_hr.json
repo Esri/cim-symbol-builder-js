@@ -1,0 +1,1 @@
+{"shadowDuration":"Ukupno vrijeme u sjeni: {duration}","sunlightDuration":"Ukupno vrijeme na suncu: {duration}","shadowDurationMoreThanUpTo":"Ukupno vrijeme u sjeni: {minDuration} - {maxDuration}","sunlightDurationLessThan":"Ukupno vrijeme na suncu: <{duration}","sunlightDurationAtLeastLessThan":"Ukupno vrijeme na suncu: {minDuration} - {maxDuration}"}

@@ -1,0 +1,1 @@
+import"./HighlightDefaults-x40vgX33.js";function e(e){return e?.name??`default`}export{e as t};

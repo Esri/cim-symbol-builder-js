@@ -1,0 +1,1 @@
+import{t as e}from"./SimpleGeometryCursor-Bz9Gb7aZ.js";import{t}from"./OperatorGeneralize-CGa5tkO6.js";var n=new t;function r(e,t,r){return n.execute(e,t,r,null)}function i(t,r,i){let a=n.executeMany(new e(t),r,i,null);return Array.from(a)}export{r as execute,i as executeMany};

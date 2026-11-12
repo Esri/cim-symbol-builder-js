@@ -1,0 +1,18 @@
+.esri-box-overlay-item {
+  --arcgis-internal-focus-region-border-width: 2px;
+
+  .esri-focus-region-outer-stroke,
+  .esri-focus-region-inner-stroke {
+    fill: none;
+  }
+
+  .esri-focus-region-outer-stroke {
+    stroke: var(--arcgis-focus-region-outer-border-color, light-dark(#000, #fff));
+    stroke-width: calc(var(--arcgis-focus-region-border-width, var(--arcgis-internal-focus-region-border-width)) * 3);
+  }
+
+  .esri-focus-region-inner-stroke {
+    stroke: var(--arcgis-focus-region-inner-border-color, light-dark(#fff, #000));
+    stroke-width: var(--arcgis-focus-region-border-width, var(--arcgis-internal-focus-region-border-width));
+  }
+}
